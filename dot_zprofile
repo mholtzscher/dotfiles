@@ -19,6 +19,8 @@ source ~/.kube/source.sh
 export PATH="${PATH}:/Users/michael/.local/bin"
 
 alias tf='terraform' 
+alias tg='terragrunt'
+
 alias lg='lazygit'
 alias ls='lsd'
 alias ll='lsd -al'
