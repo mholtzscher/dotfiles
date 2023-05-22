@@ -21,6 +21,13 @@ lvim.plugins = {
   },
   { "catppuccin/nvim",   name = "catpuccin" },
   { "leoluz/nvim-dap-go" },
+  {
+    "ggandor/leap.nvim",
+    name = "leap",
+    config = function()
+      require("leap").add_default_mappings()
+    end,
+  },
 }
 
 ------------------------
