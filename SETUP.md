@@ -21,7 +21,7 @@ chezmoi init git@github.com:mholtzscher/dotfiles.git
 ```sh
 brew install --cask nightfall
 
-brew install go node pyenv zoxide lazygit lsd bat awscli buf dive helm httpie hurl jq kubectx ripgrep ko slides fd fzf
+brew install go node pyenv zoxide lazygit lsd bat awscli buf dive helm httpie hurl jq kubectx ripgrep ko slides fd fzf bottom
     
 ```
 
