@@ -37,3 +37,9 @@ brew install go node pyenv pyenv-virtualenv zoxide lazygit lsd bat awscli buf di
   pip install --upgrade pip
 ```
 
+# Install OpenCommit
+```sh
+npm install -g opencommit
+
+oco config set OCO_OPENAI_API_KEY=<token-here>
+```
