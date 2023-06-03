@@ -64,7 +64,7 @@ lvim.plugins = {
     end
   },
   { "AckslD/swenv.nvim" },
-  -- { "stevearc/dressing.nvim" }
+  { "stevearc/dressing.nvim" }
 
 }
 
