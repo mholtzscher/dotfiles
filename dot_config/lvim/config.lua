@@ -63,6 +63,9 @@ lvim.plugins = {
       }
     end
   },
+  { "AckslD/swenv.nvim" },
+  -- { "stevearc/dressing.nvim" }
+
 }
 
 ------------------------
@@ -76,6 +79,7 @@ lvim.colorscheme = "catppuccin-mocha"
 lvim.builtin.treesitter.ensure_installed = {
   "go",
   "gomod",
+  "python",
 }
 
 ------------------------
@@ -85,10 +89,19 @@ local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   { command = "goimports", filetypes = { "go" } },
   { command = "gofumpt",   filetypes = { "go" } },
-  { command = "prettier",  filetypes = { "yaml" } }
+  { command = "prettier",  filetypes = { "yaml" } },
+  { name = "black" },
 }
 
 lvim.format_on_save = true
+
+------------------------
+-- Linting
+------------------------
+local linters = require "lvim.lsp.null-ls.linters"
+linters.setup {
+  { command = "flake8", filetypes = { "python" } }
+}
 
 ------------------------
 -- Dap
@@ -196,4 +209,12 @@ lvim.builtin.which_key.mappings["t"] = {
   q = { "<cmd>TroubleToggle quickfix<cr>", "quickfix" },
   l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
   r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
+}
+
+--------------------------------------
+-- Swenv Plugin Configuration
+--------------------------------------
+lvim.builtin.which_key.mappings["C"] = {
+  name = "Python",
+  c = { "<cmd>lua require('swenv.api').pick_venv()<cr>", "Choose Env" },
 }
