@@ -1,7 +1,8 @@
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(zoxide init zsh)"
-
+eval "$(pyenv virtualenv-init -)"
+eval "$(pyenv init -)"
 
 # Added by Toolbox App
 export PATH="$PATH:/Users/michael/Library/Application Support/JetBrains/Toolbox/scripts"
