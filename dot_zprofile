@@ -31,4 +31,5 @@ alias treed='lsd --tree -a -d --ignore-glob .git'
 
 # Go command aliases
 alias tidy='GOPRIVATE=github.com/pepper-iot go mod tidy'
-alias run='godotenv -f ~/.env go run cmd/main.go'
+alias run='godotenv -f ~/.env go run cmd/main.go | jq -c
+
