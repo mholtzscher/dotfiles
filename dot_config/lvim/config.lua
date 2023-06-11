@@ -319,6 +319,6 @@ lvim.builtin.which_key.mappings["m"] = {
   o = { "<Cmd>ChatGPTRun optimize_code<cr>", "optimize code" },
   s = { "<Cmd>ChatGPTRun summarize<cr>", "summarize" },
   f = { "<Cmd>ChatGPTRun fix_bugs<cr>", "fix bugs" },
-  -- r = { "<Cmd>ChatGPTRun roxygen_edit<cr>", "roxygen edit" },
+  -- x = { "<Cmd>ChatGPTRun roxygen_edit<cr>", "roxygen edit" },
   r = { "<Cmd>ChatGPTRun code_readability_analysis<cr>", "code readability analysis" },
 }
