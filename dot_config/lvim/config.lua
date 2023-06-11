@@ -79,6 +79,20 @@ lvim.plugins = {
       require("octo").setup()
     end,
   },
+  {
+    "jackMort/ChatGPT.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("chatgpt").setup({
+        api_key_cmd = "op read op://personal/OpenAI/chatgpt.nvim --no-newline"
+      })
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
+  }
 }
 
 ------------------------
@@ -280,3 +294,31 @@ local json_opts = {
 }
 
 require("lvim.lsp.manager").setup("jsonls", json_opts)
+
+--------------------------------------
+-- ChatGPT.nvim Plugin Configuration
+--------------------------------------
+require("chatgpt").setup({
+  api_key_cmd = "op read op://personal/OpenAI/chatgpt.nvim --no-newline"
+})
+
+local chatgpt = require("chatgpt")
+lvim.builtin.which_key.mappings["m"] = {
+  name = "ChatGPT",
+  i = {
+    function()
+      chatgpt.edit_with_instructions()
+    end,
+    "Edit with instructions",
+  },
+  e = { "<Cmd>ChatGPTRun explain_code<cr>", "explain code" },
+  t = { "<Cmd>ChatGPTRun translate<cr>", "translate" },
+  k = { "<Cmd>ChatGPTRun keywords<cr>", "keywords" },
+  d = { "<Cmd>ChatGPTRun docstring<cr>", "docstring" },
+  a = { "<Cmd>ChatGPTRun grammar_correction<cr>", "add tests" },
+  o = { "<Cmd>ChatGPTRun optimize_code<cr>", "optimize code" },
+  s = { "<Cmd>ChatGPTRun summarize<cr>", "summarize" },
+  f = { "<Cmd>ChatGPTRun fix_bugs<cr>", "fix bugs" },
+  -- r = { "<Cmd>ChatGPTRun roxygen_edit<cr>", "roxygen edit" },
+  r = { "<Cmd>ChatGPTRun code_readability_analysis<cr>", "code readability analysis" },
+}
