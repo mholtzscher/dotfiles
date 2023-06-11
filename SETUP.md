@@ -22,7 +22,7 @@ chezmoi init git@github.com:mholtzscher/dotfiles.git
 brew install --cask nightfall
 brew install --cask 1password/tap/1password-cli
 
-brew install go node pyenv pyenv-virtualenv zoxide lazygit lsd bat awscli buf dive helm httpie hurl jq kubectx ripgrep ko slides fd fzf bottom gh
+brew install go node pyenv pyenv-virtualenv zoxide lazygit lsd bat awscli buf dive helm httpie hurl jq yq kubectx ripgrep ko slides fd fzf bottom gh
     
 ```
 
