@@ -305,12 +305,16 @@ require("chatgpt").setup({
 local chatgpt = require("chatgpt")
 lvim.builtin.which_key.mappings["m"] = {
   name = "ChatGPT",
+
+  -- edit with instructions
   i = {
     function()
       chatgpt.edit_with_instructions()
     end,
-    "Edit with instructions",
+    "edit with instructions",
   },
+
+  -- run actions
   e = { "<Cmd>ChatGPTRun explain_code<cr>", "explain code" },
   t = { "<Cmd>ChatGPTRun translate<cr>", "translate" },
   k = { "<Cmd>ChatGPTRun keywords<cr>", "keywords" },
@@ -321,4 +325,10 @@ lvim.builtin.which_key.mappings["m"] = {
   f = { "<Cmd>ChatGPTRun fix_bugs<cr>", "fix bugs" },
   -- x = { "<Cmd>ChatGPTRun roxygen_edit<cr>", "roxygen edit" },
   r = { "<Cmd>ChatGPTRun code_readability_analysis<cr>", "code readability analysis" },
+
+  -- chat
+  c = { "<Cmd>ChatGPT<cr>", "chat" },
+
+  -- chat persona
+  p = { "<Cmd>ChatGPTActAs<Cr>", "act as persona" },
 }
