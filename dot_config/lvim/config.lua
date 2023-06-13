@@ -298,9 +298,9 @@ require("lvim.lsp.manager").setup("jsonls", json_opts)
 --------------------------------------
 -- ChatGPT.nvim Plugin Configuration
 --------------------------------------
-require("chatgpt").setup({
-  api_key_cmd = "op read op://personal/OpenAI/chatgpt.nvim --no-newline"
-})
+-- require("chatgpt").setup({
+--   api_key_cmd = "op read op://personal/OpenAI/chatgpt.nvim --no-newline"
+-- })
 
 local chatgpt = require("chatgpt")
 lvim.builtin.which_key.mappings["m"] = {
