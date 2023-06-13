@@ -1,8 +1,10 @@
 # languages
 brew "go"
 brew "node"
+brew "rust"
 
 # language tooling
+brew "delve"
 brew "pyenv"
 brew "pyenv-virtualenv"
 
@@ -10,6 +12,7 @@ brew "pyenv-virtualenv"
 brew "bat"
 brew "fd"
 brew "fzf"
+brew "glow"
 brew "httpie"
 brew "hurl"
 brew "jq"
@@ -19,11 +22,17 @@ brew "yq"
 brew "zoxide"
 
 # developer tools
+brew "act"
 brew "awscli"
 brew "buf"
 brew "dive"
+brew "grpcurl"
+brew "hey"
+brew "k9s"
 brew "ko"
 brew "lazygit"
+brew "mage"
+brew "neovim"
 
 # kubernetes
 brew "helm"
@@ -34,6 +43,7 @@ brew "kubectx"
 brew "bottom"
 brew "chezmoi"
 brew "slides"
+brew "speedtest"
 
 # font
 cask "font-jetbrains-mono-nerd-font"
@@ -42,3 +52,4 @@ cask "font-jetbrains-mono-nerd-font"
 cask "1password-cli"
 cask "amethyst"
 cask "nightfall"
+cask "postman"

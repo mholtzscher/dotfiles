@@ -1,11 +1,16 @@
+# Install Warp
+
+1. https://www.warp.dev/
+
 # Install Homebrew
 ```sh
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 # Setup 1Password
-Install App/GUI
 
+1. Install App/GUI
+1. Install CLI app
 ```sh
 brew install --cask 1password/tap/1password-cli
 ```
@@ -24,7 +29,7 @@ cd ~ && brew bundle
 
 # Setup Fonts
 
-Set font in Warp
+1. Set font in Warp
 
 # Install Rust
 ```sh
@@ -42,3 +47,7 @@ Set font in Warp
 ```sh
 npm install -g opencommit
 ```
+
+# Install LunarVIM
+
+1. https://www.lunarvim.org/docs/installation
