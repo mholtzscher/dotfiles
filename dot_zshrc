@@ -1,0 +1,35 @@
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(zoxide init zsh)"
+eval "$(pyenv virtualenv-init -)"
+eval "$(pyenv init -)"
+
+# Added by Toolbox App
+export PATH="$PATH:/Users/michael/Library/Application Support/JetBrains/Toolbox/scripts"
+
+# Go setup
+export GOPATH=$HOME/go
+export GOROOT="$(brew --prefix golang)/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+#export PATH="$PATH:${GOPATH}/bin"
+
+# k8s setup
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+source ~/.kube/source.sh
+
+export PATH="${PATH}:/Users/michael/.local/bin"
+
+alias tf='terraform' 
+alias tg='terragrunt'
+
+alias lg='lazygit'
+alias ls='lsd'
+alias ll='lsd -al'
+alias tree='lsd --tree -a --ignore-glob .git'
+alias treed='lsd --tree -a -d --ignore-glob .git'
+
+
+# Go command aliases
+alias tidy='GOPRIVATE=github.com/pepper-iot go mod tidy'
+alias run='godotenv -f ~/.env go run cmd/main.go | jq -c'
+
