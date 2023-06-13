@@ -3,12 +3,12 @@
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-# Setup Fonts
-```sh
-brew install font-jetbrains-mono-nerd-font
-```
+# Setup 1Password
+Install App/GUI
 
-Set font in Warp
+```sh
+brew install --cask 1password/tap/1password-cli
+```
 
 # Setup Chezmoi
 ```sh
@@ -19,12 +19,12 @@ chezmoi init git@github.com:mholtzscher/dotfiles.git
 
 # Install Homebrew Apps
 ```sh
-brew install --cask nightfall
-brew install --cask 1password/tap/1password-cli
-
-brew install go node pyenv pyenv-virtualenv zoxide lazygit lsd bat awscli buf dive helm httpie hurl jq yq kubectx ripgrep ko slides fd fzf bottom gh
-    
+cd ~ && brew bundle   
 ```
+
+# Setup Fonts
+
+Set font in Warp
 
 # Install Rust
 ```sh
@@ -41,6 +41,4 @@ brew install go node pyenv pyenv-virtualenv zoxide lazygit lsd bat awscli buf di
 # Install OpenCommit
 ```sh
 npm install -g opencommit
-
-oco config set OCO_OPENAI_API_KEY=<token-here>
 ```
