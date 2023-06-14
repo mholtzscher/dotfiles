@@ -1,3 +1,5 @@
+tap "teamookla/speedtest"
+
 # languages
 brew "go"
 brew "node"
@@ -10,6 +12,7 @@ brew "pyenv-virtualenv"
 
 # cli utilities
 brew "bat"
+brew "dust"
 brew "fd"
 brew "fzf"
 brew "glow"
@@ -53,3 +56,4 @@ cask "1password-cli"
 cask "amethyst"
 cask "nightfall"
 cask "postman"
+
