@@ -92,7 +92,8 @@ lvim.plugins = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim"
     }
-  }
+  },
+  { "ellisonleao/glow.nvim", config = true, cmd = "Glow" }
 }
 
 ------------------------
