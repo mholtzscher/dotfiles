@@ -51,3 +51,8 @@ npm install -g opencommit
 # Install LunarVIM
 
 1. https://www.lunarvim.org/docs/installation
+
+# Install Go Tools
+```sh
+go install github.com/joho/godotenv/cmd/godotenv@latest
+```
