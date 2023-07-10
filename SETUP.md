@@ -55,4 +55,5 @@ npm install -g opencommit
 # Install Go Tools
 ```sh
 go install github.com/joho/godotenv/cmd/godotenv@latest
+go install golang.org/x/vuln/cmd/govulncheck@latest
 ```
