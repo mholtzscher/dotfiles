@@ -37,6 +37,7 @@ brew "ko"
 brew "lazygit"
 brew "mage"
 brew "neovim"
+brew "oauth2l"
 
 # kubernetes
 brew "helm"
