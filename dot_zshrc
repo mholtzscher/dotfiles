@@ -32,7 +32,8 @@ alias pbj='pbpaste | jq'
 
 # Go command aliases
 alias tidy='GOPRIVATE=github.com/pepper-iot go mod tidy'
-alias run='godotenv -f ~/.env go run cmd/main.go | jq -c'
+alias run='godotenv -f ~/.env go run cmd/main.go'
+alias runjq='godotenv -f ~/.env go run cmd/main.go | jq -c'
 
 
 source ~/.functions
