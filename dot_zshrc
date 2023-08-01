@@ -35,4 +35,4 @@ alias tidy='GOPRIVATE=github.com/pepper-iot go mod tidy'
 alias run='godotenv -f ~/.env go run cmd/main.go | jq -c'
 
 
-source .functions
+source ~/.functions
