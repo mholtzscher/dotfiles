@@ -27,3 +27,14 @@ function create_allow_ecr_repo(){
     create_ecr_repo $repo
     allow_ecr_repo $repo
 }
+
+function kctx() {
+    local currentCtx=$(kubectl config current-context)
+    ctx=$(kubectl config get-contexts -o name | sort -k1 -r | fzf)
+    if [[ -z $ctx ]]; then
+        echo "nothing selected..."
+        return
+    fi
+    kubectl config use-context $ctx
+    echo "switched from $currentCtx to $ctx"
+}
