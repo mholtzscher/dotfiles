@@ -36,4 +36,4 @@ alias run='godotenv -f ~/.env go run cmd/main.go'
 alias runjq='godotenv -f ~/.env go run cmd/main.go | jq -c'
 
 
-source ~/.functions
+source ~/.functions.sh
