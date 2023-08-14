@@ -39,6 +39,8 @@ brew "lazygit"
 brew "mage"
 brew "neovim"
 brew "oauth2l"
+tap "FairwindsOps/tap"
+brew "pluto"
 
 # kubernetes
 brew "helm"
