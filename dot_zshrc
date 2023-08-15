@@ -36,7 +36,7 @@ alias treed='lsd --tree -a -d --ignore-glob .git'
 alias pbj='pbpaste | jq'
 
 # Buf aliases
-alias bff='buf format --diff -w --exit-code'
+alias bff='buf format --diff -w'
 alias bfg='buf generate'
 
 # Go command aliases
