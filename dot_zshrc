@@ -19,17 +19,23 @@ source ~/.kube/source.sh
 
 export PATH="${PATH}:/Users/michael/.local/bin"
 
+# Terraform aliases
 alias tf='terraform' 
 alias tg='terragrunt'
 
+# Git aliases
 alias lg='lazygit'
+
+# Navigation aliases
 alias ls='lsd'
 alias ll='lsd -al'
 alias tree='lsd --tree -a --ignore-glob .git'
 alias treed='lsd --tree -a -d --ignore-glob .git'
 
+# JSON aliases
 alias pbj='pbpaste | jq'
 
+# Buf aliases
 alias bff='buf format --diff -w --exit-code'
 alias bfg='buf generate'
 
