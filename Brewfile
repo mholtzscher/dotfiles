@@ -39,13 +39,13 @@ brew "lazygit"
 brew "mage"
 brew "neovim"
 brew "oauth2l"
-tap "FairwindsOps/tap"
-brew "pluto"
 
 # kubernetes
 brew "helm"
 brew "kubectl"
 brew "kubectx"
+tap "FairwindsOps/tap"
+brew "pluto"
 
 # misc
 brew "bottom"
@@ -58,7 +58,6 @@ cask "font-jetbrains-mono-nerd-font"
 
 # apps
 cask "1password-cli"
-cask "amethyst"
 cask "nightfall"
 cask "postman"
 
