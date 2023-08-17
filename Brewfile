@@ -40,6 +40,9 @@ brew "mage"
 brew "neovim"
 brew "oauth2l"
 
+tap "mongodb/brew"
+brew "mongodb-community"
+
 # kubernetes
 brew "helm"
 brew "kubectl"

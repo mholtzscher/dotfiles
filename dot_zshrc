@@ -37,7 +37,7 @@ alias pbj='pbpaste | jq'
 
 # Buf aliases
 alias bff='buf format --diff -w'
-alias bfg='buf generate'
+alias bfg='buf generate && buf generate --template buf.gen.tag.yaml'
 
 # Go command aliases
 alias tidy='GOPRIVATE=github.com/pepper-iot go mod tidy'
