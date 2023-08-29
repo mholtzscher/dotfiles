@@ -61,6 +61,8 @@ cask "font-jetbrains-mono-nerd-font"
 
 # apps
 cask "1password-cli"
+cask "mongodb-compass"
 cask "nightfall"
+cask "obsidian"
 cask "postman"
 
