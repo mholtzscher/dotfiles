@@ -1,0 +1,5 @@
+[default]
+region = us-east-2
+
+[pepper-iot-dev]
+region = us-east-2
