@@ -1,5 +1,22 @@
-[default]
+[sso-session pepper-sso]
+sso_start_url = https://pepper-iot.awsapps.com/start
+sso_region = us-east-1
+sso_registration_scopes = sso:account:access
+
+[profile pepper-iot-dev]
+sso_session = pepper-sso
+sso_account_id = 329295018884
+sso_role_name = Operations
+region = us-east-1
+
+[profile pepper-iot-staging]
+sso_session = pepper-sso
+sso_account_id = 803458383710
+sso_role_name = Operations
 region = us-east-2
 
-[pepper-iot-dev]
+[profile pepper-iot-uat]
+sso_session = pepper-sso
+sso_account_id = 471570387468
+sso_role_name = Operations
 region = us-east-2
