@@ -35,10 +35,6 @@ alias treed='lsd --tree -a -d --ignore-glob .git'
 # JSON aliases
 alias pbj='pbpaste | jq'
 
-# Buf aliases
-alias bff='buf format --diff -w'
-alias bfg='buf generate && buf generate --template buf.gen.tag.yaml'
-
 # Go command aliases
 alias tidy='GOPRIVATE=github.com/pepper-iot go mod tidy'
 alias run='godotenv -f ~/.env go run cmd/main.go'

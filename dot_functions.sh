@@ -38,3 +38,12 @@ function kctx() {
     kubectl config use-context $ctx
     echo "switched from $currentCtx to $ctx"
 }
+
+function bfg() {
+  buf format --diff -w
+  if [[ -f buf.gen.tag.yaml ]]; then
+    buf generate && buf generate --template buf.gen.tag.yaml
+  else
+    buf generate
+  fi
+}

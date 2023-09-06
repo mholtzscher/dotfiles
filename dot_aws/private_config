@@ -6,7 +6,7 @@ sso_registration_scopes = sso:account:access
 [profile pepper-iot-dev]
 sso_session = pepper-sso
 sso_account_id = 329295018884
-sso_role_name = Operations
+sso_role_name = Administrator
 region = us-east-1
 
 [profile pepper-iot-staging]
