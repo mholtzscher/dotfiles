@@ -117,7 +117,13 @@ linters.setup {
 }
 
 ------------------------
--- Go Dap
+-- nvim-dap launch.json Configuration
+------------------------
+ds = lvim.builtin.which_key.mappings["d"]
+ds["l"] = { "<cmd>lua require('dap.ext.vscode').load_launchjs()<cr>", "load launch.json" }
+
+------------------------
+-- Go Dap Configuration
 ------------------------
 local dap_ok, dapgo = pcall(require, "dap-go")
 if not dap_ok then
