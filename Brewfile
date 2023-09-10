@@ -44,6 +44,8 @@ brew "oauth2l"
 tap "mongodb/brew"
 brew "mongodb-community"
 
+brew "emqx"
+
 # kubernetes
 brew "helm"
 brew "kubectl"
