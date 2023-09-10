@@ -29,7 +29,6 @@ lvim.plugins = {
     end,
   },
   { "stevearc/dressing.nvim" },
-  -- { "olexsmir/gopher.nvim" },
   {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
@@ -46,24 +45,6 @@ lvim.plugins = {
       require("todo-comments").setup()
     end,
   },
-  -- {
-  --   "rmagatti/goto-preview",
-  --   config = function()
-  --     require('goto-preview').setup {
-  --       width = 120,             -- Width of the floating window
-  --       height = 25,             -- Height of the floating window
-  --       default_mappings = true, -- Bind default mappings
-  --       debug = false,           -- Print debug information
-  --       opacity = nil,           -- 0-100 opacity level of the floating window where 100 is fully transparent.
-  --       post_open_hook = nil     -- A function taking two arguments, a buffer and a window to be ran as a hook.
-  --       -- You can use "default_mappings = true" setup option
-  --       -- Or explicitly set keybindings
-  --       -- vim.cmd("nnoremap gpd <cmd>lua require('goto-preview').goto_preview_definition()<CR>")
-  --       -- vim.cmd("nnoremap gpi <cmd>lua require('goto-preview').goto_preview_implementation()<CR>")
-  --       -- vim.cmd("nnoremap gP <cmd>lua require('goto-preview').close_all_win()<CR>")
-  --     }
-  --   end
-  -- },
   -- { "AckslD/swenv.nvim" },
   -- { "mfussenegger/nvim-dap-python" },
   -- { "nvim-neotest/neotest" },
@@ -93,7 +74,7 @@ lvim.plugins = {
       "nvim-telescope/telescope.nvim"
     }
   },
-  { "ellisonleao/glow.nvim", config = true, cmd = "Glow" }
+  { "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
 }
 
 ------------------------
@@ -107,7 +88,11 @@ lvim.colorscheme = "catppuccin-mocha"
 lvim.builtin.treesitter.ensure_installed = {
   "go",
   "gomod",
+  "hcl",
+  "json",
   "python",
+  "typescript",
+  "tsx",
 }
 
 ------------------------
@@ -178,22 +163,6 @@ lsp_manager.setup("gopls", {
   on_attach = function(client, bufnr)
     require("lvim.lsp").common_on_attach(client, bufnr)
     local _, _ = pcall(vim.lsp.codelens.refresh)
-    -- local map = function(mode, lhs, rhs, desc)
-    --   if desc then
-    --     desc = desc
-    --   end
-
-    --   vim.keymap.set(mode, lhs, rhs, { silent = true, desc = desc, buffer = bufnr, noremap = true })
-    -- end
-    -- map("n", "<leader>Ci", "<cmd>GoInstallDeps<Cr>", "Install Go Dependencies")
-    -- map("n", "<leader>Ct", "<cmd>GoMod tidy<cr>", "Tidy")
-    -- map("n", "<leader>Ca", "<cmd>GoTestAdd<Cr>", "Add Test")
-    -- map("n", "<leader>CA", "<cmd>GoTestsAll<Cr>", "Add All Tests")
-    -- map("n", "<leader>Ce", "<cmd>GoTestsExp<Cr>", "Add Exported Tests")
-    -- map("n", "<leader>Cg", "<cmd>GoGenerate<Cr>", "Go Generate")
-    -- map("n", "<leader>Cf", "<cmd>GoGenerate %<Cr>", "Go Generate File")
-    -- map("n", "<leader>Cc", "<cmd>GoCmt<Cr>", "Generate Comment")
-    -- map("n", "<leader>DT", "<cmd>lua require('dap-go').debug_test()<cr>", "Debug Test")
   end,
   on_init = require("lvim.lsp").common_on_init,
   capabilities = require("lvim.lsp").common_capabilities(),
@@ -210,21 +179,6 @@ lsp_manager.setup("gopls", {
     },
   },
 })
-
--- local status_ok, gopher = pcall(require, "gopher")
--- if not status_ok then
---   return
--- end
-
--- gopher.setup {
---   commands = {
---     go = "go",
---     gomodifytags = "gomodifytags",
---     gotests = "gotests",
---     impl = "impl",
---     iferr = "iferr",
---   },
--- }
 
 --------------------------------------
 -- Trouble Plugin Configuration
@@ -299,10 +253,6 @@ require("lvim.lsp.manager").setup("jsonls", json_opts)
 --------------------------------------
 -- ChatGPT.nvim Plugin Configuration
 --------------------------------------
--- require("chatgpt").setup({
---   api_key_cmd = "op read op://personal/OpenAI/chatgpt.nvim --no-newline"
--- })
-
 local chatgpt = require("chatgpt")
 lvim.builtin.which_key.mappings["m"] = {
   name = "ChatGPT",
@@ -324,7 +274,6 @@ lvim.builtin.which_key.mappings["m"] = {
   o = { "<Cmd>ChatGPTRun optimize_code<cr>", "optimize code" },
   s = { "<Cmd>ChatGPTRun summarize<cr>", "summarize" },
   f = { "<Cmd>ChatGPTRun fix_bugs<cr>", "fix bugs" },
-  -- x = { "<Cmd>ChatGPTRun roxygen_edit<cr>", "roxygen edit" },
   r = { "<Cmd>ChatGPTRun code_readability_analysis<cr>", "code readability analysis" },
 
   -- chat
