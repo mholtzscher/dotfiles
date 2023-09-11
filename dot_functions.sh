@@ -40,10 +40,19 @@ function kctx() {
 }
 
 function bfg() {
+  echo "buf format --diff -w"
   buf format --diff -w
+
+  echo "buf generate"
+  buf generate
+
   if [[ -f buf.gen.tag.yaml ]]; then
-    buf generate && buf generate --template buf.gen.tag.yaml
-  else
-    buf generate
+    echo "buf generate --template buf.gen.tag.yaml"
+    buf generate --template buf.gen.tag.yaml
+  fi
+
+  if [[ -f buf.gen.ruby.yaml ]]; then
+    echo "buf generate --template buf.gen.ruby.yaml"
+    buf generate --template buf.gen.ruby.yaml
   fi
 }
