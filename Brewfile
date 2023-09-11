@@ -6,7 +6,6 @@ brew "node"
 brew "rust"
 
 # language tooling
-brew "delve"
 brew "pyenv"
 brew "pyenv-virtualenv"
 
