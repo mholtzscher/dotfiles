@@ -40,8 +40,12 @@ alias tidy='GOPRIVATE=github.com/pepper-iot go mod tidy'
 alias run='godotenv -f ~/.env go run cmd/main.go'
 alias runjq='godotenv -f ~/.env go run cmd/main.go | jq -c'
 
+# Telepresence aliases
 alias tp='telepresence connect --manager-namespace telepresence'
 alias tpq='telepresence quit'
 alias tps='telepresence status'
+
+# AWS aliases
+alias awslogin='aws sso login --sso-session pepper-sso'
 
 source ~/.functions.sh
