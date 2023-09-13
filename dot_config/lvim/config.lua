@@ -45,10 +45,6 @@ lvim.plugins = {
       require("todo-comments").setup()
     end,
   },
-  -- { "AckslD/swenv.nvim" },
-  -- { "mfussenegger/nvim-dap-python" },
-  -- { "nvim-neotest/neotest" },
-  -- { "nvim-neotest/neotest-python" },
   {
     "pwntester/octo.nvim",
     dependencies = {
@@ -83,10 +79,85 @@ lvim.plugins = {
     opts = {},
     --stylua: ignore
     keys = {
-      { "<leader>ta", function() require("wtf").ai() end,     desc = "Search Diagnostic with AI" },
-      { "<leader>tg", function() require("wtf").search() end, desc = "Search Diagnostic with Google" },
+      { "<leader>xa", function() require("wtf").ai() end,     desc = "Search Diagnostic with AI" },
+      { "<leader>xg", function() require("wtf").search() end, desc = "Search Diagnostic with Google" },
     },
-  }
+  },
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-neotest/neotest-go",
+    },
+    keys = {
+      {
+        "<leader>tF",
+        "<cmd>w|lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>",
+        desc =
+        "Debug File"
+      },
+      {
+        "<leader>tL",
+        "<cmd>w|lua require('neotest').run.run_last({strategy = 'dap'})<cr>",
+        desc =
+        "Debug Last"
+      },
+      {
+        "<leader>ta",
+        "<cmd>w|lua require('neotest').run.attach()<cr>",
+        desc =
+        "Attach"
+      },
+      { "<leader>tf", "<cmd>w|lua require('neotest').run.run(vim.fn.expand('%'))<cr>", desc = "File" },
+      { "<leader>tl", "<cmd>w|lua require('neotest').run.run_last()<cr>",              desc = "Last" },
+      {
+        "<leader>tn",
+        "<cmd>w|lua require('neotest').run.run()<cr>",
+        desc =
+        "Nearest"
+      },
+      {
+        "<leader>tN",
+        "<cmd>w|lua require('neotest').run.run({strategy = 'dap'})<cr>",
+        desc =
+        "Debug Nearest"
+      },
+      {
+        "<leader>to",
+        "<cmd>w|lua require('neotest').output.open({ enter = true })<cr>",
+        desc =
+        "Output"
+      },
+      { "<leader>ts", "<cmd>w|lua require('neotest').run.stop()<cr>", desc = "Stop" },
+      {
+        "<leader>tS",
+        "<cmd>w|lua require('neotest').summary.toggle()<cr>",
+        desc =
+        "Summary"
+      },
+    },
+    config = function()
+      -- get neotest namespace (api call creates or returns namespace)
+      local neotest_ns = vim.api.nvim_create_namespace("neotest")
+      vim.diagnostic.config({
+        virtual_text = {
+          format = function(diagnostic)
+            local message =
+                diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
+            return message
+          end,
+        },
+      }, neotest_ns)
+      require("neotest").setup({
+        -- your neotest config here
+        adapters = {
+          require("neotest-go"),
+        },
+      })
+    end,
+  },
 }
 
 ------------------------
@@ -201,7 +272,7 @@ lsp_manager.setup("gopls", {
 --------------------------------------
 -- Trouble Plugin Configuration
 --------------------------------------
-lvim.builtin.which_key.mappings["t"] = {
+lvim.builtin.which_key.mappings["x"] = {
   name = "Diagnostics",
   t = { "<cmd>TroubleToggle<cr>", "trouble" },
   w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "workspace" },
