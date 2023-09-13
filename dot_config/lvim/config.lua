@@ -75,6 +75,18 @@ lvim.plugins = {
     }
   },
   { "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
+  {
+    "piersolenski/wtf.nvim",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    },
+    opts = {},
+    --stylua: ignore
+    keys = {
+      { "<leader>ta", function() require("wtf").ai() end,     desc = "Search Diagnostic with AI" },
+      { "<leader>tg", function() require("wtf").search() end, desc = "Search Diagnostic with Google" },
+    },
+  }
 }
 
 ------------------------
