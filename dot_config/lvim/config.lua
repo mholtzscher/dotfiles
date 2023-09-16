@@ -34,11 +34,6 @@ lvim.plugins = {
     cmd = "TroubleToggle",
   },
   {
-    "ray-x/lsp_signature.nvim",
-    event = "BufRead",
-    config = function() require "lsp_signature".on_attach() end,
-  },
-  {
     "folke/todo-comments.nvim",
     event = "BufRead",
     config = function()
@@ -70,7 +65,6 @@ lvim.plugins = {
       "nvim-telescope/telescope.nvim"
     }
   },
-  { "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
   {
     "piersolenski/wtf.nvim",
     dependencies = {
@@ -170,6 +164,7 @@ lvim.colorscheme = "catppuccin-mocha"
 -- Treesitter
 ------------------------
 lvim.builtin.treesitter.ensure_installed = {
+  "bash",
   "go",
   "gomod",
   "hcl",
@@ -372,3 +367,14 @@ lvim.builtin.which_key.mappings["m"] = {
   -- chat persona
   p = { "<Cmd>ChatGPTActAs<Cr>", "act as persona" },
 }
+
+--------------------------------------
+-- dressing.nvim Plugin Configuration
+--------------------------------------
+require('dressing').setup({
+  input = {
+    win_options = {
+      winhighlight = 'NormalFloat:DiagnosticError'
+    }
+  }
+})
