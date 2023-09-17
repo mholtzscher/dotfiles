@@ -153,13 +153,21 @@ lvim.plugins = {
       })
     end,
   },
+  {
+    'stevearc/aerial.nvim',
+    opts = {},
+    -- Optional dependencies
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons"
+    },
+  },
 }
 
 ------------------------
 -- Theme Annd Colors
 ------------------------
 lvim.colorscheme = "catppuccin-mocha"
-
 ------------------------
 -- Treesitter
 ------------------------
@@ -198,7 +206,7 @@ linters.setup {
 ------------------------
 -- nvim-dap launch.json Configuration
 ------------------------
-ds = lvim.builtin.which_key.mappings["d"]
+local ds = lvim.builtin.which_key.mappings["d"]
 ds["l"] = { "<cmd>lua require('dap.ext.vscode').load_launchjs()<cr>", "load launch.json" }
 
 ------------------------
@@ -378,3 +386,18 @@ require('dressing').setup({
     }
   }
 })
+
+--------------------------------------
+-- aerial.nvim Plugin Configuration
+--------------------------------------
+require('aerial').setup({
+  -- optionally use on_attach to set keymaps when aerial has attached to a buffer
+  on_attach = function(bufnr)
+    -- Jump forwards/backwards with '{' and '}'
+    vim.keymap.set('n', '{', '<cmd>AerialPrev<CR>', { buffer = bufnr })
+    vim.keymap.set('n', '}', '<cmd>AerialNext<CR>', { buffer = bufnr })
+  end
+})
+
+local xs = lvim.builtin.which_key.mappings["x"]
+xs["o"] = { "<cmd>AerialToggle!<cr>", "Toggle Aerial" }
