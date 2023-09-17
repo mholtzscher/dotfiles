@@ -162,6 +162,7 @@ lvim.plugins = {
       "nvim-tree/nvim-web-devicons"
     },
   },
+  { 'pfeiferj/nvim-hurl' }
 }
 
 ------------------------
@@ -402,3 +403,11 @@ require('aerial').setup({
 
 local xs = lvim.builtin.which_key.mappings["x"]
 xs["o"] = { "<cmd>AerialToggle!<cr>", "Toggle Aerial" }
+
+--------------------------------------
+-- aerial.nvim Plugin Configuration
+--------------------------------------
+require("hurl").setup()
+
+local ls = lvim.builtin.which_key.mappings["l"]
+ls["h"] = { "<cmd>Hurl<cr>", "Hurl" }
