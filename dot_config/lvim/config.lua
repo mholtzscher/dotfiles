@@ -167,6 +167,7 @@ lvim.plugins = {
 ------------------------
 -- Theme Annd Colors
 ------------------------
+require("catppuccin").setup()
 lvim.colorscheme = "catppuccin-mocha"
 ------------------------
 -- Treesitter
