@@ -19,8 +19,13 @@ lvim.plugins = {
       require("copilot_cmp").setup()
     end,
   },
-  { "catppuccin/nvim",   name = "catpuccin" },
-  { "leoluz/nvim-dap-go" },
+  {
+    "catppuccin/nvim",
+    name = "catpuccin",
+  },
+  {
+    "leoluz/nvim-dap-go",
+  },
   {
     "ggandor/leap.nvim",
     name = "leap",
@@ -28,7 +33,9 @@ lvim.plugins = {
       require("leap").add_default_mappings()
     end,
   },
-  { "stevearc/dressing.nvim" },
+  {
+    "stevearc/dressing.nvim",
+  },
   {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
@@ -162,7 +169,16 @@ lvim.plugins = {
       "nvim-tree/nvim-web-devicons"
     },
   },
-  { 'pfeiferj/nvim-hurl' }
+  {
+    'pfeiferj/nvim-hurl',
+  },
+  {
+    'Wansmer/treesj',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      require('treesj').setup({})
+    end,
+  },
 }
 
 ------------------------
@@ -405,9 +421,15 @@ local xs = lvim.builtin.which_key.mappings["x"]
 xs["o"] = { "<cmd>AerialToggle!<cr>", "Toggle Aerial" }
 
 --------------------------------------
--- aerial.nvim Plugin Configuration
+-- nvim-hurl Plugin Configuration
 --------------------------------------
 require("hurl").setup()
 
 local ls = lvim.builtin.which_key.mappings["l"]
 ls["h"] = { "<cmd>Hurl<cr>", "Hurl" }
+
+--------------------------------------
+-- treesj Plugin Configuration
+--------------------------------------
+-- local ls = lvim.builtin.which_key.mappings["l"]
+ls["t"] = { "<cmd>TSJToggle<cr>", "toggle split/join" }
