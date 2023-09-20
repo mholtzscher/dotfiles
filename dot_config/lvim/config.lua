@@ -209,6 +209,7 @@ formatters.setup {
   { command = "gofumpt",   filetypes = { "go" } },
   { command = "prettier",  filetypes = { "yaml" } },
   { name = "black" },
+  { command = "buf",       filetypes = { "proto" } },
 }
 
 lvim.format_on_save = true
@@ -218,7 +219,8 @@ lvim.format_on_save = true
 ------------------------
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
-  { command = "flake8", filetypes = { "python" } }
+  { command = "flake8", filetypes = { "python" } },
+  { command = "buf",    filetypes = { "proto" } },
 }
 
 ------------------------
