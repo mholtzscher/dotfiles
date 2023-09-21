@@ -40,6 +40,9 @@ function kctx() {
 }
 
 function bfg() {
+  echo "rm -rf gen"
+  rm -rf gen
+
   echo "buf format --diff -w"
   buf format --diff -w
 
