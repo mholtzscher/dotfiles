@@ -1,11 +1,13 @@
 tap "teamookla/speedtest"
 
 # languages
+cask "flutter"
 brew "go"
 brew "node"
 brew "rust"
 
 # language tooling
+brew "cocoapods"
 brew "pyenv"
 brew "pyenv-virtualenv"
 
