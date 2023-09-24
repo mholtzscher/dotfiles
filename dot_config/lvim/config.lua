@@ -205,6 +205,15 @@ lvim.plugins = {
       require('treesj').setup({ use_default_keymaps = false })
     end,
   },
+  {
+    'akinsho/flutter-tools.nvim',
+    lazy = false,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'stevearc/dressing.nvim', -- optional for vim.ui.select
+    },
+    config = true,
+  }
 }
 
 ------------------------
@@ -236,6 +245,7 @@ formatters.setup {
   { command = "prettier",  filetypes = { "yaml" } },
   { name = "black" },
   { command = "buf",       filetypes = { "proto" } },
+  { command = "taplo" }
 }
 
 lvim.format_on_save = true
@@ -461,3 +471,11 @@ ls["h"] = { "<cmd>Hurl<cr>", "Hurl" }
 --------------------------------------
 -- local ls = lvim.builtin.which_key.mappings["l"]
 ls["t"] = { "<cmd>TSJToggle<cr>", "toggle split/join" }
+
+--------------------------------------
+-- flutter-tools Plugin Configuration
+--------------------------------------
+require("telescope").load_extension("flutter")
+
+-- local ls = lvim.builtin.which_key.mappings["l"]
+ls["F"] = { "<cmd>Telescope flutter commands<cr>", "Flutter Tools" }
