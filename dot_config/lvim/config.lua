@@ -478,6 +478,7 @@ ls["t"] = { "<cmd>TSJToggle<cr>", "toggle split/join" }
 --------------------------------------
 -- flutter-tools Plugin Configuration
 --------------------------------------
+require("flutter-tools").setup {} -- use defaults
 require("telescope").load_extension("flutter")
 
 -- local ls = lvim.builtin.which_key.mappings["l"]
