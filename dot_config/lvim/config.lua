@@ -83,6 +83,9 @@ lvim.plugins = {
     config = function()
       require("octo").setup()
     end,
+    keys = {
+      { "<leader>O", "<cmd>Octo actions<cr>", desc = "Octo" },
+    }
   },
   {
     "jackMort/ChatGPT.nvim",
