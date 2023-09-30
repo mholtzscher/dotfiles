@@ -47,6 +47,9 @@ brew "oauth2l"
 tap "mongodb/brew"
 brew "mongodb-community"
 
+tap "supabase/tap"
+brew "supabase"
+
 brew "emqx"
 
 # kubernetes
