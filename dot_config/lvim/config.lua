@@ -216,6 +216,9 @@ lvim.plugins = {
       'stevearc/dressing.nvim', -- optional for vim.ui.select
     },
     config = true,
+    keys = {
+      { "<leader>F", "<cmd>Telescope flutter commands<cr>", desc = "Flutter Tools" }
+    }
   }
 }
 
@@ -485,5 +488,5 @@ require("flutter-tools").setup {
 } -- use defaults
 require("telescope").load_extension("flutter")
 
--- local ls = lvim.builtin.which_key.mappings["l"]
-ls["F"] = { "<cmd>Telescope flutter commands<cr>", "Flutter Tools" }
+-- local Fs = lvim.builtin.which_key.mappings["F"]
+-- Fs[""] = { "<cmd>Telescope flutter commands<cr>", "Flutter Tools" }
