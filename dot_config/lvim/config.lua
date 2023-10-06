@@ -215,11 +215,28 @@ lvim.plugins = {
       'nvim-lua/plenary.nvim',
       'stevearc/dressing.nvim', -- optional for vim.ui.select
     },
-    config = true,
+    config = function()
+      require("flutter-tools").setup {
+        dev_log = {
+          open_cmd = "e",
+        },
+      }
+    end,
     keys = {
       { "<leader>F", "<cmd>Telescope flutter commands<cr>", desc = "Flutter Tools" }
     }
-  }
+  },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+    },
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
+  },
 }
 
 ------------------------
@@ -481,12 +498,29 @@ ls["t"] = { "<cmd>TSJToggle<cr>", "toggle split/join" }
 --------------------------------------
 -- flutter-tools Plugin Configuration
 --------------------------------------
-require("flutter-tools").setup {
-  dev_log = {
-    open_cmd = "e",
-  },
-} -- use defaults
 require("telescope").load_extension("flutter")
 
--- local Fs = lvim.builtin.which_key.mappings["F"]
--- Fs[""] = { "<cmd>Telescope flutter commands<cr>", "Flutter Tools" }
+-- local gs = lvim.builtin.which_key.mappings["g"]
+ls["g"] = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Go to Definition" }
+
+--------------------------------------
+-- noice.nvim Plugin Configuration
+--------------------------------------
+require("noice").setup({
+  lsp = {
+    -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+    override = {
+      ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+      ["vim.lsp.util.stylize_markdown"] = true,
+      ["cmp.entry.get_documentation"] = true,
+    },
+  },
+  -- you can enable a preset for easier configuration
+  presets = {
+    bottom_search = true,         -- use a classic bottom cmdline for search
+    command_palette = true,       -- position the cmdline and popupmenu together
+    long_message_to_split = true, -- long messages will be sent to a split
+    inc_rename = false,           -- enables an input dialog for inc-rename.nvim
+    lsp_doc_border = false,       -- add a border to hover docs and signature help
+  },
+})
