@@ -120,6 +120,7 @@ lvim.plugins = {
       "nvim-treesitter/nvim-treesitter",
       "antoinemadec/FixCursorHold.nvim",
       "nvim-neotest/neotest-go",
+      "sidlatau/neotest-dart",
     },
     keys = {
       {
@@ -214,6 +215,7 @@ lvim.plugins = {
     dependencies = {
       'nvim-lua/plenary.nvim',
       'stevearc/dressing.nvim', -- optional for vim.ui.select
+      "RobertBrunhage/flutter-riverpod-snippets",
     },
     config = function()
       require("flutter-tools").setup {
