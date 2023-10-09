@@ -120,6 +120,7 @@ lvim.plugins = {
       "nvim-treesitter/nvim-treesitter",
       "antoinemadec/FixCursorHold.nvim",
       "nvim-neotest/neotest-go",
+      "sidlatau/neotest-dart",
     },
     keys = {
       {
