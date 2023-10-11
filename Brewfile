@@ -67,6 +67,8 @@ brew "speedtest"
 
 # font
 cask "font-jetbrains-mono-nerd-font"
+cask "font-fira-code-nerd-font"
+cask "font-hack-nerd-font"
 
 # apps
 cask "1password-cli"
