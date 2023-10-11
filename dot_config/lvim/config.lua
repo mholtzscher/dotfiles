@@ -136,7 +136,7 @@ lvim.plugins = {
         "Debug Last"
       },
       {
-        "<leader>ta",
+        "<leader>tA",
         "<cmd>w|lua require('neotest').run.attach()<cr>",
         desc =
         "Attach"
@@ -161,14 +161,14 @@ lvim.plugins = {
         desc =
         "Output"
       },
-      { "<leader>ts", "<cmd>w|lua require('neotest').run.stop()<cr>",              desc = "Stop" },
+      { "<leader>ts", "<cmd>w|lua require('neotest').run.stop()<cr>",               desc = "Stop" },
       {
         "<leader>tS",
         "<cmd>w|lua require('neotest').summary.toggle()<cr>",
         desc =
         "Summary"
       },
-      { "<leader>tA", "<cmd>w|lua require('neotest').run.run(vim.fn.getcwd()<cr>", desc = "All" },
+      { "<leader>ta", "<cmd>w|lua require('neotest').run.run(vim.fn.getcwd())<cr>", desc = "All" },
     },
     config = function()
       -- get neotest namespace (api call creates or returns namespace)
