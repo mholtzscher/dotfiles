@@ -1,0 +1,17 @@
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
+[user]
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJWB4HRkQ4UAoBdnvZNf6olZ1pieJ4G9i/mCOhEbtaTT
+	name = Michael Holtzscher
+	email = michael@holtzscher.com
+[url "ssh://git@github.com/pepper-iot/"]
+  insteadOf = https://github.com/pepper-iot/
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
