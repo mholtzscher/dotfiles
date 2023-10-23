@@ -5,6 +5,7 @@ cask "flutter"
 brew "go"
 brew "node"
 brew "rust"
+brew "terraform"
 
 # language tooling
 brew "cocoapods"
