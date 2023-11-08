@@ -61,10 +61,15 @@ function bfg() {
 }
 
 function standup() {
+	# store the current directory
 	local current_dir=$(pwd)
 
+	# cd to root of code directory
 	cd ~/code
+
+	# run git standup
 	git standup -s -m 10
 
+	# return to original directory
 	cd "$current_dir"
 }
