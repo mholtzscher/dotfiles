@@ -30,7 +30,7 @@ alias lg='lazygit'
 alias ls='lsd'
 alias ll='lsd -al'
 alias tree='lsd --tree -a --ignore-glob .git'
-alias treed='lsd --tree -a -d --ignore-glob .git'
+alias treed='lsd --tree -a -d --ignore-glob .git --ignore-glob gen'
 
 # JSON aliases
 alias pbj='pbpaste | jq'
