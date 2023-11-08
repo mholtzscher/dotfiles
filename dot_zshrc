@@ -40,7 +40,7 @@ alias tidy='GOPRIVATE=github.com/pepper-iot go mod tidy'
 alias gt='go test -v ./...'
 alias gb='go build -v ./...'
 alias gv='go vet ./...'
-alias run='godotenv -f ~/.env go run cmd/main.go serve'
+alias run='godotenv -f ~/.env go run cmd/main.go'
 alias runjq='godotenv -f ~/.env go run cmd/main.go | jq -c'
 
 # Telepresence aliases
