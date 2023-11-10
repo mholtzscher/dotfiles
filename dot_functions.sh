@@ -55,8 +55,8 @@ function bfg() {
 	fi
 
 	if [[ -f buf.gen.ruby.yaml ]]; then
-		echo "buf generate --template buf.gen.ruby.yaml"
-		buf generate --template buf.gen.ruby.yaml
+		echo "buf generate --template buf.gen.ruby.yaml --include-imports"
+		buf generate --template buf.gen.ruby.yaml --include-imports
 	fi
 }
 
