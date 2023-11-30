@@ -20,3 +20,9 @@ sso_session = pepper-sso
 sso_account_id = 471570387468
 sso_role_name = Operations
 region = us-east-2
+
+[profile pepper-iot-prod]
+sso_session = pepper-sso
+sso_account_id = 588685079369
+sso_role_name = Operations
+region = us-east-2
