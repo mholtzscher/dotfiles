@@ -58,6 +58,9 @@ function bfg() {
 		echo "buf generate --template buf.gen.ruby.yaml --include-imports"
 		buf generate --template buf.gen.ruby.yaml --include-imports
 	fi
+
+	echo "yq e -i '.info.version line_comment="x-release-please-version"' swagger/apidocs.swagger.yaml"
+	yq e -i '.info.version line_comment="x-release-please-version"' swagger/apidocs.swagger.yaml
 }
 
 function standup() {
