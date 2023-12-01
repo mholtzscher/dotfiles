@@ -1,0 +1,14 @@
+
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+# missing proto tool
+go install github.com/srikrsna/protoc-gen-gotag@latest
+
+# Godotenv
+go install github.com/joho/godotenv/cmd/godotenv@latest
+
+# govulncheck
+go install golang.org/x/vuln/cmd/govulncheck@latest
+
+{{ end -}}
