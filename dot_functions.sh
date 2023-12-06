@@ -76,3 +76,26 @@ function standup() {
 	# return to original directory
 	cd "$current_dir"
 }
+
+function download_app_log() {
+	app=$1
+	if [[ -z $app ]]; then
+		echo "Usage: download_app_log <app> <searchTerm (optional)>"
+		return
+	fi
+	query="-q $2"
+	if [[ -z $2 ]]; then
+		query=""
+	fi
+	bucket="s3://pepper-app-diagnostic-logs-dev/$app/development/ios/"
+	selected=$(aws s3 ls "s3://pepper-app-diagnostic-logs-dev/${app}/development/ios/" | sort -k1 -k2 -r | fzf $query)
+	if [[ -z $selected ]]; then
+		echo "nothing selected..."
+		return
+	fi
+	selectedFile=$(echo $selected | awk '{print $4}')
+	res=$(aws s3 cp "$bucket$selectedFile" $HOME/Downloads)
+	downloadedFile="$HOME/Downloads/$selectedFile"
+	echo "log file saved to $downloadedFile. Opening..."
+	open $downloadedFile
+}
