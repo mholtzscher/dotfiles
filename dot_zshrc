@@ -12,6 +12,7 @@ export GOPATH=$HOME/go
 export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 #export PATH="$PATH:${GOPATH}/bin"
+export GOPRIVATE="github.com/pepper-iot,buf.build/gen/go"
 
 # k8s setup
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
