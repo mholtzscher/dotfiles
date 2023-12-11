@@ -37,7 +37,7 @@ alias treed='lsd --tree -a -d --ignore-glob .git --ignore-glob gen'
 alias pbj='pbpaste | jq'
 
 # Go command aliases
-alias tidy='GOPRIVATE=github.com/pepper-iot go mod tidy'
+alias tidy='go mod tidy'
 alias gt='go test -v ./...'
 alias gb='go build -v ./...'
 alias gv='go vet ./...'
