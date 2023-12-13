@@ -66,6 +66,11 @@ cask "font-iosevka-nerd-font"
 
 # apps
 cask "1password-cli"
+cask "docker"
+cask "google-chrome"
+cask "firefox"
 cask "mongodb-compass"
 cask "nightfall"
 cask "postman"
+cask "slack"
+cask "warp"
