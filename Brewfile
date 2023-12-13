@@ -52,6 +52,7 @@ brew "kubectx"
 # misc
 brew "bottom"
 brew "chezmoi"
+brew "mas"
 brew "slides"
 
 tap "teamookla/speedtest"
