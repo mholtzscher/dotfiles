@@ -1,0 +1,70 @@
+# languages
+brew "go"
+brew "node"
+brew "rust"
+brew "terraform"
+
+# language tooling
+brew "golangci-lint"
+
+# cli utilities
+brew "bat"
+brew "dust"
+brew "fd"
+brew "fx"
+brew "fzf"
+brew "git-standup"
+brew "glow"
+brew "httpie"
+brew "jc"
+brew "jq"
+brew "lsd"
+brew "pcre"
+brew "ripgrep"
+brew "yq"
+brew "zoxide"
+
+# developer tools
+brew "act"
+brew "awscli"
+brew "buf"
+brew "dive"
+brew "gh"
+brew "ghz"
+brew "graphviz"
+brew "grpcurl"
+brew "hey"
+brew "k9s"
+brew "ko"
+brew "lazygit"
+brew "mage"
+brew "neovim"
+brew "oauth2l"
+
+tap "mongodb/brew"
+brew "mongodb-community"
+
+# kubernetes
+brew "helm"
+brew "kubectl"
+brew "kubectx"
+
+# misc
+brew "bottom"
+brew "chezmoi"
+brew "slides"
+
+tap "teamookla/speedtest"
+brew "speedtest"
+
+# font
+cask "font-jetbrains-mono-nerd-font"
+cask "font-fira-code-nerd-font"
+cask "font-hack-nerd-font"
+cask "font-iosevka-nerd-font"
+
+# apps
+cask "1password-cli"
+cask "mongodb-compass"
+cask "nightfall"
+cask "postman"
