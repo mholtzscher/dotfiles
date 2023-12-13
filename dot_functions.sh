@@ -102,21 +102,25 @@ function download_app_log() {
 
 function galactus() {
 	gum format "# Behold Galactus, the Devourer of Worlds!" "Choose your weapon:"
-	CATEGORY=$(gum choose "npm" "go" "brew")
+	CATEGORY=$(gum choose "all" "brew" "mas" "go" "npm")
 
-	if [[ $CATEGORY == "npm" ]]; then
-		gum spin --spinner pulse --title "Installing opencommit..." -- npm install -g opencommit
-		gum spin --spinner pulse --title "Installing serverless..." -- npm install -g serverless
+	if [[ $CATEGORY == "brew" ]] || [[ $CATEGORY == "all" ]]; then
+		gum spin --spinner pulse --title "Installing Homebrew Bundle..." -- brew bundle --no-lock --file=~/Brewfile
 	fi
 
-	if [[ $CATEGORY == "go" ]]; then
+	if [[ $CATEGORY == "go" ]] || [[ $CATEGORY == "all" ]]; then
 		gum spin --spinner pulse --title "Installing protoc-gen-gotag..." -- go install github.com/srikrsna/protoc-gen-gotag@latest
 		gum spin --spinner pulse --title "Installing godotenv..." -- go install github.com/joho/go-dotenv/cmd/godotenv@latest
 		gum spin --spinner pulse --title "Installing govulncheck" -- go install golang.org/x/vuln/cmd/govulncheck@latest
 	fi
 
-	if [[ $CATEGORY == "brew" ]]; then
-		gum spin --spinner pulse --title "Installing Homebrew Bundle..." -- brew bundle --no-lock --file=~/Brewfile
+	if [[ $CATEGORY == "mas" ]] || [[ $CATEGORY == "all" ]]; then
+		gum spin --spinner pulse --title "Installing Mac App Store apps..." -- brew bundle --no-lock --file=~/Brewfile-mas
+	fi
+
+	if [[ $CATEGORY == "npm" ]] || [[ $CATEGORY == "all" ]]; then
+		gum spin --spinner pulse --title "Installing opencommit..." -- npm install -g opencommit
+		gum spin --spinner pulse --title "Installing serverless..." -- npm install -g serverless
 	fi
 
 }
