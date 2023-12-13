@@ -102,16 +102,21 @@ function download_app_log() {
 
 function galactus() {
 	gum format "# Behold Galactus, the Devourer of Worlds!" "Choose your weapon:"
-	CATEGORY=$(gum choose "npm" "go")
+	CATEGORY=$(gum choose "npm" "go" "brew")
 
 	if [[ $CATEGORY == "npm" ]]; then
 		gum spin --spinner pulse --title "Installing opencommit..." -- npm install -g opencommit
+		gum spin --spinner pulse --title "Installing serverless..." -- npm install -g serverless
 	fi
 
 	if [[ $CATEGORY == "go" ]]; then
 		gum spin --spinner pulse --title "Installing protoc-gen-gotag..." -- go install github.com/srikrsna/protoc-gen-gotag@latest
 		gum spin --spinner pulse --title "Installing godotenv..." -- go install github.com/joho/go-dotenv/cmd/godotenv@latest
 		gum spin --spinner pulse --title "Installing govulncheck" -- go install golang.org/x/vuln/cmd/govulncheck@latest
+	fi
+
+	if [[ $CATEGORY == "brew" ]]; then
+		gum spin --spinner pulse --title "Installing Homebrew Bundle..." -- brew bundle --no-lock --file=~/Brewfile
 	fi
 
 }
