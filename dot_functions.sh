@@ -101,7 +101,7 @@ function download_app_log() {
 }
 
 function galactus() {
-	gum format "# Behold Galactus, the Devourer of Worlds!" "Choose your weapon:"
+	gum format "# Behold Galactus, the Devourer of Worlds!" "Choose your configuration weapon:"
 	CATEGORY=$(gum choose "all" "brew" "mas" "go" "npm")
 
 	if [[ $CATEGORY == "brew" ]] || [[ $CATEGORY == "all" ]]; then
@@ -122,5 +122,4 @@ function galactus() {
 		gum spin --spinner pulse --title "Installing opencommit..." -- npm install -g opencommit
 		gum spin --spinner pulse --title "Installing serverless..." -- npm install -g serverless
 	fi
-
 }
