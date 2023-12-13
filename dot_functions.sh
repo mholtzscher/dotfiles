@@ -101,7 +101,11 @@ function download_app_log() {
 }
 
 function galactus() {
-	gum format "# Behold Galactus, the Devourer of Worlds!" "Choose your configuration weapon:"
+	gum style \
+		--foreground 212 --border-foreground 212 --border double \
+		--align center --width 50 --margin "1 2" --padding "2 4" \
+		'Behold Galactus, the Devourer of Worlds!'
+	gum format "Choose your configuration weapon:"
 	CATEGORY=$(gum choose "all" "brew" "mas" "go" "npm")
 
 	if [[ $CATEGORY == "brew" ]] || [[ $CATEGORY == "all" ]]; then
