@@ -100,6 +100,18 @@ function download_app_log() {
 	open $downloadedFile
 }
 
-function setup_npm() {
-	gum spin --spinner dot --title "Installing opencommit" -- npm install -g opencommit
+function galactus() {
+	gum format "# Behold Galactus, the Devourer of Worlds!" "Choose your weapon:"
+	CATEGORY=$(gum choose "npm" "go")
+
+	if [[ $CATEGORY == "npm" ]]; then
+		gum spin --spinner pulse --title "Installing opencommit..." -- npm install -g opencommit
+	fi
+
+	if [[ $CATEGORY == "go" ]]; then
+		gum spin --spinner pulse --title "Installing protoc-gen-gotag..." -- go install github.com/srikrsna/protoc-gen-gotag@latest
+		gum spin --spinner pulse --title "Installing godotenv..." -- go install github.com/joho/go-dotenv/cmd/godotenv@latest
+		gum spin --spinner pulse --title "Installing govulncheck" -- go install golang.org/x/vuln/cmd/govulncheck@latest
+	fi
+
 }
