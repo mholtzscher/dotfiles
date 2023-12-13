@@ -101,12 +101,22 @@ function download_app_log() {
 }
 
 function galactus() {
+	if ! command -v brew >/dev/null 2>&1; then
+		echo "Homebrew is not in PATH"
+		return
+	fi
+
+	if ! command -v gum >/dev/null 2>&1; then
+		echo "Gum is not in PATH"
+		brew install gum
+	fi
+
 	gum style \
 		--foreground 212 --border-foreground 212 --border double \
 		--align center --width 50 --margin "1 2" --padding "2 4" \
 		'Behold Galactus, the Devourer of Worlds!'
 	gum format "Choose your configuration weapon:"
-	CATEGORY=$(gum choose "all" "brew" "mas" "go" "npm")
+	CATEGORY=$(gum choose "all" "brew" "mas" "go" "npm" "xcode")
 
 	if [[ $CATEGORY == "brew" ]] || [[ $CATEGORY == "all" ]]; then
 		gum spin --spinner pulse --title "Installing Homebrew Bundle..." -- brew bundle --no-lock --file=~/Brewfile
@@ -125,5 +135,11 @@ function galactus() {
 	if [[ $CATEGORY == "npm" ]] || [[ $CATEGORY == "all" ]]; then
 		gum spin --spinner pulse --title "Installing opencommit..." -- npm install -g opencommit
 		gum spin --spinner pulse --title "Installing serverless..." -- npm install -g serverless
+	fi
+
+	if [[ $CATEGORY == "xcode" ]] || [[ $CATEGORY == "all" ]]; then
+		if ! xcode-select -p >/dev/null 2>&1; then
+			gum spin --spinner pulse --title "Installing xcode-select..." -- xcode-select --install
+		fi
 	fi
 }
