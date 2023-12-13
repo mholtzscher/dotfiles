@@ -119,27 +119,27 @@ function galactus() {
 	CATEGORY=$(gum choose "all" "brew" "mas" "go" "npm" "xcode")
 
 	if [[ $CATEGORY == "brew" ]] || [[ $CATEGORY == "all" ]]; then
-		gum spin --spinner pulse --title "Installing Homebrew Bundle..." -- brew bundle --no-lock --file=~/Brewfile
+		gum spin --spinner moon --title "Installing Homebrew Bundle..." -- brew bundle --no-lock --file=~/Brewfile
 	fi
 
 	if [[ $CATEGORY == "go" ]] || [[ $CATEGORY == "all" ]]; then
-		gum spin --spinner pulse --title "Installing protoc-gen-gotag..." -- go install github.com/srikrsna/protoc-gen-gotag@latest
-		gum spin --spinner pulse --title "Installing godotenv..." -- go install github.com/joho/go-dotenv/cmd/godotenv@latest
-		gum spin --spinner pulse --title "Installing govulncheck" -- go install golang.org/x/vuln/cmd/govulncheck@latest
+		gum spin --spinner moon --title "Installing protoc-gen-gotag..." -- go install github.com/srikrsna/protoc-gen-gotag@latest
+		gum spin --spinner moon --title "Installing godotenv..." -- go install github.com/joho/go-dotenv/cmd/godotenv@latest
+		gum spin --spinner moon --title "Installing govulncheck" -- go install golang.org/x/vuln/cmd/govulncheck@latest
 	fi
 
 	if [[ $CATEGORY == "mas" ]] || [[ $CATEGORY == "all" ]]; then
-		gum spin --spinner pulse --title "Installing Mac App Store apps..." -- brew bundle --no-lock --file=~/Brewfile-mas
+		gum spin --spinner moon --title "Installing Mac App Store apps..." -- brew bundle --no-lock --file=~/Brewfile-mas
 	fi
 
 	if [[ $CATEGORY == "npm" ]] || [[ $CATEGORY == "all" ]]; then
-		gum spin --spinner pulse --title "Installing opencommit..." -- npm install -g opencommit
-		gum spin --spinner pulse --title "Installing serverless..." -- npm install -g serverless
+		gum spin --spinner moon --title "Installing opencommit..." -- npm install -g opencommit
+		gum spin --spinner moon --title "Installing serverless..." -- npm install -g serverless
 	fi
 
 	if [[ $CATEGORY == "xcode" ]] || [[ $CATEGORY == "all" ]]; then
 		if ! xcode-select -p >/dev/null 2>&1; then
-			gum spin --spinner pulse --title "Installing xcode-select..." -- xcode-select --install
+			gum spin --spinner moon --title "Installing xcode-select..." -- xcode-select --install
 		fi
 	fi
 }
