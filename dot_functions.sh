@@ -99,3 +99,7 @@ function download_app_log() {
 	echo "log file saved to $downloadedFile. Opening..."
 	open $downloadedFile
 }
+
+function setup_npm() {
+	gum spin --spinner dot --title "Installing opencommit" -- npm install -g opencommit
+}
