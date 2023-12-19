@@ -116,7 +116,7 @@ function galactus() {
 		--align center --width 50 --margin "1 2" --padding "2 4" \
 		'Behold Galactus, the Devourer of Worlds!'
 	gum format "Choose your configuration weapon:"
-	CATEGORY=$(gum choose "all" "brew" "mas" "go" "npm" "xcode")
+	CATEGORY=$(gum choose "all" "brew" "mas" "go" "npm" "starship" "xcode")
 
 	if [[ $CATEGORY == "brew" ]] || [[ $CATEGORY == "all" ]]; then
 		gum spin --spinner moon --title "Installing Homebrew Bundle..." -- brew bundle --no-lock --file=~/Brewfile
@@ -135,6 +135,11 @@ function galactus() {
 	if [[ $CATEGORY == "npm" ]] || [[ $CATEGORY == "all" ]]; then
 		gum spin --spinner moon --title "Installing opencommit..." -- npm install -g opencommit
 		gum spin --spinner moon --title "Installing serverless..." -- npm install -g serverless
+	fi
+
+	if [[ $CATEGORY == "starship" ]] || [[ $CATEGORY == "all" ]]; then
+		gum format "Installing starship..."
+		curl -sS https://starship.rs/install.sh | sh
 	fi
 
 	if [[ $CATEGORY == "xcode" ]] || [[ $CATEGORY == "all" ]]; then
