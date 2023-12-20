@@ -62,7 +62,7 @@ symbol = " "
 
 [kubernetes]
 disabled = false
-style = "#fab387"
+style = "peach"
 
 [lua]
 symbol = " "
