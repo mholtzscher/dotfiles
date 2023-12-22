@@ -45,6 +45,9 @@ brew "oauth2l"
 tap "mongodb/brew"
 brew "mongodb-community"
 
+tap "deviceinsight/packages"
+brew "deviceinsight/packages/kafkactl"
+
 # kubernetes
 brew "helm"
 brew "kubectl"
