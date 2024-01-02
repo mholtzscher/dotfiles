@@ -53,6 +53,9 @@ brew "helm"
 brew "kubectl"
 brew "kubectx"
 
+tap "robusta-dev/homebrew-krr"
+brew "krr"
+
 # misc
 brew "bottom"
 brew "chezmoi"
