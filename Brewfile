@@ -41,6 +41,7 @@ brew "lazygit"
 brew "mage"
 brew "neovim"
 brew "oauth2l"
+brew "temporal"
 
 tap "mongodb/brew"
 brew "mongodb-community"
