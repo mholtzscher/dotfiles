@@ -62,6 +62,7 @@ brew "bottom"
 brew "chezmoi"
 brew "mas"
 brew "slides"
+brew "silicon"
 
 tap "teamookla/speedtest"
 brew "speedtest"
