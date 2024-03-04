@@ -18,6 +18,7 @@ return {
       font = "Iosevka Nerd Font Mono",
       theme = "Dracula",
       background = "#aaaaff",
+      shadow_color = "#555555",
       to_clipboard = true,
     })
   end,
