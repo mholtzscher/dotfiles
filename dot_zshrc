@@ -5,6 +5,9 @@ eval "$(zoxide init zsh)"
 eval "$(pyenv virtualenv-init -)"
 eval "$(pyenv init -)"
 
+# java setup
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
 # Added by Toolbox App
 export PATH="$PATH:/Users/michael/Library/Application Support/JetBrains/Toolbox/scripts"
 
