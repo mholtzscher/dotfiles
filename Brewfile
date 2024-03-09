@@ -1,5 +1,6 @@
 # languages
 brew "go"
+brew "java"
 brew "node"
 brew "rust"
 brew "terraform"
