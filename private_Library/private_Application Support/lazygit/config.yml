@@ -21,12 +21,3 @@ gui:
       - "#cdd6f4"
     searchingActiveBorderColor:
       - "#f9e2af"
-
-customCommands:
-  - key: "G"
-    context: "files"
-    description: "Generate a commit message with opencommit"
-    command: "opencommit"
-    subprocess: true
-    showOutput: true
-    stream: true

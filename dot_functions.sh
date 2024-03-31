@@ -38,10 +38,6 @@ function galactus() {
 		gum spin --spinner moon --title "Installing Mac App Store apps..." -- brew bundle --no-lock --file=~/Brewfile-mas
 	fi
 
-	if [[ $CATEGORY == "npm" ]] || [[ $CATEGORY == "all" ]]; then
-		gum spin --spinner moon --title "Installing opencommit..." -- npm install -g opencommit
-	fi
-
 	if [[ $CATEGORY == "starship" ]] || [[ $CATEGORY == "all" ]]; then
 		gum format "Installing starship..."
 		curl -sS https://starship.rs/install.sh | sh
