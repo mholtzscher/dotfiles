@@ -1,68 +1,3 @@
-function create_ecr_repo() {
-	repo=$1
-	if [[ -z repo ]]; then
-		echo "Usage: create_ecr_repo <repo-name> "
-		return
-	fi
-	aws ecr create-repository --no-cli-pager --repository-name $repo
-	echo "ecr repository $repo created"
-}
-
-function allow_ecr_repo() {
-	repo=$1
-	if [[ -z repo ]]; then
-		echo "Usage: allow_ecr_repo <repo-name> "
-		return
-	fi
-	aws ecr set-repository-policy --no-cli-pager --repository-name $repo --policy-text "{\"Version\" : \"2012-10-17\",\"Statement\" : [ {\"Sid\" : \"EcrAllowedAccounts\",\"Effect\" : \"Allow\",\"Principal\" : {\"AWS\" : [ \"arn:aws:iam::329295018884:root\", \"arn:aws:iam::471570387468:root\", \"arn:aws:iam::588685079369:root\", \"arn:aws:iam::803458383710:root\", \"arn:aws:iam::053519916355:root\" ]},\"Action\" : [ \"ecr:BatchCheckLayerAvailability\", \"ecr:BatchGetImage\", \"ecr:GetDownloadUrlForLayer\", \"ecr:GetAuthorizationToken\" ]}]}"
-	echo "ecr repository $repo is now accessible to all Pepper AWS accounts"
-}
-
-function create_allow_ecr_repo() {
-	repo=$1
-	if [[ -z repo ]]; then
-		echo "Usage: create_allow_ecr_repo <repo-name> "
-		return
-	fi
-	create_ecr_repo $repo
-	allow_ecr_repo $repo
-}
-
-function kctx() {
-	local currentCtx=$(kubectl config current-context)
-	ctx=$(kubectl config get-contexts -o name | sort -k1 -r | fzf)
-	if [[ -z $ctx ]]; then
-		echo "nothing selected..."
-		return
-	fi
-	kubectl config use-context $ctx
-	echo "switched from $currentCtx to $ctx"
-}
-
-function bfg() {
-	echo "rm -rf gen"
-	rm -rf gen
-
-	echo "buf format --diff -w"
-	buf format --diff -w
-
-	echo "buf generate"
-	buf generate
-
-	if [[ -f buf.gen.tag.yaml ]]; then
-		echo "buf generate --template buf.gen.tag.yaml"
-		buf generate --template buf.gen.tag.yaml
-	fi
-
-	if [[ -f buf.gen.ruby.yaml ]]; then
-		echo "buf generate --template buf.gen.ruby.yaml --include-imports"
-		buf generate --template buf.gen.ruby.yaml --include-imports
-	fi
-
-	echo "yq e -i '.info.version line_comment="x-release-please-version"' swagger/apidocs.swagger.yaml"
-	yq e -i '.info.version line_comment="x-release-please-version"' swagger/apidocs.swagger.yaml
-}
-
 function standup() {
 	# store the current directory
 	local current_dir=$(pwd)
@@ -75,29 +10,6 @@ function standup() {
 
 	# return to original directory
 	cd "$current_dir"
-}
-
-function download_app_log() {
-	app=$1
-	if [[ -z $app ]]; then
-		echo "Usage: download_app_log <app> <searchTerm (optional)>"
-		return
-	fi
-	query="-q $2"
-	if [[ -z $2 ]]; then
-		query=""
-	fi
-	bucket="s3://pepper-app-diagnostic-logs-dev/$app/development/ios/"
-	selected=$(aws s3 ls "s3://pepper-app-diagnostic-logs-dev/${app}/development/ios/" | sort -k1 -k2 -r | fzf $query)
-	if [[ -z $selected ]]; then
-		echo "nothing selected..."
-		return
-	fi
-	selectedFile=$(echo $selected | awk '{print $4}')
-	res=$(aws s3 cp "$bucket$selectedFile" $HOME/Downloads)
-	downloadedFile="$HOME/Downloads/$selectedFile"
-	echo "log file saved to $downloadedFile. Opening..."
-	open $downloadedFile
 }
 
 function galactus() {
@@ -144,5 +56,7 @@ function galactus() {
 	if [[ $CATEGORY == "asdf" ]] || [[ $CATEGORY == "all" ]]; then
 		gum spin --spinner moon --title "Updating asdf plugins..." -- asdf plugin update --all
 		gum spin --spinner moon --title "Installing asdf plugins...java" -- asdf plugin add java
+		gum spin --spinner moon --title "Installing asdf plugins...maven" -- asdf plugin add maven
+		gum spin --spinner moon --title "Installing asdf plugins...gradle" -- asdf plugin add gradle
 	fi
 }
