@@ -95,3 +95,5 @@ alias audio='SwitchAudioSource -s "$(SwitchAudioSource -a | fzf)"'
 alias weather="curl wttr.in"
 
 source ~/.functions.sh
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh

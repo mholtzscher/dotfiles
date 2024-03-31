@@ -5,6 +5,9 @@ brew "node"
 brew "rust"
 brew "terraform"
 
+# language version managers
+brew "asdf"
+
 # language tooling
 brew "golangci-lint"
 
