@@ -116,7 +116,7 @@ function galactus() {
 		--align center --width 50 --margin "1 2" --padding "2 4" \
 		'Behold Galactus, the Devourer of Worlds!'
 	gum format "Choose your configuration weapon:"
-	CATEGORY=$(gum choose "all" "brew" "mas" "go" "npm" "starship" "xcode")
+	CATEGORY=$(gum choose "all" "brew" "mas" "go" "npm" "starship" "xcode" "asdf")
 
 	if [[ $CATEGORY == "brew" ]] || [[ $CATEGORY == "all" ]]; then
 		gum spin --spinner moon --title "Installing Homebrew Bundle..." -- brew bundle --no-lock --file=~/Brewfile
@@ -146,5 +146,10 @@ function galactus() {
 		if ! xcode-select -p >/dev/null 2>&1; then
 			gum spin --spinner moon --title "Installing xcode-select..." -- xcode-select --install
 		fi
+	fi
+
+	if [[ $CATEGORY == "asdf" ]] || [[ $CATEGORY == "all" ]]; then
+		gum spin --spinner moon --title "Updating asdf plugins..." -- asdf plugin update --all
+		gum spin --spinner moon --title "Installing asdf plugins...java" -- asdf plugin add java
 	fi
 }
