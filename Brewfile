@@ -1,6 +1,4 @@
 # languages
-brew "go"
-brew "java"
 brew "node"
 brew "rust"
 brew "terraform"
@@ -8,14 +6,10 @@ brew "terraform"
 # language version managers
 brew "asdf"
 
-# language tooling
-brew "golangci-lint"
-
 # cli utilities
 brew "bat"
 brew "dust"
 brew "fd"
-brew "fx"
 brew "fzf"
 brew "git-standup"
 brew "glow"
@@ -31,36 +25,14 @@ brew "yq"
 brew "zoxide"
 
 # developer tools
-brew "act"
 brew "awscli"
-brew "buf"
 brew "dive"
 brew "gh"
-brew "ghz"
 brew "graphviz"
 brew "grpcurl"
 brew "hey"
-brew "k9s"
-brew "ko"
 brew "lazygit"
-brew "mage"
 brew "neovim"
-brew "oauth2l"
-brew "temporal"
-
-tap "mongodb/brew"
-brew "mongodb-community"
-
-tap "deviceinsight/packages"
-brew "deviceinsight/packages/kafkactl"
-
-# kubernetes
-brew "helm"
-brew "kubectl"
-brew "kubectx"
-
-tap "robusta-dev/homebrew-krr"
-brew "krr"
 
 # misc
 brew "bottom"
@@ -83,8 +55,8 @@ cask "1password-cli"
 cask "docker"
 cask "google-chrome"
 cask "firefox"
-cask "mongodb-compass"
 cask "nightfall"
 cask "postman"
 cask "slack"
 cask "warp"
+
