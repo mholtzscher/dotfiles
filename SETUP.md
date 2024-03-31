@@ -1,59 +1,40 @@
-# Install Warp
+# Setup
 
-1. https://www.warp.dev/
+<!--toc:start-->
 
-# Install Homebrew
+- [Setup](#setup)
+  - [Install Homebrew](#install-homebrew)
+  - [Setup 1Password](#setup-1password)
+  - [Setup Chezmoi](#setup-chezmoi)
+  - [Install Additional Tools](#install-additional-tools)
+  - [Setup Fonts](#setup-fonts)
+  <!--toc:end-->
+
+## Install Homebrew
+
 ```sh
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-# Setup 1Password
+## Setup 1Password
 
 1. Install App/GUI
-1. Install CLI app
-```sh
-brew install --cask 1password/tap/1password-cli
-```
+1. Enable using 1Password for SSH keys
 
-# Setup Chezmoi
+## Setup Chezmoi
+
 ```sh
 brew install chezmoi
 
 chezmoi init git@github.com:mholtzscher/dotfiles.git
 ```
 
-# Install Homebrew Apps
+## Install Additional Tools
+
 ```sh
-cd ~ && brew bundle   
+galactus
 ```
 
-# Setup Fonts
+## Setup Fonts
 
 1. Set font in Warp
-
-# Install Rust
-```sh
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
-
-# Install Python Tools
-```sh
-  pyenv install 3.11.3
-  pyenv global 3.11.3
-  pip install --upgrade pip
-```
-
-# Install OpenCommit
-```sh
-npm install -g opencommit
-```
-
-# Install LunarVIM
-
-1. https://www.lunarvim.org/docs/installation
-
-# Install Go Tools
-```sh
-go install github.com/joho/godotenv/cmd/godotenv@latest
-go install golang.org/x/vuln/cmd/govulncheck@latest
-```

@@ -2,31 +2,14 @@ eval "$(starship init zsh)"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(zoxide init zsh)"
-eval "$(pyenv virtualenv-init -)"
-eval "$(pyenv init -)"
-
-# java setup
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 # Added by Toolbox App
 export PATH="$PATH:/Users/michael/Library/Application Support/JetBrains/Toolbox/scripts"
-
-# Go setup
-export GOPATH=$HOME/go
-export GOROOT="$(brew --prefix golang)/libexec"
-export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
-#export PATH="$PATH:${GOPATH}/bin"
-export GOPRIVATE="github.com/pepper-iot,buf.build/gen/go"
-
-# k8s setup
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-source ~/.kube/source.sh
 
 export PATH="${PATH}:/Users/michael/.local/bin"
 
 # Terraform aliases
 alias tf='terraform' 
-alias tg='terragrunt'
 
 # Git aliases
 alias lg='lazygit'
@@ -39,39 +22,6 @@ alias treed='lsd --tree -a -d --ignore-glob .git --ignore-glob gen'
 
 # JSON aliases
 alias pbj='pbpaste | jq'
-
-# Go command aliases
-alias tidy='go mod tidy'
-alias gt='go test -v ./...'
-alias gb='go build -v ./...'
-alias gv='go vet ./...'
-alias run='godotenv -f ~/.env go run cmd/main.go'
-alias runjq='godotenv -f ~/.env go run cmd/main.go | jq -c'
-
-# Telepresence aliases
-alias tp='telepresence connect --manager-namespace telepresence'
-alias tpq='telepresence quit'
-alias tps='telepresence status'
-
-# AWS aliases
-alias awslogin='aws sso login --sso-session pepper-sso'
-
-# Local Jaeger
-alias jaeger-start='docker run -d --name jaeger \
-  -e COLLECTOR_ZIPKIN_HOST_PORT=:9411 \
-  -e COLLECTOR_OTLP_ENABLED=true \
-  -p 6831:6831/udp \
-  -p 6832:6832/udp \
-  -p 5778:5778 \
-  -p 16686:16686 \
-  -p 4317:4317 \
-  -p 4318:4318 \
-  -p 14250:14250 \
-  -p 14268:14268 \
-  -p 14269:14269 \
-  -p 9411:9411 \
-  jaegertracing/all-in-one:1.48'
-alias jaeger-stop='docker stop jaeger && docker rm jaeger'
 
 # Flush DNS cache
 alias cacheclear='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'

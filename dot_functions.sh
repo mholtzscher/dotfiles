@@ -116,16 +116,10 @@ function galactus() {
 		--align center --width 50 --margin "1 2" --padding "2 4" \
 		'Behold Galactus, the Devourer of Worlds!'
 	gum format "Choose your configuration weapon:"
-	CATEGORY=$(gum choose "all" "brew" "mas" "go" "npm" "starship" "xcode" "asdf")
+	CATEGORY=$(gum choose "all" "brew" "mas" "npm" "starship" "xcode" "asdf")
 
 	if [[ $CATEGORY == "brew" ]] || [[ $CATEGORY == "all" ]]; then
 		gum spin --spinner moon --title "Installing Homebrew Bundle..." -- brew bundle --no-lock --file=~/Brewfile
-	fi
-
-	if [[ $CATEGORY == "go" ]] || [[ $CATEGORY == "all" ]]; then
-		gum spin --spinner moon --title "Installing protoc-gen-gotag..." -- go install github.com/srikrsna/protoc-gen-gotag@latest
-		gum spin --spinner moon --title "Installing godotenv..." -- go install github.com/joho/go-dotenv/cmd/godotenv@latest
-		gum spin --spinner moon --title "Installing govulncheck" -- go install golang.org/x/vuln/cmd/govulncheck@latest
 	fi
 
 	if [[ $CATEGORY == "mas" ]] || [[ $CATEGORY == "all" ]]; then
@@ -134,7 +128,6 @@ function galactus() {
 
 	if [[ $CATEGORY == "npm" ]] || [[ $CATEGORY == "all" ]]; then
 		gum spin --spinner moon --title "Installing opencommit..." -- npm install -g opencommit
-		gum spin --spinner moon --title "Installing serverless..." -- npm install -g serverless
 	fi
 
 	if [[ $CATEGORY == "starship" ]] || [[ $CATEGORY == "all" ]]; then
