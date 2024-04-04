@@ -46,4 +46,4 @@ alias weather="curl wttr.in"
 
 source ~/.functions.sh
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+source "/Users/michael/.sdkman/bin/sdkman-init.sh"

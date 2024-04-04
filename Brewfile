@@ -3,9 +3,6 @@ brew "node"
 brew "rust"
 brew "terraform"
 
-# language version managers
-brew "asdf"
-
 # cli utilities
 brew "bat"
 brew "dust"
