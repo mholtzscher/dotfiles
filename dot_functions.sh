@@ -50,7 +50,13 @@ function galactus() {
 	fi
 
 	if [[ $CATEGORY == "sdkman" ]] || [[ $CATEGORY == "all" ]]; then
-		gum format "Installing sdkman..."
-		curl -s "https://get.sdkman.io" | sh
+		if ! command -v sdk >/dev/null 2>&1; then
+			gum format "Installing sdkman..."
+			curl -s "https://get.sdkman.io" | sh
+		else
+			gum format "Updating sdkman..."
+			sdk selfupdate
+		fi
+
 	fi
 }
