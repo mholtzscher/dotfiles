@@ -53,6 +53,7 @@ cask "google-chrome"
 cask "firefox"
 cask "nightfall"
 cask "postman"
+cask "raycast"
 cask "slack"
 cask "warp"
 
