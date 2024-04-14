@@ -28,7 +28,7 @@ function galactus() {
 		--align center --width 50 --margin "1 2" --padding "2 4" \
 		'Behold Galactus, the Devourer of Worlds!'
 	gum format "Choose your configuration weapon:"
-	CATEGORY=$(gum choose "all" "brew" "go" "mas" "starship" "xcode" "sdkman")
+	CATEGORY=$(gum choose "all" "brew" "go" "mas" "starship" "xcode" "sdkman" "asdf")
 
 	if [[ $CATEGORY == "brew" ]] || [[ $CATEGORY == "all" ]]; then
 		gum spin --spinner moon --title "Installing Homebrew Bundle..." -- brew bundle --no-lock --file=~/Brewfile
@@ -63,6 +63,12 @@ function galactus() {
 			gum format "Updating sdkman..."
 			sdk selfupdate
 		fi
-
 	fi
+
+	if [[ $CATEGORY == "asdf" ]] || [[ $CATEGORY == "all" ]]; then
+		gum spin --spinner moon --title "Installing asdf plugin java..." -- asdf plugin add java
+		gum spin --spinner moon --title "Installing asdf plugin nodejs..." -- asdf plugin add nodejs
+		gum spin --spinner moon --title "Updating asdf plugins..." -- asdf plugin update --all
+	fi
+
 }

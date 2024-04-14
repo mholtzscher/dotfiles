@@ -1,28 +1,53 @@
-[sso-session pepper-sso]
-sso_start_url = https://pepper-iot.awsapps.com/start
-sso_region = us-east-1
+[sso-session paytient]
+sso_start_url = https://d-926779fa6e.awsapps.com/start/
+sso_region = us-west-2
 sso_registration_scopes = sso:account:access
 
-[profile pepper-iot-dev]
-sso_session = pepper-sso
-sso_account_id = 329295018884
-sso_role_name = Administrator
-region = us-east-1
+[profile production]
+region = us-west-2
+sso_start_url = https://d-926779fa6e.awsapps.com/start
+sso_region = us-west-2
+sso_account_id = 967922733953
+sso_role_name = PaytientProductionAccess
 
-[profile pepper-iot-staging]
-sso_session = pepper-sso
-sso_account_id = 803458383710
-sso_role_name = Operations
-region = us-east-2
+[profile staging]
+region = us-west-2
+sso_start_url = https://d-926779fa6e.awsapps.com/start
+sso_region = us-west-2
+sso_account_id = 022190335263
+sso_role_name = PaytientNonProdAccess
 
-[profile pepper-iot-uat]
-sso_session = pepper-sso
-sso_account_id = 471570387468
-sso_role_name = Operations
-region = us-east-2
+[profile shared_services]
+region = us-west-2
+sso_start_url = https://d-926779fa6e.awsapps.com/start
+sso_region = us-west-2
+sso_account_id = 188442536245
+sso_role_name = PaytientEngineering
 
-[profile pepper-iot-prod]
-sso_session = pepper-sso
-sso_account_id = 588685079369
-sso_role_name = Operations
-region = us-east-2
+[profile eng_tools]
+region = us-west-2
+sso_start_url = https://d-926779fa6e.awsapps.com/start
+sso_region = us-west-2
+sso_account_id = 492616914427
+sso_role_name = PaytientNonProdAccess
+
+[profile management]
+region = us-west-2
+sso_start_url = https://d-926779fa6e.awsapps.com/start
+sso_region = us-west-2
+sso_account_id = 843132783998
+sso_role_name = PaytientProductionAccess
+
+[profile qa]
+region = us-west-2
+sso_start_url = https://d-926779fa6e.awsapps.com/start
+sso_region = us-west-2
+sso_account_id = 025587968835
+sso_role_name = PaytientNonProdAccess
+
+[profile m3p_staging]
+region = us-west-2
+sso_start_url = https://d-926779fa6e.awsapps.com/start
+sso_region = us-west-2
+sso_account_id = 533267267027
+sso_role_name = PaytientProductionAccess

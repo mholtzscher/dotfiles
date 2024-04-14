@@ -3,10 +3,7 @@ eval "$(starship init zsh)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(zoxide init zsh)"
 
-# Added by Toolbox App
-export PATH="$PATH:/Users/michael/Library/Application Support/JetBrains/Toolbox/scripts"
-
-export PATH="${PATH}:/Users/michael/.local/bin"
+export PATH="${PATH}:$HOME/.local/bin"
 
 # Terraform aliases
 alias tf='terraform' 
@@ -46,4 +43,11 @@ alias weather="curl wttr.in"
 
 source ~/.functions.sh
 
-source "/Users/michael/.sdkman/bin/sdkman-init.sh"
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+if [ -f /Users/michaelholtzcher/code/onboarding/engineering.sh ]; then
+    source /Users/michaelholtzcher/code/onboarding/engineering.sh
+fi
+

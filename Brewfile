@@ -1,7 +1,10 @@
 # languages
-brew "node"
+brew "go"
 brew "rust"
 brew "terraform"
+
+# language manager
+brew "asdf"
 
 # cli utilities
 brew "bat"
@@ -18,6 +21,7 @@ brew "jq"
 brew "lsd"
 brew "pcre"
 brew "ripgrep"
+brew "watch"
 brew "yq"
 brew "zoxide"
 
@@ -30,6 +34,7 @@ brew "grpcurl"
 brew "hey"
 brew "lazygit"
 brew "neovim"
+brew "sops"
 
 # misc
 brew "bottom"
@@ -41,6 +46,7 @@ tap "teamookla/speedtest"
 brew "speedtest"
 
 # font
+tap "homebrew/cask-fonts"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-fira-code-nerd-font"
 cask "font-hack-nerd-font"
@@ -51,9 +57,11 @@ cask "1password-cli"
 cask "docker"
 cask "google-chrome"
 cask "firefox"
+cask "intellij-idea"
 cask "nightfall"
 cask "postman"
 cask "raycast"
 cask "slack"
+cask "visual-studio-code"
 cask "warp"
 
