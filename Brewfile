@@ -64,5 +64,4 @@ cask "raycast"
 cask "slack"
 cask "visual-studio-code"
 cask "warp"
-cask "zed"
 
