@@ -51,3 +51,5 @@ if [ -f /Users/michaelholtzcher/code/onboarding/engineering.sh ]; then
     source /Users/michaelholtzcher/code/onboarding/engineering.sh
 fi
 
+
+alias fmt="./gradlew spotlessApply"
