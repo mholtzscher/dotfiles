@@ -54,6 +54,7 @@ cask "font-iosevka-nerd-font"
 
 # apps
 cask "1password-cli"
+cask "arc"
 cask "docker"
 cask "google-chrome"
 cask "firefox"
