@@ -25,6 +25,7 @@ brew "rm-improved"
 brew "thefuck"
 brew "watch"
 brew "yq"
+brew "zellij"
 brew "zoxide"
 
 # developer tools

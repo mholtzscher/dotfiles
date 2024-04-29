@@ -9,3 +9,7 @@ import = [
 [font]
 normal = { family = "Iosevka Nerd Font Mono", style = "Regular" }
 size = 13.0
+
+
+[window]
+option_as_alt = "Both"
