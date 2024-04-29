@@ -5,3 +5,7 @@ import = [
   # "~/.config/alacritty/catppuccin-macchiato.toml"
   "~/.config/alacritty/catppuccin-mocha.toml",
 ]
+
+[font]
+normal = { family = "Iosevka Nerd Font Mono", style = "Regular" }
+size = 13.0
