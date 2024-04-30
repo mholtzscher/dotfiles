@@ -1,8 +1,30 @@
+# init starship
 eval "$(starship init zsh)"
 
+# init homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# init zoxide
 eval "$(zoxide init zsh)"
 
+# init thefuck
+eval $(thefuck --alias)
+
+# source custom functions
+source ~/.functions.sh
+
+# source sdkman
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# source asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# source Paytient engineering aliases and functions
+if [ -f /Users/michaelholtzcher/code/onboarding/engineering.sh ]; then
+    source /Users/michaelholtzcher/code/onboarding/engineering.sh
+fi
+
+# I can't remember what this does but I think it sources rust crates? 
 export PATH="${PATH}:$HOME/.local/bin"
 
 # Terraform aliases
@@ -23,7 +45,7 @@ alias pbj='pbpaste | jq'
 # Flush DNS cache
 alias cacheclear='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 
-## IP addresses
+# IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
@@ -35,24 +57,15 @@ alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
-#Change Audio Output
+# Change Audio Output
 alias audio='SwitchAudioSource -s "$(SwitchAudioSource -a | fzf)"'
 
 # get current weather
 alias weather="curl wttr.in"
 
-source ~/.functions.sh
-
-source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-
-if [ -f /Users/michaelholtzcher/code/onboarding/engineering.sh ]; then
-    source /Users/michaelholtzcher/code/onboarding/engineering.sh
-fi
-
-
-alias fmt="./gradlew spotlessApply"
+# gradle aliases
+alias gfmt="./gradlew spotlessApply"
+alias gtest="./gradlew test"
 
 # Set fzf theme
 export FZF_DEFAULT_OPTS=" \
@@ -60,4 +73,3 @@ export FZF_DEFAULT_OPTS=" \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
 --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 
-eval $(thefuck --alias)
