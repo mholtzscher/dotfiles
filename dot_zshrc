@@ -64,8 +64,8 @@ alias audio='SwitchAudioSource -s "$(SwitchAudioSource -a | fzf)"'
 alias weather="curl wttr.in"
 
 # gradle aliases
-alias gfmt="./gradlew spotlessApply"
-alias gtest="./gradlew test"
+alias fmt="./gradlew spotlessApply"
+alias test="./gradlew test"
 
 # Set fzf theme
 export FZF_DEFAULT_OPTS=" \
