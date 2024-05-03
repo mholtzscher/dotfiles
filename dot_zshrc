@@ -13,9 +13,6 @@ eval $(thefuck --alias)
 # source custom functions
 source ~/.functions.sh
 
-# source sdkman
-source "$HOME/.sdkman/bin/sdkman-init.sh"
-
 # source asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
