@@ -39,6 +39,9 @@ brew "lazygit"
 brew "neovim"
 brew "sops"
 
+# Zsh 
+brew "antidote"
+
 # misc
 brew "bottom"
 brew "chezmoi"

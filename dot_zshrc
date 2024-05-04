@@ -10,6 +10,12 @@ eval "$(zoxide init zsh)"
 # init thefuck
 eval $(thefuck --alias)
 
+# source antidote
+source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
+
+# initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
+antidote load
+
 # source custom functions
 source ~/.functions.sh
 
