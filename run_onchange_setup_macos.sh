@@ -1,3 +1,4 @@
+#!/bin/sh
 # Description: Setup MacOS and applications
 
 # Set the dock size
