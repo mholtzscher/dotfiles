@@ -12,6 +12,10 @@ function standup() {
 	cd "$current_dir"
 }
 
+function h() {
+	eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
+
 function galactus() {
 	if ! command -v brew >/dev/null 2>&1; then
 		echo "Homebrew is not in PATH"
