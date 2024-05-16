@@ -52,6 +52,9 @@ brew "slides"
 tap "teamookla/speedtest"
 brew "speedtest"
 
+# databases
+brew "postgresql"
+
 # font
 tap "homebrew/cask-fonts"
 cask "font-jetbrains-mono-nerd-font"
