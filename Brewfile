@@ -1,8 +1,3 @@
-# languages
-brew "go"
-brew "rust"
-brew "terraform"
-
 # language manager
 brew "asdf"
 
@@ -31,7 +26,6 @@ brew "zoxide"
 brew "awscli"
 brew "dive"
 brew "gh"
-brew "graphviz"
 brew "grpcurl"
 brew "hey"
 brew "lazygit"
@@ -50,8 +44,6 @@ brew "speedtest"
 # font
 tap "homebrew/cask-fonts"
 cask "font-jetbrains-mono-nerd-font"
-cask "font-fira-code-nerd-font"
-cask "font-hack-nerd-font"
 cask "font-iosevka-nerd-font"
 
 # apps
@@ -67,5 +59,4 @@ cask "postman"
 cask "raycast"
 cask "slack"
 cask "visual-studio-code"
-cask "warp"
 

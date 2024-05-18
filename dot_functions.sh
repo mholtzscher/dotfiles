@@ -39,6 +39,9 @@ function galactus() {
 	if [[ $CATEGORY == "asdf" ]] || [[ $CATEGORY == "all" ]]; then
 		gum spin --spinner moon --title "Installing asdf plugin java..." -- asdf plugin add java
 		gum spin --spinner moon --title "Installing asdf plugin nodejs..." -- asdf plugin add nodejs
+		gum spin --spinner moon --title "Installing asdf plugin go..." -- asdf plugin add golang
+		gum spin --spinner moon --title "Installing asdf plugin terraform..." -- asdf plugin add terraform
+		gum spin --spinner moon --title "Installing asdf plugin rust..." -- asdf plugin add rust
 		gum spin --spinner moon --title "Updating asdf plugins..." -- asdf plugin update --all
 	fi
 
