@@ -1,30 +1,3 @@
-function standup() {
-	# store the current directory
-	local current_dir=$(pwd)
-
-	# cd to root of code directory
-	cd ~/code
-
-	# run git standup
-	git standup -s -m 10
-
-	# return to original directory
-	cd "$current_dir"
-}
-
-function h() {
-	eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
-}
-
-function yy() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
-
 function galactus() {
 	if ! command -v brew >/dev/null 2>&1; then
 		echo "Homebrew is not in PATH"
@@ -41,7 +14,7 @@ function galactus() {
 		--align center --width 50 --margin "1 2" --padding "2 4" \
 		'Behold Galactus, the Devourer of Worlds!'
 	gum format "Choose your configuration weapon:"
-	CATEGORY=$(gum choose "all" "brew" "go" "mas" "starship" "xcode" "asdf")
+	CATEGORY=$(gum choose "all" "brew" "go" "mas" "xcode" "asdf")
 
 	if [[ $CATEGORY == "brew" ]] || [[ $CATEGORY == "all" ]]; then
 		gum spin --spinner moon --title "Installing Homebrew Bundle..." -- brew bundle --no-lock --file=~/Brewfile
@@ -57,26 +30,11 @@ function galactus() {
 		gum spin --spinner moon --title "Installing Mac App Store apps..." -- brew bundle --no-lock --file=~/Brewfile-mas
 	fi
 
-	if [[ $CATEGORY == "starship" ]] || [[ $CATEGORY == "all" ]]; then
-		gum format "Installing starship..."
-		curl -sS https://starship.rs/install.sh | sh
-	fi
-
 	if [[ $CATEGORY == "xcode" ]] || [[ $CATEGORY == "all" ]]; then
 		if ! xcode-select -p >/dev/null 2>&1; then
 			gum spin --spinner moon --title "Installing xcode-select..." -- xcode-select --install
 		fi
 	fi
-
-	# if [[ $CATEGORY == "sdkman" ]] || [[ $CATEGORY == "all" ]]; then
-	# 	if ! command -v sdk >/dev/null 2>&1; then
-	# 		gum format "Installing sdkman..."
-	# 		curl -s "https://get.sdkman.io" | sh
-	# 	else
-	# 		gum format "Updating sdkman..."
-	# 		sdk selfupdate
-	# 	fi
-	# fi
 
 	if [[ $CATEGORY == "asdf" ]] || [[ $CATEGORY == "all" ]]; then
 		gum spin --spinner moon --title "Installing asdf plugin java..." -- asdf plugin add java
