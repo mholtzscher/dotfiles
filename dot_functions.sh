@@ -17,32 +17,32 @@ function galactus() {
 	CATEGORY=$(gum choose "all" "brew" "go" "mas" "xcode" "asdf")
 
 	if [[ $CATEGORY == "brew" ]] || [[ $CATEGORY == "all" ]]; then
-		gum spin --spinner moon --title "Installing Homebrew Bundle..." -- brew bundle --no-lock --file=~/Brewfile
+		gum spin --spinner moon --show-output --title "Installing Homebrew Bundle..." -- brew bundle --no-lock --file=~/Brewfile
 	fi
 
 	if [[ $CATEGORY == "go" ]] || [[ $CATEGORY == "all" ]]; then
-		gum spin --spinner moon --title "Installing protoc-gen-gotag..." -- go install github.com/srikrsna/protoc-gen-gotag@latest
-		gum spin --spinner moon --title "Installing godotenv..." -- go install github.com/joho/go-dotenv/cmd/godotenv@latest
-		gum spin --spinner moon --title "Installing govulncheck" -- go install golang.org/x/vuln/cmd/govulncheck@latest
+		gum spin --spinner moon --show-output --title "Installing protoc-gen-gotag..." -- go install github.com/srikrsna/protoc-gen-gotag@latest
+		gum spin --spinner moon --show-output --title "Installing godotenv..." -- go install github.com/joho/go-dotenv/cmd/godotenv@latest
+		gum spin --spinner moon --show-output --title "Installing govulncheck" -- go install golang.org/x/vuln/cmd/govulncheck@latest
 	fi
 
 	if [[ $CATEGORY == "mas" ]] || [[ $CATEGORY == "all" ]]; then
-		gum spin --spinner moon --title "Installing Mac App Store apps..." -- brew bundle --no-lock --file=~/Brewfile-mas
+		gum spin --spinner moon --show-output --title "Installing Mac App Store apps..." -- brew bundle --no-lock --file=~/Brewfile-mas
 	fi
 
 	if [[ $CATEGORY == "xcode" ]] || [[ $CATEGORY == "all" ]]; then
 		if ! xcode-select -p >/dev/null 2>&1; then
-			gum spin --spinner moon --title "Installing xcode-select..." -- xcode-select --install
+			gum spin --spinner moon --show-output --title "Installing xcode-select..." -- xcode-select --install
 		fi
 	fi
 
 	if [[ $CATEGORY == "asdf" ]] || [[ $CATEGORY == "all" ]]; then
-		gum spin --spinner moon --title "Installing asdf plugin java..." -- asdf plugin add java
-		gum spin --spinner moon --title "Installing asdf plugin nodejs..." -- asdf plugin add nodejs
-		gum spin --spinner moon --title "Installing asdf plugin go..." -- asdf plugin add golang
-		gum spin --spinner moon --title "Installing asdf plugin terraform..." -- asdf plugin add terraform
-		gum spin --spinner moon --title "Installing asdf plugin rust..." -- asdf plugin add rust
-		gum spin --spinner moon --title "Updating asdf plugins..." -- asdf plugin update --all
+		gum spin --spinner moon --show-output --title "Installing asdf plugin java..." -- asdf plugin add java
+		gum spin --spinner moon --show-output --title "Installing asdf plugin nodejs..." -- asdf plugin add nodejs
+		gum spin --spinner moon --show-output --title "Installing asdf plugin go..." -- asdf plugin add golang
+		gum spin --spinner moon --show-output --title "Installing asdf plugin terraform..." -- asdf plugin add terraform
+		gum spin --spinner moon --show-output --title "Installing asdf plugin rust..." -- asdf plugin add rust
+		gum spin --spinner moon --show-output --title "Updating asdf plugins..." -- asdf plugin update --all
 	fi
 
 }
