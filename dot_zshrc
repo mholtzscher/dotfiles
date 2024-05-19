@@ -96,6 +96,7 @@ alias audio='SwitchAudioSource -s "$(SwitchAudioSource -a | fzf)"'
 alias weather="curl wttr.in"
 alias fmt="./gradlew spotlessApply"
 alias test="./gradlew test"
+alias clean="git clean -Xdf"
 
 # Shell integrations
 eval "$(fzf --zsh)"
