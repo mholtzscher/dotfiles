@@ -13,3 +13,4 @@ size = 13.0
 
 [window]
 option_as_alt = "Both"
+dimensions = { lines = 50, columns = 200 }
