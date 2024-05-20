@@ -16,4 +16,10 @@ size = 13.0
 
 [window]
 option_as_alt = "Both"
+{{ if eq .chezmoi.hostname "Michaels-MacBook-Pro" }}
+# paytient laptop
+dimensions = { lines = 60, columns = 300 }
+{{ else }}
+# personal laptop
 dimensions = { lines = 50, columns = 200 }
+{{ end }}
