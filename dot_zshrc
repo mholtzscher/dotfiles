@@ -107,6 +107,9 @@ eval "$(thefuck --alias)"
 # source custom functions
 source ~/.functions.sh
 
+# load completions for chezmoi
+source .chezmoi_completions.sh
+
 # source Paytient engineering aliases and functions
 if [ -f /Users/michaelholtzcher/code/onboarding/engineering.sh ]; then
     source /Users/michaelholtzcher/code/onboarding/engineering.sh
