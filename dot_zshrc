@@ -97,6 +97,7 @@ alias weather="curl wttr.in"
 alias fmt="./gradlew spotlessApply"
 alias test="./gradlew test"
 alias clean="git clean -Xdf"
+alias nvim-kick='NVIM_APPNAME="nvim-kick" nvim'
 
 # Shell integrations
 eval "$(fzf --zsh)"
