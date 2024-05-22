@@ -43,6 +43,7 @@ function galactus() {
 		gum spin --spinner moon --show-output --title "Installing asdf plugin terraform..." -- asdf plugin add terraform
 		gum spin --spinner moon --show-output --title "Installing asdf plugin rust..." -- asdf plugin add rust
 		gum spin --spinner moon --show-output --title "Installing asdf plugin gleam..." -- asdf plugin add gleam
+		gum spin --spinner moon --show-output --title "Installing asdf plugin erlang..." -- asdf plugin add erlang
 		gum spin --spinner moon --show-output --title "Updating asdf plugins..." -- asdf plugin update --all
 	fi
 
