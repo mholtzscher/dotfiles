@@ -1,6 +1,8 @@
 # language manager
 brew "asdf"
 
+brew "rebar3"
+
 # cli utilities
 brew "bat"
 brew "dust"
