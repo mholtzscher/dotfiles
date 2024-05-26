@@ -2,7 +2,7 @@ return {
   {
     "tris203/precognition.nvim",
     config = {
-      -- startVisible = true,
+      startVisible = false,
       -- showBlankVirtLine = true,
       -- highlightColor = "Comment",
       -- hints = {
