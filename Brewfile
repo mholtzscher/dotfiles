@@ -47,7 +47,7 @@ brew "speedtest"
 # font
 tap "homebrew/cask-fonts"
 cask "font-jetbrains-mono-nerd-font"
-cask "font-iosevka-nerd-font"
+cask "font-iosevka"
 
 # apps
 cask "1password-cli"
