@@ -45,9 +45,8 @@ tap "teamookla/speedtest"
 brew "speedtest"
 
 # font
-tap "homebrew/cask-fonts"
 cask "font-jetbrains-mono-nerd-font"
-cask "font-iosevka"
+cask "font-iosevka-nerd-font"
 
 # apps
 cask "1password-cli"
