@@ -14,7 +14,7 @@ function galactus() {
 		--align center --width 50 --margin "1 2" --padding "2 4" \
 		'Behold Galactus, the Devourer of Worlds!'
 	gum format "Choose your configuration weapon:"
-	CATEGORY=$(gum choose "all" "asdf" "brew" "go" "mas" "xcode" "zinit")
+	CATEGORY=$(gum choose "all" "asdf" "brew" "go" "mas" "tpm" "xcode" "zinit")
 
 	if [[ $CATEGORY == "asdf" ]] || [[ $CATEGORY == "all" ]]; then
 		gum spin --spinner moon --show-output --title "Installing asdf plugin java..." -- asdf plugin add java
@@ -39,6 +39,10 @@ function galactus() {
 
 	if [[ $CATEGORY == "mas" ]] || [[ $CATEGORY == "all" ]]; then
 		gum spin --spinner moon --show-output --title "Installing Mac App Store apps..." -- brew bundle --no-lock --file=~/Brewfile-mas
+	fi
+
+	if [[ $CATEGORY == "tpm" ]] || [[ $CATEGORY == "all" ]]; then
+		~/.config/tmux/plugins/tpm/bin/update_plugins all
 	fi
 
 	if [[ $CATEGORY == "xcode" ]] || [[ $CATEGORY == "all" ]]; then
