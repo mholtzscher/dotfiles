@@ -14,7 +14,18 @@ function galactus() {
 		--align center --width 50 --margin "1 2" --padding "2 4" \
 		'Behold Galactus, the Devourer of Worlds!'
 	gum format "Choose your configuration weapon:"
-	CATEGORY=$(gum choose "all" "brew" "go" "mas" "xcode" "asdf")
+	CATEGORY=$(gum choose "all" "asdf" "brew" "go" "mas" "xcode" "zinit")
+
+	if [[ $CATEGORY == "asdf" ]] || [[ $CATEGORY == "all" ]]; then
+		gum spin --spinner moon --show-output --title "Installing asdf plugin java..." -- asdf plugin add java
+		gum spin --spinner moon --show-output --title "Installing asdf plugin nodejs..." -- asdf plugin add nodejs
+		gum spin --spinner moon --show-output --title "Installing asdf plugin go..." -- asdf plugin add golang
+		gum spin --spinner moon --show-output --title "Installing asdf plugin terraform..." -- asdf plugin add terraform
+		gum spin --spinner moon --show-output --title "Installing asdf plugin rust..." -- asdf plugin add rust
+		gum spin --spinner moon --show-output --title "Installing asdf plugin gleam..." -- asdf plugin add gleam
+		gum spin --spinner moon --show-output --title "Installing asdf plugin erlang..." -- asdf plugin add erlang
+		gum spin --spinner moon --show-output --title "Updating asdf plugins..." -- asdf plugin update --all
+	fi
 
 	if [[ $CATEGORY == "brew" ]] || [[ $CATEGORY == "all" ]]; then
 		gum spin --spinner moon --show-output --title "Installing Homebrew Bundle..." -- brew bundle --no-lock --file=~/Brewfile
@@ -36,15 +47,7 @@ function galactus() {
 		fi
 	fi
 
-	if [[ $CATEGORY == "asdf" ]] || [[ $CATEGORY == "all" ]]; then
-		gum spin --spinner moon --show-output --title "Installing asdf plugin java..." -- asdf plugin add java
-		gum spin --spinner moon --show-output --title "Installing asdf plugin nodejs..." -- asdf plugin add nodejs
-		gum spin --spinner moon --show-output --title "Installing asdf plugin go..." -- asdf plugin add golang
-		gum spin --spinner moon --show-output --title "Installing asdf plugin terraform..." -- asdf plugin add terraform
-		gum spin --spinner moon --show-output --title "Installing asdf plugin rust..." -- asdf plugin add rust
-		gum spin --spinner moon --show-output --title "Installing asdf plugin gleam..." -- asdf plugin add gleam
-		gum spin --spinner moon --show-output --title "Installing asdf plugin erlang..." -- asdf plugin add erlang
-		gum spin --spinner moon --show-output --title "Updating asdf plugins..." -- asdf plugin update --all
+	if [[ $CATEGORY == "zinit" ]] || [[ $CATEGORY == "all" ]]; then
+		zinit update
 	fi
-
 }
