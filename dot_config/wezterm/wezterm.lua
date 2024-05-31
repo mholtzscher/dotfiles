@@ -11,7 +11,7 @@ config.font = wezterm.font("Iosevka Nerd Font Mono")
 config.font_size = 13.0
 
 config.initial_cols = 200
-config.initial_rows = 50
+config.initial_rows = 35
 
 -- and finally, return the configuration to wezterm
 return config
