@@ -11,11 +11,11 @@ config.font = wezterm.font("Iosevka Nerd Font Mono")
 config.font_size = 13.0
 
 {{ if eq .chezmoi.hostname "Michaels-MacBook-Pro" }}
-# paytient laptop
+-- paytient laptop dimensions
 config.initial_cols = 200
 config.initial_rows = 35
 {{ else }}
-# personal laptop
+-- personal laptop dimensions
 config.initial_cols = 200
 config.initial_rows = 50
 {{ end }}
