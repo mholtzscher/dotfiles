@@ -1,5 +1,5 @@
 [sso-session paytient]
-sso_start_url = https://d-926779fa6e.awsapps.com/start/
+sso_start_url = https://d-926779fa6e.awsapps.com/start
 sso_region = us-west-2
 sso_registration_scopes = sso:account:access
 
@@ -49,5 +49,13 @@ sso_role_name = PaytientNonProdAccess
 region = us-west-2
 sso_start_url = https://d-926779fa6e.awsapps.com/start
 sso_region = us-west-2
+sso_account_id = 211125772151
+sso_role_name = PaytientNonProdAccess
+sso_session = paytient
+output = json
+[profile m3p_production]
+sso_session = paytient
 sso_account_id = 533267267027
 sso_role_name = PaytientProductionAccess
+region = us-west-2
+output = json
