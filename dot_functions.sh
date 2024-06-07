@@ -62,6 +62,10 @@ function galactus() {
 
 		echo "Installing govulncheck"
 		go install golang.org/x/vuln/cmd/govulncheck@latest
+
+		echo "Installing protoc-gen-connect-go"
+		go install connectrpc.com/connect/cmd/protoc-gen-connect-go@latest
+
 	fi
 
 	if [[ $CATEGORY == "mas" ]] || [[ $CATEGORY == "all" ]]; then
