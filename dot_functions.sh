@@ -60,12 +60,14 @@ function galactus() {
 		echo "Installing godotenv..."
 		go install github.com/joho/go-dotenv/cmd/godotenv@latest
 
-		echo "Installing govulncheck"
+		echo "Installing govulncheck..."
 		go install golang.org/x/vuln/cmd/govulncheck@latest
 
-		echo "Installing protoc-gen-connect-go"
+		echo "Installing protoc-gen-connect-go..."
 		go install connectrpc.com/connect/cmd/protoc-gen-connect-go@latest
 
+		echo "Installing buf cli..."
+		go install github.com/bufbuild/buf/cmd/buf@latest
 	fi
 
 	if [[ $CATEGORY == "mas" ]] || [[ $CATEGORY == "all" ]]; then
