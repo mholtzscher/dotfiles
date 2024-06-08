@@ -1,6 +1,7 @@
 # language manager
 brew "asdf"
 
+brew "go"
 brew "rebar3"
 
 # cli utilities
@@ -14,6 +15,7 @@ brew "gum"
 brew "httpie"
 brew "jc"
 brew "jq"
+brew "ko"
 brew "lsd"
 brew "pcre"
 brew "ripgrep"

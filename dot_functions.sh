@@ -48,11 +48,11 @@ function galactus() {
 	fi
 
 	if [[ $CATEGORY == "go" ]] || [[ $CATEGORY == "all" ]]; then
-		echo "Installing golang..."
-		asdf install golang latest
-
-		echo "Setting golang to latest..."
-		asdf global golang latest
+		# echo "Installing golang..."
+		# asdf install golang latest
+		#
+		# echo "Setting golang to latest..."
+		# asdf global golang latest
 
 		echo "Installing protoc-gen-gotag..."
 		go install github.com/srikrsna/protoc-gen-gotag@latest
