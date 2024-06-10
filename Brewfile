@@ -29,6 +29,7 @@ brew "zoxide"
 
 # developer tools
 brew "awscli"
+tap "bufbuild/buf"
 brew "bufbuild/buf/buf"
 brew "dive"
 brew "gh"
