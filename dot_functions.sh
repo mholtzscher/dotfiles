@@ -38,6 +38,9 @@ function galactus() {
 		echo "Installing asdf plugin erlang..."
 		asdf plugin add erlang
 
+		echo "Installing asdf plugin lua..."
+		asdf plugin add lua
+
 		echo "Updating asdf plugins..."
 		asdf plugin update --all
 	fi
@@ -48,12 +51,6 @@ function galactus() {
 	fi
 
 	if [[ $CATEGORY == "go" ]] || [[ $CATEGORY == "all" ]]; then
-		# echo "Installing golang..."
-		# asdf install golang latest
-		#
-		# echo "Setting golang to latest..."
-		# asdf global golang latest
-
 		echo "Installing protoc-gen-gotag..."
 		go install github.com/srikrsna/protoc-gen-gotag@latest
 
@@ -65,6 +62,14 @@ function galactus() {
 
 		echo "Installing protoc-gen-connect-go..."
 		go install connectrpc.com/connect/cmd/protoc-gen-connect-go@latest
+	fi
+
+	if [[ $CATEGORY == "lua" ]] || [[ $CATEGORY == "all" ]]; then
+		echo "Installina lua..."
+		asdf install lua latest
+
+		echo "Setting lua to latest..."
+		asdf global lua latest
 	fi
 
 	if [[ $CATEGORY == "mas" ]] || [[ $CATEGORY == "all" ]]; then
