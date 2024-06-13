@@ -2,3 +2,7 @@
 type = "git-repo"
 url = "git@github.com:mholtzscher/kickstart.nvim.git"
 refreshPeriod = "168h"
+
+["notes"]
+type = "git-repo"
+url = "git@github.com:mholtzscher/obsidian.git"
