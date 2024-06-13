@@ -14,7 +14,7 @@ function galactus() {
 		--align center --width 50 --margin "1 2" --padding "2 4" \
 		'Behold Galactus, the Devourer of Worlds!'
 	gum format "Choose your configuration weapon:"
-	CATEGORY=$(gum choose "all" "asdf" "brew" "go" "mas" "nodejs" "tpm" "xcode" "zinit")
+	CATEGORY=$(gum choose "all" "asdf" "brew" "go" "lua" "mas" "nodejs" "tpm" "xcode" "zinit")
 
 	if [[ $CATEGORY == "asdf" ]] || [[ $CATEGORY == "all" ]]; then
 		echo "Installing asdf plugin java..."
