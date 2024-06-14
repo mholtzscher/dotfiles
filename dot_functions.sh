@@ -55,7 +55,7 @@ function galactus() {
 		go install github.com/srikrsna/protoc-gen-gotag@latest
 
 		echo "Installing godotenv..."
-		go install github.com/joho/go-dotenv/cmd/godotenv@latest
+		go install github.com/joho/godotenv/cmd/godotenv@latest
 
 		echo "Installing govulncheck..."
 		go install golang.org/x/vuln/cmd/govulncheck@latest

@@ -43,7 +43,7 @@ brew "sops"
 # misc
 brew "bottom"
 brew "chezmoi"
-brew "deskpad"
+cask "deskpad"
 brew "mas"
 brew "slides"
 
