@@ -1,7 +1,9 @@
 function galactus() {
 	if ! command -v brew >/dev/null 2>&1; then
 		echo "Homebrew is not in PATH"
-		return
+		echo "Installing Homebrew..."
+		# Install Homebrew
+		ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	fi
 
 	if ! command -v gum >/dev/null 2>&1; then
