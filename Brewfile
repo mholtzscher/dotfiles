@@ -2,14 +2,12 @@
 brew "asdf"
 
 brew "go"
-brew "rebar3"
 
 # cli utilities
 brew "bat"
 brew "dust"
 brew "fd"
 brew "fzf"
-brew "glow"
 brew "gnu-sed"
 brew "gum"
 brew "httpie"
