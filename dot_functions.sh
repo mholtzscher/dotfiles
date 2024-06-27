@@ -67,6 +67,12 @@ function galactus() {
 
 		echo "Installing protoc-gen-connect-go..."
 		go install connectrpc.com/connect/cmd/protoc-gen-connect-go@latest
+
+		echo "Installing goose..."
+		go install github.com/pressly/goose/v3/cmd/goose@latest
+
+		echo "Installing sqlc..."
+		go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest
 	fi
 
 	if [[ $CATEGORY == "lua" ]] || [[ $CATEGORY == "all" ]]; then
