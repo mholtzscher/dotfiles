@@ -73,6 +73,8 @@ sso_role_name = PaytientNonProdAccess
 [profile localstack]
 region = us-east-1
 endpoint = http://localhost.localstack.cloud:4566
+aws_access_key_id = access-key
+aws_secret_access_key = secret-key
 
 [default]
 region = us-west-2
