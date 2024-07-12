@@ -3,13 +3,9 @@ return {
     "mistricky/codesnap.nvim",
     build = "make",
     init = function()
-      -- Keymap
-      local wk = require("which-key")
-      wk.register({
-        c = {
-          x = { ":CodeSnap<CR>", "CodeSnap", mode = { "v" } },
-        },
-      }, { prefix = "<leader>" })
+      require("which-key").add({
+        { "<leader>cx", ":CodeSnap<CR>", desc = "CodeSnap", mode = "v" },
+      })
     end,
 
     config = function()
