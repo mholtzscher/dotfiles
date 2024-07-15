@@ -4,6 +4,7 @@ brew "asdf"
 brew "go"
 
 # cli utilities
+brew "atuin"
 brew "bat"
 brew "dust"
 brew "fd"
