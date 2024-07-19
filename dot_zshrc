@@ -30,6 +30,7 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
+zinit light atuinsh/atuin
 
 # Add in snippets
 zinit snippet OMZP::archlinux
@@ -125,4 +126,4 @@ export PATH="$HOME/go/bin:$PATH"
 
 # . "$HOME/.atuin/bin/env"
 
-eval "$(atuin init zsh)"
+# eval "$(atuin init zsh)"
