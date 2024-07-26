@@ -42,6 +42,9 @@ brew "lazygit"
 brew "neovim"
 brew "sops"
 
+tap "jorgerojas26/lazysql"
+brew "lazysql"
+
 # misc
 brew "bottom"
 brew "chezmoi"

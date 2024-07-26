@@ -73,6 +73,9 @@ function galactus() {
 
     echo "Installing sqlc..."
     go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest
+
+    echo "Installing air..."
+    go install github.com/air-verse/air@latest
   fi
 
   if [[ $CATEGORY == "lua" ]] || [[ $CATEGORY == "all" ]]; then
