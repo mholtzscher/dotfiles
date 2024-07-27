@@ -100,11 +100,6 @@ alias test="./gradlew test"
 alias clean="git clean -Xdf"
 alias nvim-kick='NVIM_APPNAME="nvim-kick" nvim'
 
-# Shell integrations
-eval "$(fzf --zsh)"
-eval "$(zoxide init zsh)"
-eval "$(thefuck --alias)"
-
 # source custom functions
 source ~/.functions.sh
 
@@ -125,6 +120,9 @@ export FZF_DEFAULT_OPTS=" \
 # Add Go binaries to path
 export PATH="$HOME/go/bin:$PATH"
 
-
+# Shell integrations
+eval "$(fzf --zsh)"
+eval "$(zoxide init zsh)"
+eval "$(thefuck --alias)"
 eval "$(starship init zsh)"
 
