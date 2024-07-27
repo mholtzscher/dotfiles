@@ -8,8 +8,8 @@
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILyAn4X7ZQUyU7DQYHjQ4qccecA2r6ekk+jS1gjBfWAi
 	name = Michael Holtzscher
 	email = michael@holtzscher.com
-[url "ssh://git@github.com/pepper-iot/"]
-  insteadOf = https://github.com/pepper-iot/
+; [url "ssh://git@github.com/pepper-iot/"]
+;   insteadOf = https://github.com/pepper-iot/
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
