@@ -76,6 +76,9 @@ function galactus() {
 
     echo "Installing air..."
     go install github.com/air-verse/air@latest
+
+    echo "Installing cobra-cli..."
+    go install github.com/spf13/cobra-cli@latest
   fi
 
   if [[ $CATEGORY == "lua" ]] || [[ $CATEGORY == "all" ]]; then
