@@ -61,6 +61,7 @@ symbol = ".NET "
 
 [docker_context]
 symbol = "docker "
+disabled = true
 
 [elixir]
 symbol = "exs "
