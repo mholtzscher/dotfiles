@@ -11,7 +11,7 @@ vimcmd_symbol = "[❮](green)"
 truncation_length = 4
 style = "bold lavender"
 read_only = " ro"
-
+truncate_to_repo = false
 
 [git_commit]
 tag_symbol = " tag "
