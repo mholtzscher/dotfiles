@@ -1,4 +1,4 @@
 function ls --wraps=lsd --description 'alias ls lsd'
-    lsd $argv
-
+  lsd $argv
+        
 end
