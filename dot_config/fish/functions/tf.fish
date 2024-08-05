@@ -1,3 +1,4 @@
-function tf --wraps=terraform --description 'shortened alias for terraform'
-    terraform $argv
+function tf --wraps=terraform --description 'alias tf=terraform'
+  terraform $argv
+        
 end
