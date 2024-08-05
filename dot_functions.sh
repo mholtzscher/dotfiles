@@ -138,3 +138,27 @@ function galactus() {
   echo "Sourcing zshrc..."
   source ~/.zshrc
 }
+
+function fmt() {
+  if [[ -e go.mod ]]; then
+    echo "go.mod found. Running Go formatter..."
+    go fmt ./...
+  elif [[ -e build.gradle ]] || [[ -e build.gradle.kts ]]; then
+    echo "build.gradle found. Running ./gradlew spotlessApply..."
+    ./gradlew spotlessApply
+  else
+    echo "Neither go.mod nor build.gradle found in the current directory."
+  fi
+}
+
+function test() {
+  if [[ -e go.mod ]]; then
+    echo "go.mod found. Running Go tests..."
+    go test ./...
+  elif [[ -e build.gradle ]] || [[ -e build.gradle.kts ]]; then
+    echo "build.gradle found. Running ./gradlew test..."
+    ./gradlew test
+  else
+    echo "Neither go.mod nor build.gradle found in the current directory."
+  fi
+}

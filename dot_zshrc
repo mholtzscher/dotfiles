@@ -94,8 +94,6 @@ alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && kill
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 alias audio='SwitchAudioSource -s "$(SwitchAudioSource -a | fzf)"'
 alias weather="curl wttr.in"
-alias fmt="./gradlew spotlessApply"
-alias test="./gradlew test"
 alias clean="git clean -Xdf"
 alias nvim-kick='NVIM_APPNAME="nvim-kick" nvim'
 
