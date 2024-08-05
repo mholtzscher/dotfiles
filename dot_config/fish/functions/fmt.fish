@@ -1,4 +1,11 @@
-function fmt --wraps='./gradlew spotlessApply' --description 'alias fmt=./gradlew spotlessApply'
-  ./gradlew spotlessApply $argv
-        
+function fmt --description="Run the formatter for the current project"
+    if test -e go.mod
+        echo "go.mod found. Running Go formatter..."
+        go fmt ./...
+    else if test -e build.gradle
+        echo "build.gradle found. Running ./gradlew spotlessApply..."
+        ./gradlew spotlessApply
+    else
+        echo "Neither go.mod nor build.gradle found in the current directory."
+    end
 end
