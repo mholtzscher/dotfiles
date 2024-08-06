@@ -6,7 +6,7 @@ if status --is-interactive && type -q asdf
     atuin init fish | source
 end
 
-abbr -a -- sso aws_login
+abbr -a -- sso aws_change_profile
 
 zoxide init fish | source
 starship init fish | source
