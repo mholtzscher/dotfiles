@@ -1,207 +1,244 @@
-"" .ideavimrc - Matt Chapman
+set scrolloff=5
+set history=1000
 
-
-"" Base Settings
-"" ========================================================
-
-set scrolloff=10
-set relativenumber
+" status bar
 set showmode
-set showcmd
 
-set smartcase
-set incsearch
+" leader
+map <space> <nop>
+let mapleader=" "
+
+" find and replace
 set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set gdefault
+nunmap zz
+nmap <leader>nh :noh<CR>
+nnoremap <leader>fc :edit ~/.ideavimrc<CR>
+nnoremap <leader>lp :source ~/.ideavimrc
 
-set visualbell
+" ideavim settings
+set ideajoin
+set ideamarks
+set idearefactormode=normal
+set ideastatusicon=gray
 
-" Use system clipboard
-set clipboard+=unnamed   
+" better escape
+imap jk <Esc>
 
-let mapleader = " "
+" location
+nmap <C-i> <Action>(Forward)
+nmap <C-o> <Action>(Back)
+nmap <C-u> <C-u>zz
+nmap <C-d> <C-d>zz
 
+" buffer (buffer < window < tab)
+nmap <leader>xx <Action>(CloseContent)
+nmap <leader>xa <Action>(CloseAllEditors)
+nmap <leader>xo <Action>(CloseAllEditorsButActive)
+nmap <leader>xp <Action>(CloseAllUnpinnedEditors)
 
-"" Plugin Settings
-"" ========================================================
+nmap <leader>d "_d
+vmap <leader>d "_d
+xmap <leader>p "_dP
+xmap <leader>y "+y
 
-set surround
-set highlightedyank
-set sneak
-set nerdtree
+" tab
+map <leader>sH <Action>(SplitHorizontally)
+map <leader>sV <Action>(SplitVertically)
 
-" Easymotion settings
-set easymotion
-set notimeout
+nmap <C-p> <Action>(JumpToLastWindow)
+nmap <C-k> <C-w>k
+nmap <C-j> <C-w>j
+nmap <C-h> <C-w>h
+nmap <C-l> <C-w>l
 
-" Which-key settings
-set which-key
-let g:WhichKey_FontSize = 16
-let g:WhichKey_CommandColor = "#41ead4"
-let g:WhichKey_PrefixColor = "#f335b2"
-let g:WhichKey_SortOrder = "by_key_prefix_first"
+nmap <leader>ww <Action>(HideAllWindows)
+nmap <leader>wk <Action>(StretchSplitToTop)
+nmap <leader>wj <Action>(StretchSplitToBottom)
+nmap <C-,> <Action>(StretchSplitToLeft)
+nmap <C-.> <Action>(StretchSplitToRight)
+nmap <leader>wm <Action>(MaximizeEditorInSplit)
+nmap <leader>wu <Action>(UnsplitAll)
 
-let g:WhichKeyDesc_leader = "<leader> Leader key"
-
-let g:WhichKeyDesc_leader = "<leader>x Open file explorer"
-
-let g:WhichKeyDesc_easymotion = "<leader>j Jump with Easymotion"
-let g:WhichKeyDesc_easymotion_prefix = "<leader><leader>"
-
-let g:WhichKeyDesc_comment = "<leader>c Comment line"
-
-let g:WhichKeyDesc_fold = "<leader>z Folding"
-let g:WhichKeyDesc_fold_all = "<leader>zc Fold all regions"
-let g:WhichKeyDesc_unfold_all = "<leader>zo Unfold all regions"
-
-let g:WhichKeyDesc_window = "<leader>w Window splits"
-let g:WhichKeyDesc_window_split_vertically = "<leader>wv Split vertically"
-let g:WhichKeyDesc_window_split_horizontally = "<leader>wh Split horizontally"
-let g:WhichKeyDesc_window_split_unsplit = "<leader>wu Unsplit"
-let g:WhichKeyDesc_window_split_move_editor = "<leader>wm Move editor to opposite tab group"
-
-
-let g:WhichKeyDesc_display = "<leader>d Display options"
-let g:WhichKeyDesc_zen_mode = "<leader>dz Toggle Zen mode"
-let g:WhichKeyDesc_df_mode = "<leader>dd Toggle Distraction-Free mode"
-let g:WhichKeyDesc_fullscreen = "<leader>df Toggle full screen"
-
-let g:WhichKeyDesc_action= "<leader>a Actions"
-let g:WhichKeyDesc_action_context_menu = "<leader>am Open context menu"
-let g:WhichKeyDesc_action_search = "<leader>as Open command modal"
-
-let g:WhichKeyDesc_file_quickLook = "<leader><leader> Recent files"
-
-let g:WhichKeyDesc_file_nav = "<leader>f File navigation"
-let g:WhichKeyDesc_file_nav_goto_file = "<leader>ff Go to file"
-let g:WhichKeyDesc_file_nav_goto_content = "<leader>fc Search for file content"
-let g:WhichKeyDesc_file_nav_show_recent_files = "<leader>fr Show recent files"
-let g:WhichKeyDesc_file_nav_show_recent_locations = "<leader>fl Show recent locations"
-
-let g:WhichKeyDesc_close_tab = "<leader>q Close active tab"
-
-let g:WhichKeyDesc_refactoring = "<leader>r Refactoring menu"
-let g:WhichKeyDesc_refactoring_rename = "<leader>rn Rename element"
-let g:WhichKeyDesc_refactoring_method = "<leader>rm Extract method"
-let g:WhichKeyDesc_refactoring_variable = "<leader>rv Introduce variable"
-let g:WhichKeyDesc_refactoring_field = "<leader>rf Introduce field"
-let g:WhichKeyDesc_refactoring_signature = "<leader>rs Change signature"
-let g:WhichKeyDesc_refactoring_all = "<leader>rr Open refactorings list"
-
-let g:WhichKeyDesc_goto = "<leader>g Go to X"
-let g:WhichKeyDesc_goto_declaration = "<leader>gd Go to Definition"
-let g:WhichKeyDesc_goto_type_declaration = "<leader>gy Go to Type Definition"
-let g:WhichKeyDesc_goto_implementation = "<leader>gi Go to Implementation"
-let g:WhichKeyDesc_goto_usages = "<leader>gu Go to Usages"
-let g:WhichKeyDesc_goto_test = "<leader>gt Go to Test"
-let g:WhichKeyDesc_goto_back = "<leader>gb Go Back"
-let g:WhichKeyDesc_goto_forward = "<leader>gf Go Forward"
-
-let g:WhichKeyDesc_git = "<leader>g Git operations"
-let g:WhichKeyDesc_git_commit = "<leader>gc Open Git commit dialog"
-let g:WhichKeyDesc_git_status = "<leader>gs Open Git status dialog"
-let g:WhichKeyDesc_git_branches = "<leader>gb Open Git branches list"
-
-let g:WhichKeyDesc_errors = "<leader>e Error navigation"
-let g:WhichKeyDesc_errors_next = "<leader>en Go to next error in solution"
-let g:WhichKeyDesc_errors_prev = "<leader>ep Go to previous error in solution"
+" menu
+nmap <leader>mm <Action>(MainMenu)
+nmap <leader>ma <Action>(AnalyzeMenu)
+nmap <leader>mb <Action>(BuildMenu)
+nmap <leader>mc <Action>(CodeMenu)
+nmap <leader>mf <Action>(FindMenuGroup)
+nmap <leader>mg <Action>(GoToMenu)
+nmap <leader>ms <Action>(ScopeViewPopupMenu)
+nmap <leader>mt <Action>(EditorTabPopupMenu)
+nmap <leader>mw <Action>(ToolWindowsGroup)
 
 
-"" Key mappings
-"" ========================================================
+" file
+nmap <leader>of <Action>(OpenFile)
+nmap <leader>yp <Action>(CopyAbsolutePath)
+nmap <leader><leader> <Action>(SearchEverywhere)
+nmap <leader>, <Action>(RecentFiles)
+nmap <leader>rl <Action>(RecentLocations)
+nmap <leader>rp <Action>(ManageRecentProjects)
+nmap <leader>sh <Action>(LocalHistory.ShowHistory)
+nmap <leader>sf <Action>(ShowFilePath)
+nmap <leader>si <Action>(SelectIn)
+nmap <leader>fp <Action>(FindInPath)
+nmap <leader>rp <Action>(ReplaceInPath)
+nmap <leader>sw <Action>($SearchWeb)
 
-inoremap jk <Esc>
+" tag
+nmap <leader>fu <Action>(FindUsages)
+nmap <leader>fs <Action>(FileStructurePopup)
+nmap <leader>su <Action>(ShowUsages)
+nmap <leader>hl <Action>(HighlightUsagesInFile)
+nmap <leader>qp <Action>(QuickPreview)
+nmap <leader>qd <Action>(QuickDefinition)
+nmap <leader>qD <Action>(QuickTypeDefinition)
 
-" Tab navigation
-nnoremap <A-n> :tabnext<CR>
-nnoremap <A-p> :tabprev<CR>
-
-" Pane navigation
-nnoremap <A-h> <C-w>h
-nnoremap <A-l> <C-w>l
-nnoremap <A-k> <C-w>k
-nnoremap <A-j> <C-w>j
-
-" Jump between methods
-nnoremap [[ <Action>(MethodUp)
-nnoremap ]] <Action>(MethodDown)
-
-" Easy visual indentation
-vnoremap < <gv
-vnoremap > >gv
-
-" Execute macro saved in 'q' register
-nnoremap qj @q
-
-" Popup navigation
-inoremap <C-j> <Action>(PopupMenu-selectNext)
-inoremap <C-k> <Action>(PopupMenu-selectPrev)
-
-
-"" Leader commands
-"" ========================================================
-
-" Comment lines
-map <leader>c <action>(CommentByLineComment)
-
-" Jump around with easymotion
-map <leader>j <Plug>(easymotion-s)
-
-" Open NERDTree (use q to exit)
-map <leader>x :NERDTreeToggle<CR>
-
-" Folding
-map <leader>zc :action CollapseAllRegions<CR>
-map <leader>zo :action ExpandAllRegions<CR>
-
-" Window splits
-map <leader>wv <Action>(SplitVertically)
-map <leader>ws <Action>(SplitHorizontally)
-map <leader>wu <Action>(Unsplit)
-map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
-
-" Display options
-map <leader>dd <action>(ToggleDistractionFreeMode)
-map <leader>dz <action>(ToggleZenMode)
-map <leader>df <action>(ToggleFullScreen)
-
-" Actions
-map <leader>am <action>(ShowIntentionActions)
-map <leader>as <action>(SearchEverywhere)
-
-" File navigation
-map <leader>ff <action>(GotoFile)
-map <leader>fr <action>(RecentFiles)
-map <leader>fc <action>(FindInPath)
-map <leader><leader> <Action>(RecentFiles)
-map <leader>fl <action>(RecentLocations)
-map <leader>fs <action>(NewScratchFile)
-
-" Close active tab
-map <leader>q <action>(CloseContent)
-
-" Refactoring
-map <leader>rn <Action>(RenameElement)
-map <leader>rm <Action>(ExtractMethod)
-map <leader>rv <Action>(IntroduceVariable)
-map <leader>rf <Action>(IntroduceField)
-map <leader>rs <Action>(ChangeSignature)
-map <leader>rr <Action>(Refactorings.QuickListPopupAction)
-
-" Go to code
-nmap <leader>gd <Action>(GotoDeclaration)
-nmap <leader>gy <Action>(GotoTypeDeclaration)
-nmap <leader>gi <Action>(GotoImplementation)
-nmap <leader>gu <Action>(ShowUsages)
+" code
+nmap <leader>qf <Action>(ShowIntentionActions)
+nmap <leader>se <Action>(ShowErrorDescription)
+nmap <leader>om <Action>(OverrideMethods)
+nmap <leader>im <Action>(ImplementMethods)
+nmap <leader>ic <Action>(InspectCode)
+nmap <leader>so <Action>(SelectAllOccurrences)
+nmap <leader>gc <Action>(Generate)
 nmap <leader>gt <Action>(GotoTest)
-nmap <leader>gf <Action>(Back)
-nmap <leader>gb <Action>(Forward)
 
-" Git windows
-map <leader>gc <Action>(CheckinProject)
-map <leader>gs <Action>(ActivateVersionControlToolWindow)
-map <leader>gb <Action>(Git.Branches)
+" run
+nmap <leader>rc <Action>(ContextRun)
+nmap <leader>rx <Action>(chooseRunConfiguration)
+nmap <leader>rr <Action>(Rerun)
+nmap <leader>rt <Action>(RunTests)
+nmap <leader>rs <Action>(Stop)
 
-" Errors
-map <leader>en <Action>(ReSharperGotoNextErrorInSolution)
-map <leader>ep <Action>(ReSharperGotoPrevErrorInSolution)
+" debug
+nmap <leader>dc <Action>(ContextDebug)
+nmap <leader>dx <Action>(Debug)
+nmap <leader>db <Action>(ToggleLineBreakpoint)
+nmap <leader>de <Action>(EditBreakpoint)
+nmap <leader>dv <Action>(ViewBreakpoints)
+
+" build
+nmap <leader>bb <Action>(BuildMenu)
+
+" refactor
+nmap <leader>cr <Action>(RenameElement)
+nmap <leader>re <Action>(Refactorings.QuickListPopupAction)
+nmap <leader>uw <Action>(Unwrap)
+nmap <leader>sw <Action>(SurroundWith)
+nmap <leader>sd <Action>(SafeDelete)
+
+" collapse
+nmap zc <Action>(ExpandCollapseToggleAction)
+nmap za <Action>(CollapseAllRegions)
+nmap zA <Action>(ExpandAllRegions)
+
+
+" []
+nmap [b <Action>(PreviousTab)
+nmap ]b <Action>(NextTab)
+nmap [g <Action>(GotoPreviousError)
+nmap ]g <Action>(GotoNextError)
+nmap [u <Action>(GotoPrevElementUnderCaretUsage)
+nmap ]u <Action>(GotoNextElementUnderCaretUsage)
+nmap [o <Action>(PreviousOccurence)
+nmap ]o <Action>(NextOccurence)
+nmap [m <Action>(MethodUp)
+nmap ]m <Action>(MethodDown)
+nmap [c <Action>(JumpToLastChange)
+nmap ]c <Action>(JumpToNextChange)
+
+" goto
+nmap <Leader>ca :action ShowIntentionActions<CR>
+nmap ga <Action>(GotoAction)
+nmap gc <Action>(GotoClass)
+nmap gf <Action>(GotoFile)
+nmap gs <Action>(GotoSymbol)
+nmap gt <Action>(GotoTest)
+nmap gT <Action>(TextSearchAction)
+nmap go <Action>(GotoSuperMethod)
+nmap gd <Action>(GotoDeclaration)
+nmap gD <Action>(GotoTypeDeclaration)
+nmap gi <Action>(GotoImplementation)
+nmap gI <Action>(QuickImplementations)
+nmap gn <Action>(ShowNavBar)
+
+" terminal
+nmap <leader>t <Action>(ActivateTerminalToolWindow)
+
+" bookmark
+nmap mm <Action>(ToggleBookmark)
+nmap ms <Action>(ShowBookmarks)
+
+" todo
+nmap <leader>to <Action>(ActivateTODOToolWindow)
+
+" task
+nmap <leader>ts <Action>(tasks.goto)
+
+" idea join
+nmap \\jl <Action>(EditorJoinLines)
+
+" gist
+nmap \\cg <Action>(Github.Create.Gist)
+
+" open IdeaVim settings
+nmap \\v <Action>(VimActions)
+
+" text-object (bundle plugin)
+set vim-paragraph-motion
+set textobj-indent
+set textobj-entire
+set argtextobj
+
+" jump-motion (required idea plugin: IdeaVim-EasyMotion, AceJump)
+set easymotion
+
+" highlight yank (bundle plugin)
+set highlightedyank
+let g:highlightedyank_highlight_duration = "100"
+let g:highlightedyank_highlight_color = "rgba(57, 197, 187, 155)"
+
+" translation (required idea plugin: Translation)
+nmap \\tt <Action>($ShowTranslationDialogAction)
+nmap \\ts <Action>($TranslateTextComponent)
+nmap \\ti <Action>($InclusiveTranslateAction)
+nmap \\te <Action>($ExclusiveTranslateAction)
+
+" string manipulate (required idea plugin: String Manipulation)
+nmap <leader>ss <Action>(osmedile.intellij.stringmanip.PopupChoiceAction)
+
+" code screenshot (required idea plugin: Code Screenshots)
+nmap <leader>cs <Action>(one.util.ideaplugin.screenshoter.CopyImageAction)
+
+nnoremap - :NERDTree<CR>
+nmap <Leader>- :NERDTreeToggle<CR>
+
+" surround (bundle plugin)
+" usage: https://github.com/tpope/vim-surround
+set surround
+
+" exchange (bundle plugin)
+" usage: https://github.com/tommcdo/vim-exchange
+set exchange
+
+" nerdtree (bundle plugin)
+set NERDTree
+
+" replace with register (bundle plugin)
+" usage: https://github.com/vim-scripts/ReplaceWithRegister
+set ReplaceWithRegister
+
+set commentary
+
+" continuous shift
+xnoremap < <gv
+xnoremap > >gv
+
+" alias
+nmap <C-a> ggVG"+y
 
