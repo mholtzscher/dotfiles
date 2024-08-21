@@ -42,10 +42,15 @@ return {
     opts = {},
   },
   {
+    "dgox16/oldworld.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "eldritch",
-      colorscheme = "catppuccin-mocha",
+      colorscheme = "oldworld",
     },
   },
 }
