@@ -15,3 +15,13 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
+[include]
+  path = ~/catppuccin.gitconfig
+
+[delta]
+  features = catppuccin-mocha
+
+[core]
+    pager = delta
+
