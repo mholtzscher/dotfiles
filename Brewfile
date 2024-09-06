@@ -29,6 +29,7 @@ brew "tmux"
 brew "tpm"
 brew "watch"
 brew "yq"
+brew "zellij"
 brew "zoxide"
 
 # developer tools
