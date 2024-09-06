@@ -127,7 +127,7 @@ keybinds clear-defaults=true {
     }
     tmux {
         bind "[" { SwitchToMode "Scroll"; }
-        bind "Ctrl a" { Write 2; SwitchToMode "Normal"; }
+        bind "Ctrl Space" { Write 2; SwitchToMode "Normal"; }
         bind "\"" { NewPane "Down"; SwitchToMode "Normal"; }
         bind "%" { NewPane "Right"; SwitchToMode "Normal"; }
         bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
@@ -235,7 +235,7 @@ keybinds clear-defaults=true {
         bind "Alt m" { SwitchToMode "Move"; }
     }
     shared_except "tmux" "locked" {
-        bind "Ctrl a" { SwitchToMode "Tmux"; }
+        bind "Ctrl Space" { SwitchToMode "Tmux"; }
     }
 }
 
