@@ -16,7 +16,7 @@ function galactus() {
     --align center --width 50 --margin "1 2" --padding "2 4" \
     'Behold Galactus, the Devourer of Worlds!'
   gum format "Choose your configuration weapon:"
-  CATEGORY=$(gum choose "all" "asdf" "brew" "go" "lua" "mas" "nodejs" "python" "rust" "tpm" "xcode" "zinit")
+  CATEGORY=$(gum choose "all" "asdf" "brew" "go" "lua" "mas" "neovim" "nodejs" "python" "rust" "tpm" "xcode" "zinit")
 
   if [[ $CATEGORY == "asdf" ]] || [[ $CATEGORY == "all" ]]; then
     echo "Installing asdf plugin java..."
@@ -98,6 +98,11 @@ function galactus() {
   if [[ $CATEGORY == "mas" ]] || [[ $CATEGORY == "all" ]]; then
     echo "Installing Mac App Store apps..."
     brew bundle --no-lock --file=~/Brewfile-mas
+  fi
+
+  if [[ $CATEGORY == "neovim" ]] || [[ $CATEGORY == "all" ]]; then
+    echo "Installing neovim plugins..."
+    nvim --headless "+Lazy! sync" +qa
   fi
 
   if [[ $CATEGORY == "nodejs" ]] || [[ $CATEGORY == "all" ]]; then
