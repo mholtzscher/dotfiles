@@ -174,3 +174,10 @@ function test() {
     echo "Neither go.mod nor build.gradle found in the current directory."
   fi
 }
+
+awslogs() {
+  set -e
+  export AWS_PROFILE=$(cat ~/.aws/config | awk '/^\[profile /{print $2}' | tr -d ']' | fzf)
+  local log_group=$(aws logs describe-log-groups | jq -r '.logGroups[].logGroupName' | fzf)
+  aws logs tail "$log_group" --since 3h --follow --format=short
+}
