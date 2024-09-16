@@ -1,7 +1,7 @@
 function aws_change_profile --description 'Change the AWS profile and login to SSO'
     set -l profile
 
-    if test -z "$argv[1]"
+    if test -z $argv[1]
         if command -v fzf >/dev/null 2>&1
             set profile (aws configure list-profiles | fzf)
             and set -gx AWS_PROFILE "$profile"
