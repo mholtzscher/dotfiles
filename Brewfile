@@ -6,6 +6,7 @@ brew "go"
 # cli utilities
 brew "atuin"
 brew "bat"
+brew "bottom"
 brew "dust"
 brew "fd"
 brew "fish"
@@ -47,12 +48,8 @@ brew "lazygit"
 brew "neovim"
 brew "sops"
 
-tap "jorgerojas26/lazysql"
-brew "lazysql"
-
 # misc
 cask "bartender"
-brew "bottom"
 brew "chezmoi"
 cask "deskpad"
 brew "hugo"
@@ -61,10 +58,6 @@ brew "slides"
 
 tap "teamookla/speedtest"
 brew "speedtest"
-
-tap "nats-io/nats-tools"
-brew "nats-io/nats-tools/nats"
-brew "nats-server"
 
 # font
 cask "font-jetbrains-mono-nerd-font"
