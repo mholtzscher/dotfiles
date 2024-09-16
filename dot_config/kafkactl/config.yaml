@@ -1,13 +1,5 @@
 contexts:
-    default:
-        brokers:
-            - localhost:9092
-    dev:
-        brokers:
-            - my-cluster-kafka-bootstrap.kafka:9092
-        kubernetes:
-            binary: kubectl
-            enabled: false
-            kubecontext: dev-a-us-east-1-eks-B1iELtT9
-            namespace: default
-current-context: dev
+  default:
+    brokers:
+      - localhost:9092
+current-context: default
