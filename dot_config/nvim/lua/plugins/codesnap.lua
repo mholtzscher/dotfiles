@@ -13,7 +13,7 @@ return {
         has_breadcrumbs = true,
         bg_theme = "grape",
         code_font_family = "Iosevka Nerd Font Mono",
-        watermark = "I use NeoVIM, BTW",
+        watermark = "",
       })
     end,
   },
