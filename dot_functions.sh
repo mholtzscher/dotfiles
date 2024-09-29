@@ -1,4 +1,3 @@
-# TODO: add fisher
 function galactus() {
   if ! command -v brew >/dev/null 2>&1; then
     echo "Homebrew is not in PATH"
