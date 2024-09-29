@@ -4,4 +4,6 @@ function update --description "Update all the things"
 
     gum log --time kitchen --level info "Updating neovim plugins"
     nvim --headless "+Lazy! sync" +qa
+
+    gum log --time kitchen --level info Finished
 end

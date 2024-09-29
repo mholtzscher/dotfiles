@@ -26,9 +26,6 @@ function galactus() {
     echo "Installing asdf plugin nodejs..."
     asdf plugin add nodejs
 
-    echo "Installing asdf plugin go..."
-    asdf plugin add golang
-
     echo "Installing asdf plugin python..."
     asdf plugin add python
 
@@ -37,12 +34,6 @@ function galactus() {
 
     echo "Installing asdf plugin rust..."
     asdf plugin add rust
-
-    echo "Installing asdf plugin gleam..."
-    asdf plugin add gleam
-
-    echo "Installing asdf plugin erlang..."
-    asdf plugin add erlang
 
     echo "Installing asdf plugin lua..."
     asdf plugin add lua
