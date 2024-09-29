@@ -52,8 +52,3 @@ chezmoi apply
 ```sh
 galactus
 ```
-
-## Theming
-
-1. Set font in Warp
-1. Set theme in Warp
