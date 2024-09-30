@@ -10,15 +10,11 @@ function galactus() {
     xcode-select --install
   fi
 
-  if [[ $CATEGORY == "tpm" ]] || [[ $CATEGORY == "all" ]]; then
-    echo "Updating tpm plugins..."
-    ~/.config/tmux/plugins/tpm/bin/update_plugins all
-  fi
+  echo "Updating tpm plugins..."
+  ~/.config/tmux/plugins/tpm/bin/update_plugins all
 
-  if [[ $CATEGORY == "zinit" ]] || [[ $CATEGORY == "all" ]]; then
-    echo "Updating zinit plugins..."
-    zinit update
-  fi
+  echo "Updating zinit plugins..."
+  zinit update
 
   echo "Sourcing zshrc..."
   source ~/.zshrc
