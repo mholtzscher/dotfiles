@@ -65,10 +65,12 @@ sso_region = us-west-2
 
 [profile m3p_uat]
 region = us-west-2
+output = json
+sso_session = paytient
 sso_start_url = https://d-926779fa6e.awsapps.com/start
-sso_region = us-west-2
 sso_account_id = 590183679435
 sso_role_name = PaytientNonProdAccess
+sso_region = us-west-2
 
 [profile localstack]
 region = us-east-1

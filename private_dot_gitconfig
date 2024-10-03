@@ -1,9 +1,9 @@
-[gpg]
-	format = ssh
-[gpg "ssh"]
-	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
-[commit]
-	gpgsign = true
+; [gpg]
+; 	format = ssh
+; [gpg "ssh"]
+; 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+; [commit]
+; 	gpgsign = true
 [user]
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILyAn4X7ZQUyU7DQYHjQ4qccecA2r6ekk+jS1gjBfWAi
 	name = Michael Holtzscher
