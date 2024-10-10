@@ -51,12 +51,30 @@
           security.pam.enableSudoTouchIdAuth = true;
 
           system.defaults = {
-            dock.autohide = true;
+            dock.autohide = false;
+            dock.tilesize = 48;
+            dock.show-recents = false;
+            dock.orientation = "bottom";
+            dock.minimize-to-application = true;
+            screencapture.location = "~/Library/Mobile Documents/com~apple~CloudDocs/ScreenShots";
             finder.FXPreferredViewStyle = "clmv";
             loginwindow.GuestEnabled = false;
             NSGlobalDomain.AppleInterfaceStyle = "Dark";
             NSGlobalDomain.KeyRepeat = 2;
             NSGlobalDomain.InitialKeyRepeat = 15;
+
+            dock.persistent-apps = [
+              "/Applications/Arc.app"
+              "/System/Applications/Messages.app"
+              "/Applications/WhatsApp.app"
+              "/Applications/Discord.app"
+              "/Applications/1Password.app"
+              "/Applications/WezTerm.app"
+              "/System/Applications/Mail.app"
+              "/System/Applications/Calendar.app"
+              "/System/Applications/Music.app"
+              "/System/Applications/News.app"
+            ];
           };
         };
     in
