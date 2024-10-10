@@ -52,6 +52,9 @@
 
           system.defaults = {
             dock.autohide = true;
+            finder.FXPreferredViewStyle = "clmv";
+            loginwindow.GuestEnabled = false;
+            NSGlobalDomain.AppleInterfaceStyle = "Dark";
             NSGlobalDomain.KeyRepeat = 2;
             NSGlobalDomain.InitialKeyRepeat = 15;
           };
