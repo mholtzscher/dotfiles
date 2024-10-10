@@ -5,5 +5,5 @@ function work-add --description "Add a git worktree"
     end
 
     set branch_name $argv[1]
-    git worktree add ../$branch_name
+    git worktree add $branch_name
 end
