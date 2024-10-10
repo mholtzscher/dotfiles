@@ -20,9 +20,11 @@
           # List packages installed in system profile. To search by name, run:
           # $ nix-env -qaP | grep wget
           environment.systemPackages = [
+            pkgs.nixfmt-rfc-style
+            pkgs.neovim
             pkgs.vim
             pkgs.wezterm
-            pkgs.nixfmt-rfc-style
+            pkgs.zellij
           ];
 
           # Auto upgrade nix package and the daemon service.
@@ -45,6 +47,14 @@
 
           # The platform the configuration will be used on.
           nixpkgs.hostPlatform = "aarch64-darwin";
+
+          security.pam.enableSudoTouchIdAuth = true;
+
+          system.defaults = {
+            dock.autohide = true;
+            NSGlobalDomain.KeyRepeat = 2;
+            NSGlobalDomain.InitialKeyRepeat = 15;
+          };
         };
     in
     {
