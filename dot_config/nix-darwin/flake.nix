@@ -23,23 +23,71 @@
           # List packages installed in system profile. To search by name, run:
           # $ nix-env -qaP | grep wget
           environment.systemPackages = [
+            pkgs.asdf
+            pkgs.atuin
+            pkgs.bat
+            pkgs.bottom
+            pkgs.buf
+            pkgs.chezmoi
+            pkgs.dive
+            pkgs.docker
+            pkgs.dust
+            pkgs.fd
+            pkgs.fish
+            pkgs.fzf
+            pkgs.gh
+            pkgs.gnused
+            pkgs.grpcurl
+            pkgs.hey
+            pkgs.httpie
+            pkgs.jc
+            pkgs.jq
+            pkgs.k9s
+            pkgs.ko
+            pkgs.kubernetes-helm
+            pkgs.lazygit
+            pkgs.lsd
             pkgs.mkalias
             pkgs.nixfmt-rfc-style
             pkgs.neovim
             pkgs.obsidian
+            pkgs.ripgrep
+            pkgs.rm-improved
+            pkgs.slack
+            pkgs.sops
+            pkgs.starship
+            pkgs.tldr
             pkgs.vim
+            pkgs.vscode
             pkgs.wezterm
+            pkgs.yq
             pkgs.zellij
+            pkgs.zoxide
           ];
 
           homebrew = {
             enable = true;
             brews = [
+              "awscli"
+              "go"
+              "gum"
+              "hugo"
               "mas"
+              "slides"
+              "thefuck"
+              "watch"
             ];
-            casks =
-              [
-              ];
+            casks = [
+              "1password"
+              "1password-cli"
+              "arc"
+              "bartender"
+              "deskpad"
+              "intellij-idea"
+              "nightfall"
+              "postman"
+              "raycast"
+            ];
             masApps = {
               "In Your Face" = 1476964367;
               "WhatsApp" = 310633997;
@@ -49,7 +97,7 @@
               "Hazeover" = 430798174;
               "Postico" = 6446933691;
             };
-            # onActivation.cleanup = "zap";
+            onActivation.cleanup = "zap";
           };
 
           # Auto upgrade nix package and the daemon service.
