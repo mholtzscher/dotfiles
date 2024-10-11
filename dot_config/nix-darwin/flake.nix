@@ -23,7 +23,6 @@
           # List packages installed in system profile. To search by name, run:
           # $ nix-env -qaP | grep wget
           environment.systemPackages = [
-            pkgs.asdf
             pkgs.atuin
             pkgs.bat
             pkgs.bottom
@@ -68,6 +67,7 @@
           homebrew = {
             enable = true;
             brews = [
+              "asdf"
               "awscli"
               "go"
               "gum"
@@ -145,8 +145,11 @@
               "/System/Applications/Messages.app"
               "/Applications/WhatsApp.app"
               "/Applications/Discord.app"
+              "${pkgs.slack}/Applications/Slack.app"
               "/Applications/1Password.app"
               "${pkgs.wezterm}/Applications/WezTerm.app"
+              "/Applications/Postico.app"
+              "/Applications/IntelliJ IDEA.app"
               "/System/Applications/Mail.app"
               "/System/Applications/Calendar.app"
               "/System/Applications/Music.app"
