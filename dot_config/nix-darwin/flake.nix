@@ -5,6 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
   outputs =
@@ -12,6 +13,7 @@
       self,
       nix-darwin,
       nixpkgs,
+      nix-homebrew,
     }:
     let
       configuration =
@@ -20,12 +22,33 @@
           # List packages installed in system profile. To search by name, run:
           # $ nix-env -qaP | grep wget
           environment.systemPackages = [
+            pkgs.mkalias
             pkgs.nixfmt-rfc-style
             pkgs.neovim
             pkgs.vim
             pkgs.wezterm
             pkgs.zellij
           ];
+
+          homebrew = {
+            enable = true;
+            brews = [
+              "mas"
+            ];
+            casks =
+              [
+              ];
+            masApps = {
+              "In Your Face" = 1476964367;
+              "WhatsApp" = 310633997;
+              "Microsoft Remote Desktop" = 1295203466;
+              "Numbers" = 409203825;
+              "Better Snap Tool" = 417375580;
+              "Hazeover" = 430798174;
+              "Postico" = 6446933691;
+            };
+            # onActivation.cleanup = "zap";
+          };
 
           # Auto upgrade nix package and the daemon service.
           services.nix-daemon.enable = true;
@@ -107,7 +130,21 @@
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#Michaels-M1-Max
       darwinConfigurations."Michaels-M1-Max" = nix-darwin.lib.darwinSystem {
-        modules = [ configuration ];
+        modules = [
+          configuration
+          nix-homebrew.darwinModules.nix-homebrew
+          {
+            nix-homebrew = {
+              enable = true;
+              # Apple Silicon Only
+              enableRosetta = true;
+              # User owning the Homebrew prefix
+              user = "michael";
+
+              autoMigrate = true;
+            };
+          }
+        ];
       };
 
       # Expose the package set, including overlays, for convenience.
