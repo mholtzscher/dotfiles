@@ -48,6 +48,10 @@
           # The platform the configuration will be used on.
           nixpkgs.hostPlatform = "aarch64-darwin";
 
+          fonts.packages = [
+            (pkgs.nerdfonts.override { fonts = [ "Iosevka" ]; })
+          ];
+
           security.pam.enableSudoTouchIdAuth = true;
 
           system.defaults = {
