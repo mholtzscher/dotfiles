@@ -66,14 +66,92 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  imports = [
+    ./git.nix
+  ];
+
   programs = {
-    git = {
+    # git = {
+    #   enable = true;
+    #   userName = "Michael Holtzscher";
+    #   userEmail = "michael@holtzscher.com";
+    #   signing.key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILyAn4X7ZQUyU7DQYHjQ4qccecA2r6ekk+jS1gjBfWAi";
+    #   signing.signByDefault = true;
+    #   lfs.enable = true;
+    #   delta.enable = true;
+    #   includes = [ { path = ./themes/catppuccin.gitconfig; } ];
+    # };
+
+    atuin = {
       enable = true;
-      userName = "Michael Holtzscher";
-      userEmail = "michael@holtzscher.com";
-      lfs.enable = true;
-      delta.enable = true;
+      enableZshIntegration = true;
+      enableFishIntegration = true;
+      settings = {
+        sync_address = "https://atuin.holtzscher.com";
+      };
     };
+
+    bat = {
+      enable = true;
+      config = {
+        theme = "catppuccin-mocha";
+      };
+      themes = {
+        catppuccin-mocha = {
+          src = pkgs.fetchFromGitHub {
+            owner = "catppuccin";
+            repo = "bat";
+            rev = "d714cc1d358ea51bfc02550dabab693f70cccea0";
+            sha256 = "sha256-Q5B4NDrfCIK3UAMs94vdXnR42k4AXCqZz6sRn8bzmf4=";
+          };
+          file = "themes/Catppuccin Mocha.tmTheme";
+        };
+      };
+    };
+
+    bottom = {
+      enable = true;
+      settings = {
+        colors = {
+          table_header_color = "#f5e0dc";
+          all_cpu_color = "#f5e0dc";
+          avg_cpu_color = "#eba0ac";
+          cpu_core_colors = [
+            "#f38ba8"
+            "#fab387"
+            "#f9e2af"
+            "#a6e3a1"
+            "#74c7ec"
+            "#cba6f7"
+          ];
+          ram_color = "#a6e3a1";
+          swap_color = "#fab387";
+          rx_color = "#a6e3a1";
+          tx_color = "#f38ba8";
+          widget_title_color = "#f2cdcd";
+          border_color = "#585b70";
+          highlighted_border_color = "#f5c2e7";
+          text_color = "#cdd6f4";
+          graph_color = "#a6adc8";
+          cursor_color = "#f5c2e7";
+          selected_text_color = "#11111b";
+          selected_bg_color = "#cba6f7";
+          high_battery_color = "#a6e3a1";
+          medium_battery_color = "#f9e2af";
+          low_battery_color = "#f38ba8";
+          gpu_core_colors = [
+            "#74c7ec"
+            "#cba6f7"
+            "#f38ba8"
+            "#fab387"
+            "#f9e2af"
+            "#a6e3a1"
+          ];
+          arc_color = "#89dceb";
+        };
+      };
+    };
+
     # fish = {
     #   enable = true;
     #   # enableCompletions = true;
