@@ -18,9 +18,9 @@
 [include]
   path = ~/catppuccin.gitconfig
 
-[delta]
-  features = catppuccin-mocha
-
-[core]
-    pager = delta
+; [delta]
+;   features = catppuccin-mocha
+;
+; [core]
+;     pager = delta
 

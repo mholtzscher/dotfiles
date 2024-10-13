@@ -60,9 +60,24 @@
   #
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs = {
+    git = {
+      enable = true;
+      userName = "Michael Holtzscher";
+      userEmail = "michael@holtzscher.com";
+      lfs.enable = true;
+      delta.enable = true;
+    };
+    # fish = {
+    #   enable = true;
+    #   # enableCompletions = true;
+    #   # enableSyntaxHighlighting = true;
+    # };
+  };
 }
