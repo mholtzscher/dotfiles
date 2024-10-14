@@ -38,6 +38,7 @@
             pkgs.bottom
             pkgs.buf
             pkgs.chezmoi
+            pkgs.discord
             pkgs.dive
             pkgs.docker
             pkgs.dust
@@ -154,7 +155,7 @@
               "/Applications/Arc.app"
               "/System/Applications/Messages.app"
               "/Applications/WhatsApp.app"
-              "/Applications/Discord.app"
+              "${pkgs.discord}/Applications/Discord.app"
               "${pkgs.slack}/Applications/Slack.app"
               "/Applications/1Password.app"
               "${pkgs.wezterm}/Applications/WezTerm.app"
