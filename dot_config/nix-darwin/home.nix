@@ -188,25 +188,6 @@
       };
     };
 
-    ssh = {
-      enable = true;
-      matchBlocks = {
-        # "*" = {
-        #   identityAgent = "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock";
-        # };
-        "mina-nas" = {
-          identityFile = "${config.home.homeDirectory}/.ssh/mina-nas-id_ed25519.pub";
-          hostname = "10.69.69.156";
-          user = "root";
-        };
-        "max-nas" = {
-          identityFile = "${config.home.homeDirectory}/.ssh/max-nas-id_ed25519.pub";
-          hostname = "10.69.69.186";
-          user = "root";
-        };
-      };
-    };
-
     # fish = {
     #   enable = true;
     #   # enableCompletions = true;
