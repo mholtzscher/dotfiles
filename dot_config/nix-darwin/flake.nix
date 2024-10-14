@@ -40,7 +40,6 @@
             pkgs.chezmoi
             pkgs.discord
             pkgs.dive
-            pkgs.docker
             pkgs.dust
             pkgs.fd
             pkgs.fish
@@ -94,6 +93,7 @@
               "arc"
               "bartender"
               "deskpad"
+              "docker"
               "intellij-idea"
               "nightfall"
               "postman"

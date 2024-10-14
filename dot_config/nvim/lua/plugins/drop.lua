@@ -1,4 +1,4 @@
 return {
-  "folke/drop.nvim",
-  opts = {},
+  -- "folke/drop.nvim",
+  -- opts = {},
 }
