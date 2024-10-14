@@ -1,9 +1,10 @@
 function update --description "Update all the things"
-    _homebrew
-    _neovim_plugins
-    _fisher_plugins
-    _asdf_plugins
-    _go_tools
+    #_homebrew
+    #_neovim_plugins
+    #_fisher_plugins
+    #_asdf_plugins
+    #_go_tools
+    darwin-rebuild switch --flake ~/.config/nix-darwin
 
     gum log --time kitchen --level info Finished
 end

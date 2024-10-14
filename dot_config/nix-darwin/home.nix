@@ -47,6 +47,7 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    ".ssh/config".source = ./dotfiles/ssh-config;
   };
 
   # You can also manage environment variables but you will have to manually
@@ -183,6 +184,25 @@
           unstagedChangesColor = [ "#f38ba8" ];
           defaultFgColor = [ "#cdd6f4" ];
           searchingActiveBorderColor = [ "#f9e2af" ];
+        };
+      };
+    };
+
+    ssh = {
+      enable = true;
+      matchBlocks = {
+        # "*" = {
+        #   identityAgent = "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock";
+        # };
+        "mina-nas" = {
+          identityFile = "${config.home.homeDirectory}/.ssh/mina-nas-id_ed25519.pub";
+          hostname = "10.69.69.156";
+          user = "root";
+        };
+        "max-nas" = {
+          identityFile = "${config.home.homeDirectory}/.ssh/max-nas-id_ed25519.pub";
+          hostname = "10.69.69.186";
+          user = "root";
         };
       };
     };
