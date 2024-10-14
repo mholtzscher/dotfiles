@@ -26,6 +26,10 @@
             name = "michael";
             home = "/Users/michael";
           };
+          users.users.michaelholtzcher = {
+            name = "michaelholtzcher";
+            home = "/Users/michaelholtzcher";
+          };
 
           nixpkgs.config.allowUnfree = true;
           environment.systemPackages = [
@@ -188,32 +192,61 @@
     {
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#Michaels-M1-Max
-      darwinConfigurations."Michaels-M1-Max" = nix-darwin.lib.darwinSystem {
-        modules = [
-          configuration
-          nix-homebrew.darwinModules.nix-homebrew
-          {
-            nix-homebrew = {
-              enable = true;
-              # Apple Silicon Only
-              enableRosetta = true;
-              # User owning the Homebrew prefix
-              user = "michael";
+      darwinConfigurations = {
+        "Michaels-M1-Max" = nix-darwin.lib.darwinSystem {
+          modules = [
+            configuration
+            nix-homebrew.darwinModules.nix-homebrew
+            {
+              nix-homebrew = {
+                enable = true;
+                # Apple Silicon Only
+                enableRosetta = true;
+                # User owning the Homebrew prefix
+                user = "michael";
 
-              autoMigrate = true;
-            };
-          }
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
-            home-manager.users.michael = import ./home.nix;
+                autoMigrate = true;
+              };
+            }
+            home-manager.darwinModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
+              home-manager.users.michael = import ./home.nix;
 
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
-          }
-        ];
+              # Optionally, use home-manager.extraSpecialArgs to pass
+              # arguments to home.nix
+            }
+          ];
+        };
+        "Michaels-MacBook-Pro" = nix-darwin.lib.darwinSystem {
+          modules = [
+            configuration
+            nix-homebrew.darwinModules.nix-homebrew
+            {
+              nix-homebrew = {
+                enable = true;
+                # Apple Silicon Only
+                enableRosetta = true;
+                # User owning the Homebrew prefix
+                user = "michaelholtzcher";
+
+                autoMigrate = true;
+              };
+            }
+            home-manager.darwinModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
+              home-manager.users.michaelholtzcher = import ./home.nix;
+
+              # Optionally, use home-manager.extraSpecialArgs to pass
+              # arguments to home.nix
+            }
+          ];
+        };
       };
 
       # Expose the package set, including overlays, for convenience.
