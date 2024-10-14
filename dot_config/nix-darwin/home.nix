@@ -74,8 +74,6 @@
   programs = {
     atuin = {
       enable = true;
-      enableZshIntegration = true;
-      enableFishIntegration = true;
       settings = {
         sync_address = "https://atuin.holtzscher.com";
       };
@@ -177,10 +175,8 @@
       };
     };
 
-    # fish = {
-    #   enable = true;
-    #   # enableCompletions = true;
-    #   # enableSyntaxHighlighting = true;
-    # };
+    fish = {
+      enable = true;
+    };
   };
 }
