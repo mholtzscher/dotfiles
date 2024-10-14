@@ -179,5 +179,9 @@
     fish = {
       enable = true;
     };
+
+    zoxide = {
+      enable = true;
+    };
   };
 }
