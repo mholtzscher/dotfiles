@@ -141,6 +141,10 @@
       };
     };
 
+    fzf = {
+      enable = true;
+    };
+
     k9s = {
       enable = true;
       settings = {
