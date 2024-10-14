@@ -182,6 +182,10 @@
 
     fish = {
       enable = true;
+      shellAbbrs = {
+        sso = "aws_change_profile";
+        build = "gradle build --parallel";
+      };
     };
 
     zoxide = {
