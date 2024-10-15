@@ -4,7 +4,6 @@ function update --description "Update all the things"
     #_fisher_plugins
     #_asdf_plugins
     #_go_tools
-    darwin-rebuild switch --flake ~/.config/nix-darwin
 
     gum log --time kitchen --level info Finished
 end

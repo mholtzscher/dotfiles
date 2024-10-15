@@ -185,6 +185,7 @@
       shellAbbrs = {
         sso = "aws_change_profile";
         build = "gradle build --parallel";
+        nu = "darwin-rebuild switch --flake ~/.config/nix-darwin";
       };
     };
 
