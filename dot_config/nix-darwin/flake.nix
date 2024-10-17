@@ -142,7 +142,7 @@
             dock.autohide = false;
             dock.tilesize = 48;
             dock.show-recents = false;
-            dock.orientation = "bottom";
+            dock.orientation = "right";
             dock.minimize-to-application = true;
             screencapture.location = "~/Library/Mobile Documents/com~apple~CloudDocs/ScreenShots";
             finder.FXPreferredViewStyle = "clmv";
