@@ -199,6 +199,10 @@
         if status --is-interactive && type -q asdf
             source (brew --prefix asdf)/libexec/asdf.fish
         end
+
+        for kubeconfigFile in (fd -e yml -e yaml . "$HOME/.kube")
+            set -gx KUBECONFIG "$kubeconfigFile:$KUBECONFIG"
+        end
       '';
     };
 
