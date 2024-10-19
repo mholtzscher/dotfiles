@@ -141,6 +141,10 @@
       };
     };
 
+    fd = {
+      enable = true;
+    };
+
     fzf = {
       enable = true;
     };
