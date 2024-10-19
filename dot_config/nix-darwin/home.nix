@@ -48,7 +48,7 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
     ".ssh/config".source = ./dotfiles/ssh-config;
-    ".config/zellij/conig.kdl".source = ./dotfiles/zellij.kdl;
+    ".config/zellij/config.kdl".source = ./dotfiles/zellij.kdl;
     ".asdfrc".source = ./dotfiles/asdfrc;
     ".config/kafkactl/config.yml".source = ./dotfiles/kafkactl.yaml;
     ".config/1Password/ssh/agent.toml".source = ./dotfiles/1password-agent.toml;
@@ -207,6 +207,32 @@
         for kubeconfigFile in (fd -e yml -e yaml . "$HOME/.kube")
             set -gx KUBECONFIG "$kubeconfigFile:$KUBECONFIG"
         end
+      '';
+    };
+
+    wezterm = {
+      enable = true;
+      extraConfig = ''
+        -- Pull in the wezterm API
+        local wezterm = require("wezterm")
+
+        -- This will hold the configuration.
+        local config = wezterm.config_builder()
+
+        -- Appearance
+        config.color_scheme = "Catppuccin Mocha"
+        config.hide_tab_bar_if_only_one_tab = true
+        config.font = wezterm.font("Iosevka Nerd Font")
+        config.font_size = 13.0
+
+        config.initial_cols = 200
+        config.initial_rows = 35
+
+        -- https://github.com/wez/wezterm/issues/5990
+        config.front_end = "WebGpu"
+
+        -- and finally, return the configuration to wezterm
+        return config
       '';
     };
 
