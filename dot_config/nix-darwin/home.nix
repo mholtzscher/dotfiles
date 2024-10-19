@@ -49,6 +49,8 @@
     # '';
     ".ssh/config".source = ./dotfiles/ssh-config;
     ".config/zellij/conig.kdl".source = ./dotfiles/zellij.kdl;
+    ".asdfrc".source = ./dotfiles/asdfrc;
+    ".config/kafkactl/config.yml".source = ./dotfiles/kafkactl.yaml;
   };
 
   # You can also manage environment variables but you will have to manually
