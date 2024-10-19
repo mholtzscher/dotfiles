@@ -190,7 +190,16 @@
         sso = "aws_change_profile";
         build = "gradle build --parallel";
         nu = "darwin-rebuild switch --flake ~/.config/nix-darwin";
+
       };
+      interactiveShellInit = ''
+        fish_add_path "$ASDF_DIR/bin"
+        fish_add_path "$HOME/.asdf/shims"
+
+        if status --is-interactive && type -q asdf
+            source (brew --prefix asdf)/libexec/asdf.fish
+        end
+      '';
     };
 
     zoxide = {
