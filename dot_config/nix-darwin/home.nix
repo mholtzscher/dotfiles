@@ -48,6 +48,7 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
     ".ssh/config".source = ./dotfiles/ssh-config;
+    ".config/zellij/conig.kdl".source = ./dotfiles/zellij.kdl;
   };
 
   # You can also manage environment variables but you will have to manually
