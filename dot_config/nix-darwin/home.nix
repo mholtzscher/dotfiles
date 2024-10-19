@@ -51,6 +51,7 @@
     ".config/zellij/conig.kdl".source = ./dotfiles/zellij.kdl;
     ".asdfrc".source = ./dotfiles/asdfrc;
     ".config/kafkactl/config.yml".source = ./dotfiles/kafkactl.yaml;
+    ".config/1Password/ssh/agent.toml".source = ./dotfiles/1password-agent.toml;
   };
 
   # You can also manage environment variables but you will have to manually
