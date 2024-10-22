@@ -52,6 +52,14 @@
     ".asdfrc".source = ./dotfiles/asdfrc;
     ".config/kafkactl/config.yml".source = ./dotfiles/kafkactl.yaml;
     ".config/1Password/ssh/agent.toml".source = ./dotfiles/1password-agent.toml;
+    ".config/fish/themes/catppuccin-mocha.theme".source =
+      pkgs.fetchFromGitHub {
+        owner = "catppuccin";
+        repo = "fish";
+        rev = "cc8e4d8fffbdaab07b3979131030b234596f18da";
+        sha256 = "sha256-udiU2TOh0lYL7K7ylbt+BGlSDgCjMpy75vQ98C1kFcc=";
+      }
+      + "/themes/Catppuccin Mocha.theme";
   };
 
   # You can also manage environment variables but you will have to manually
