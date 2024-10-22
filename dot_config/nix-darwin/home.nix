@@ -210,6 +210,10 @@
       '';
     };
 
+    thefuck = {
+      enable = true;
+    };
+
     wezterm = {
       enable = true;
       extraConfig = ''
@@ -233,6 +237,32 @@
 
         -- and finally, return the configuration to wezterm
         return config
+      '';
+    };
+
+    zsh = {
+      enable = true;
+      shellAliases = {
+        vim = "nvim";
+        c = "clear";
+        lg = "lazygit";
+        ls = "lsd";
+        ll = "lsd -al";
+        tree = "lsd --tree -a --ignore-glob .git";
+        treed = "lsd --tree -a -d --ignore-glob .git --ignore-glob gen";
+        pbj = "pbpaste | jq";
+        cacheclear = "sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder";
+        ip = "dig +short myip.opendns.com @resolver1.opendns.com";
+        localip = "ipconfig getifaddr en0";
+        show = "defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder";
+        hide = "defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder";
+        weather = "curl wttr.in";
+        clean = "git clean -Xdf";
+      };
+      initExtra = ''
+        if [ -f /Users/michaelholtzcher/code/onboarding/engineering.sh ]; then
+            source /Users/michaelholtzcher/code/onboarding/engineering.sh
+        fi
       '';
     };
 
