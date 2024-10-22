@@ -244,6 +244,11 @@
           body = "ipconfig getifaddr en0 $argv";
           description = "get local ip address";
         };
+        ls = {
+          body = "lsd $argv";
+          description = "lsd";
+          wraps = "lsd";
+        };
         nu = {
           body = "darwin-rebuild switch --flake ~/.config/nix-darwin";
           description = "Rebuild nix-darwin";
