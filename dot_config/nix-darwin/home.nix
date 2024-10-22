@@ -208,6 +208,17 @@
             set -gx KUBECONFIG "$kubeconfigFile:$KUBECONFIG"
         end
       '';
+      plugins = [
+        {
+          name = "catppuccin";
+          src = pkgs.fetchFromGitHub {
+            owner = "catppuccin";
+            repo = "fish";
+            rev = "cc8e4d8fffbdaab07b3979131030b234596f18da";
+            sha256 = "sha256-udiU2TOh0lYL7K7ylbt+BGlSDgCjMpy75vQ98C1kFcc=";
+          };
+        }
+      ];
     };
 
     wezterm = {
