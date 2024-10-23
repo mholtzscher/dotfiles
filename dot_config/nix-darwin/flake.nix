@@ -76,6 +76,11 @@
 
           homebrew = {
             enable = true;
+            onActivation = {
+              cleanup = "zap";
+              upgrade = true;
+              autoUpdate = true;
+            };
             brews = [
               "asdf"
               "awscli"
@@ -108,7 +113,6 @@
               "Hazeover" = 430798174;
               "Postico" = 6446933691;
             };
-            onActivation.cleanup = "zap";
           };
 
           # Auto upgrade nix package and the daemon service.
@@ -139,33 +143,133 @@
           security.pam.enableSudoTouchIdAuth = true;
 
           system.defaults = {
-            dock.autohide = false;
-            dock.tilesize = 48;
-            dock.show-recents = false;
-            dock.orientation = "right";
-            dock.minimize-to-application = true;
-            screencapture.location = "~/Library/Mobile Documents/com~apple~CloudDocs/ScreenShots";
-            finder.FXPreferredViewStyle = "clmv";
-            loginwindow.GuestEnabled = false;
-            NSGlobalDomain.AppleInterfaceStyle = "Dark";
-            NSGlobalDomain.KeyRepeat = 2;
-            NSGlobalDomain.InitialKeyRepeat = 15;
+            NSGlobalDomain = {
+              AppleKeyboardUIMode = 3;
+              AppleInterfaceStyle = "Dark";
+              AppleShowAllExtensions = true;
+              InitialKeyRepeat = 15;
+              KeyRepeat = 2;
+            };
 
-            dock.persistent-apps = [
-              "/Applications/Arc.app"
-              "/System/Applications/Messages.app"
-              "/Applications/WhatsApp.app"
-              "${pkgs.discord}/Applications/Discord.app"
-              "${pkgs.slack}/Applications/Slack.app"
-              "/Applications/1Password.app"
-              "${pkgs.wezterm}/Applications/WezTerm.app"
-              "/Applications/Postico.app"
-              "/Applications/IntelliJ IDEA.app"
-              "/System/Applications/Mail.app"
-              "/System/Applications/Calendar.app"
-              "/System/Applications/Music.app"
-              "/System/Applications/News.app"
-            ];
+            dock = {
+              autohide = false;
+              tilesize = 48;
+              orientation = "right";
+              minimize-to-application = true;
+              show-process-indicators = true;
+              show-recents = false;
+              persistent-apps = [
+                "/Applications/Arc.app"
+                "/System/Applications/Messages.app"
+                "/Applications/WhatsApp.app"
+                "${pkgs.discord}/Applications/Discord.app"
+                "${pkgs.slack}/Applications/Slack.app"
+                "/Applications/1Password.app"
+                "${pkgs.wezterm}/Applications/WezTerm.app"
+                "/Applications/Postico.app"
+                "/Applications/IntelliJ IDEA.app"
+                "/System/Applications/Mail.app"
+                "/System/Applications/Calendar.app"
+                "/System/Applications/Music.app"
+                "/System/Applications/News.app"
+              ];
+              wvous-bl-corner = 1;
+              wvous-br-corner = 1;
+              wvous-tl-corner = 1;
+              wvous-tr-corner = 1;
+            };
+
+            finder = {
+              AppleShowAllExtensions = true;
+              ShowPathbar = true;
+              FXEnableExtensionChangeWarning = false;
+              FXPreferredViewStyle = "clmv";
+            };
+
+            trackpad = {
+              Clicking = true;
+            };
+
+            screencapture.location = "~/Library/Mobile Documents/com~apple~CloudDocs/ScreenShots";
+            loginwindow.GuestEnabled = false;
+
+            CustomUserPreferences = {
+              "com.pointum.hazeover" = {
+                Enabled = 1;
+                Intensity = "70";
+              };
+              "com.surteesstudios.Bartender" = {
+                UseBartenderBar = 1;
+                TriggerSettings = {
+                  Battery1 = {
+                    description = "";
+                    icon = {
+                      SFSymbolName = "bolt.fill";
+                      isTemplate = 1;
+                    };
+                    isActive = 1;
+                    isSpecial = 0;
+                    menuBarItemsToActivate = {
+                      "com.apple.controlcenter-Battery" = "Battery";
+                    };
+                    name = "Show Battery when battery condition met";
+                    triggerSpecificDict = {
+                      "Battery-When" = "OnBatteryPower";
+                      "Battery-percentage" = 50;
+                    };
+                    type = [ "Battery" ];
+                  };
+                  TimeMachine1 = {
+                    description = "";
+                    icon = {
+                      SFSymbolName = "bolt.fill";
+                      isTemplate = 1;
+                    };
+                    isActive = 1;
+                    isSpecial = 0;
+                    menuBarItemsToActivate = {
+                      "com.apple.systemuiserver-TimeMachine.TMMenuExtraHost" = "SystemUIServer";
+                      "com.apple.systemuiserver-TimeMachineMenuExtra.TMMenuExtraHost" = "Time Machine";
+                    };
+                    name = "Show Time Machine when time machine is backing up.";
+                    triggerSpecificDict = {
+                      Script = "tmutil status | awk -F'=' '/Running/ {print $2*1}'";
+                    };
+                    type = [ "Script" ];
+                  };
+                  WiFi1 = {
+                    description = "";
+                    icon = {
+                      SFSymbolName = "bolt.fill";
+                      isTemplate = 1;
+                    };
+                    isActive = 1;
+                    isSpecial = 0;
+                    menuBarItemsToActivate = {
+                      "com.apple.controlcenter-WiFi" = "Wi-Fi";
+                    };
+                    name = "Show Wi-Fi when Wi-Fi condition met";
+                    triggerSpecificDict = {
+                      ShowOn = "AllDisconnected";
+                    };
+                    type = [ "WiFi" ];
+                  };
+                };
+              };
+              "pl.maketheweb.cleanshotx" = {
+                afterScreenshotActions = [
+                  0
+                  1
+                  2
+                ];
+                afterVideoActions = [
+                  0
+                  2
+                ];
+                # exportPath = "${builtins.getEnv "HOME"}/Library/Mobile Documents/com~apple~CloudDocs/ScreenShots";
+              };
+            };
+
           };
 
           system.activationScripts.applications.text =
@@ -251,6 +355,6 @@
       };
 
       # Expose the package set, including overlays, for convenience.
-      darwinPackages = self.darwinConfigurations."Michaels-M1-Max".pkgs;
+      # darwinPackages = self.darwinConfigurations."Michaels-M1-Max".pkgs;
     };
 }
