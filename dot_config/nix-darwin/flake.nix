@@ -32,46 +32,46 @@
           };
 
           nixpkgs.config.allowUnfree = true;
-          environment.systemPackages = [
-            pkgs.atuin
-            pkgs.bat
-            pkgs.bottom
-            pkgs.buf
-            pkgs.chezmoi
-            pkgs.discord
-            pkgs.dive
-            pkgs.dust
-            pkgs.fd
-            pkgs.fish
-            pkgs.fzf
-            pkgs.gh
-            pkgs.gnused
-            pkgs.grpcurl
-            pkgs.hey
-            pkgs.httpie
-            pkgs.jc
-            pkgs.jq
-            pkgs.k9s
-            pkgs.ko
-            pkgs.kubernetes-helm
-            pkgs.lazygit
-            pkgs.lsd
-            pkgs.mkalias
-            pkgs.nixfmt-rfc-style
-            pkgs.neovim
-            pkgs.obsidian
-            pkgs.ripgrep
-            pkgs.rm-improved
-            pkgs.slack
-            pkgs.sops
-            pkgs.starship
-            pkgs.tldr
-            pkgs.vim
-            pkgs.vscode
-            pkgs.wezterm
-            pkgs.yq
-            pkgs.zellij
-            pkgs.zoxide
+          environment.systemPackages = with pkgs; [
+            atuin
+            bat
+            bottom
+            buf
+            chezmoi
+            discord
+            dive
+            dust
+            fd
+            fish
+            fzf
+            gh
+            gnused
+            grpcurl
+            hey
+            httpie
+            jc
+            jq
+            k9s
+            ko
+            kubernetes-helm
+            lazygit
+            lsd
+            mkalias
+            nixfmt-rfc-style
+            neovim
+            obsidian
+            ripgrep
+            rm-improved
+            slack
+            sops
+            starship
+            tldr
+            vim
+            vscode
+            wezterm
+            yq
+            zellij
+            zoxide
           ];
 
           homebrew = {
