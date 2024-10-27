@@ -51,80 +51,25 @@
         };
     in
     {
-      # Build darwin flake using:
-      # $ darwin-rebuild build --flake .#Michaels-M1-Max
       darwinConfigurations = {
         "Michaels-M1-Max" = nix-darwin.lib.darwinSystem {
           modules = [
+            ./hosts/personal-mac.nix
             ./modules/darwin
             configuration
-            {
-              users.users.michael = {
-                name = "michael";
-                home = "/Users/michael";
-              };
-            }
             nix-homebrew.darwinModules.nix-homebrew
-            {
-              nix-homebrew = {
-                enable = true;
-                # Apple Silicon Only
-                enableRosetta = true;
-                # User owning the Homebrew prefix
-                user = "michael";
-
-                autoMigrate = true;
-              };
-            }
             home-manager.darwinModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "backup";
-              home-manager.users.michael = import ./modules/home-manager/home.nix;
-
-              # Optionally, use home-manager.extraSpecialArgs to pass
-              # arguments to home.nix
-            }
           ];
         };
         "Michaels-MacBook-Pro" = nix-darwin.lib.darwinSystem {
           modules = [
+            ./hosts/paytient-mac.nix
             ./modules/darwin
             configuration
-            {
-              users.users.michael = {
-                name = "michaelholtzcher";
-                home = "/Users/michaelholtzcher";
-              };
-            }
             nix-homebrew.darwinModules.nix-homebrew
-            {
-              nix-homebrew = {
-                enable = true;
-                # Apple Silicon Only
-                enableRosetta = true;
-                # User owning the Homebrew prefix
-                user = "michaelholtzcher";
-
-                autoMigrate = true;
-              };
-            }
             home-manager.darwinModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "backup";
-              home-manager.users.michael = import ./modules/home-manager/home.nix;
-
-              # Optionally, use home-manager.extraSpecialArgs to pass
-              # arguments to home.nix
-            }
           ];
         };
       };
-
-      # Expose the package set, including overlays, for convenience.
-      # darwinPackages = self.darwinConfigurations."Michaels-M1-Max".pkgs;
     };
 }
