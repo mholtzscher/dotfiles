@@ -46,11 +46,11 @@
   ];
 
   home.file = {
-    ".ssh/config".source = ./dotfiles/ssh-config;
-    ".config/zellij/config.kdl".source = ./dotfiles/zellij.kdl;
-    ".asdfrc".source = ./dotfiles/asdfrc;
-    ".config/kafkactl/config.yml".source = ./dotfiles/kafkactl.yaml;
-    ".config/1Password/ssh/agent.toml".source = ./dotfiles/1password-agent.toml;
+    ".ssh/config".source = ./files/ssh-config;
+    ".config/zellij/config.kdl".source = ./files/zellij.kdl;
+    ".asdfrc".source = ./files/asdfrc;
+    ".config/kafkactl/config.yml".source = ./files/kafkactl.yaml;
+    ".config/1Password/ssh/agent.toml".source = ./files/1password-agent.toml;
     ".config/fish/themes/catppuccin-mocha.theme".source =
       pkgs.fetchFromGitHub {
         owner = "catppuccin";
@@ -223,7 +223,7 @@
         };
 
         fmt = {
-          body = builtins.readFile ./dotfiles/fish/functions/fmt.fish;
+          body = builtins.readFile ./files/fish/functions/fmt.fish;
           description = "Run the formatter for the current project";
         };
 
