@@ -1,51 +1,13 @@
 { pkgs, ... }:
 {
+
+  imports = [
+    ./programs
+  ];
+
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
-  home.packages = with pkgs; [
-    atuin
-    awscli2
-    bat
-    bottom
-    buf
-    chezmoi
-    discord
-    dive
-    dust
-    fd
-    fish
-    fzf
-    gh
-    gnused
-    grpcurl
-    hey
-    httpie
-    hugo
-    jc
-    jq
-    k9s
-    ko
-    kubernetes-helm
-    lazygit
-    lsd
-    mkalias
-    nixfmt-rfc-style
-    neovim
-    obsidian
-    ripgrep
-    rm-improved
-    slack
-    sops
-    starship
-    thefuck
-    tldr
-    vim
-    vscode
-    wezterm
-    yq
-    zellij
-    zoxide
-  ];
+  home.packages = with pkgs; [ ] ++ (import ./packages.nix { inherit pkgs; });
 
   home.file = {
     ".ssh/config".source = ./files/ssh-config;
@@ -69,21 +31,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  imports = [
-    ./programs/atuin.nix
-    ./programs/bat.nix
-    ./programs/bottom.nix
-    ./programs/fd.nix
-    ./programs/fzf.nix
-    ./programs/git.nix
-    ./programs/k9s.nix
-    ./programs/lazygit.nix
-    ./programs/fish.nix
-    ./programs/starship.nix
-    ./programs/thefuck.nix
-    ./programs/wezterm.nix
-    ./programs/zsh.nix
-    ./programs/zoxide.nix
-  ];
 }
