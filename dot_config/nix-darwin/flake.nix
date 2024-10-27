@@ -42,7 +42,7 @@
             };
             brews = [
               "asdf"
-              "awscli"
+              # "awscli"
               "go"
               "gum"
               "hugo"

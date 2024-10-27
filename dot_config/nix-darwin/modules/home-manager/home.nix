@@ -4,6 +4,7 @@
 
   home.packages = with pkgs; [
     atuin
+    awscli2
     bat
     bottom
     buf
