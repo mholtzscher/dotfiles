@@ -42,13 +42,10 @@
             };
             brews = [
               "asdf"
-              # "awscli"
               "go"
               "gum"
-              "hugo"
               "mas"
               "slides"
-              "thefuck"
               "watch"
             ];
             casks = [

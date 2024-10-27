@@ -20,6 +20,7 @@
     grpcurl
     hey
     httpie
+    hugo
     jc
     jq
     k9s
@@ -36,6 +37,7 @@
     slack
     sops
     starship
+    thefuck
     tldr
     vim
     vscode
@@ -79,6 +81,7 @@
     ./programs/lazygit.nix
     ./programs/fish.nix
     ./programs/starship.nix
+    ./programs/thefuck.nix
     ./programs/wezterm.nix
     ./programs/zsh.nix
     ./programs/zoxide.nix
