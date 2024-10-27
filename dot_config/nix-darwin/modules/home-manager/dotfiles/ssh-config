@@ -1,0 +1,15 @@
+Host mina-nas
+  IdentityFile ~/.ssh/mina-nas-id_ed25519.pub
+  IdentitiesOnly yes
+  HostName 10.69.69.156
+  User root
+
+Host max-nas
+  IdentityFile ~/.ssh/max-nas-id_ed25519.pub
+  IdentitiesOnly yes
+  HostName 10.69.69.186
+  User root
+
+Host *
+	IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+
