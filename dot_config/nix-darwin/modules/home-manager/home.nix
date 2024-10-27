@@ -5,7 +5,7 @@
     ./programs
   ];
 
-  home.stateVersion = "23.05"; # Please read the comment before changing.
+  home.stateVersion = "23.05";
 
   home.packages = with pkgs; [ ] ++ (import ./packages.nix { inherit pkgs; });
 
