@@ -1,0 +1,47 @@
+{ pkgs }:
+
+with pkgs;
+[
+  atuin
+  awscli2
+  bat
+  bottom
+  buf
+  chezmoi
+  discord
+  dive
+  dust
+  fd
+  fish
+  fzf
+  gh
+  gnused
+  grpcurl
+  hey
+  httpie
+  hugo
+  jc
+  jq
+  k9s
+  ko
+  kubernetes-helm
+  lazygit
+  lsd
+  mkalias
+  nixfmt-rfc-style
+  neovim
+  obsidian
+  ripgrep
+  rm-improved
+  slack
+  sops
+  starship
+  thefuck
+  tldr
+  vim
+  vscode
+  wezterm
+  yq
+  zellij
+  zoxide
+]
