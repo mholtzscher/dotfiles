@@ -37,15 +37,29 @@
           services.nix-daemon.enable = true;
           # nix.package = pkgs.nix;
 
-          # Necessary for using flakes on this system.
-          nix.settings.experimental-features = "nix-command flakes";
-
           # Set Git commit hash for darwin-version.
           system.configurationRevision = self.rev or self.dirtyRev or null;
 
           # Used for backwards compatibility, please read the changelog before changing.
           # $ darwin-rebuild changelog
           system.stateVersion = 5;
+
+          nix.gc.automatic = true;
+
+          nix = {
+            settings.experimental-features = "nix-command flakes";
+            gc = {
+              user = "root";
+              automatic = true;
+              interval = {
+                Weekday = 0;
+                Hour = 2;
+                Minute = 0;
+              };
+              options = "--delete-older-than 30d";
+            };
+          };
+
         };
     in
     {
