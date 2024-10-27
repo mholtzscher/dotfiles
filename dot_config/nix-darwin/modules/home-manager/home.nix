@@ -7,7 +7,7 @@
 
   home.stateVersion = "23.05";
 
-  home.packages = with pkgs; [ ] ++ (import ./packages.nix { inherit pkgs; });
+  home.packages = [ ] ++ (import ./packages.nix { inherit pkgs; });
 
   home.file = {
     ".ssh/config".source = ./files/ssh-config;
