@@ -44,12 +44,9 @@
           # $ darwin-rebuild changelog
           system.stateVersion = 5;
 
-          nix.gc.automatic = true;
-
           nix = {
             settings.experimental-features = "nix-command flakes";
             gc = {
-              user = "root";
               automatic = true;
               interval = {
                 Weekday = 0;
