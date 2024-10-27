@@ -32,47 +32,6 @@
           };
 
           nixpkgs.config.allowUnfree = true;
-          environment.systemPackages = with pkgs; [
-            atuin
-            bat
-            bottom
-            buf
-            chezmoi
-            discord
-            dive
-            dust
-            fd
-            fish
-            fzf
-            gh
-            gnused
-            grpcurl
-            hey
-            httpie
-            jc
-            jq
-            k9s
-            ko
-            kubernetes-helm
-            lazygit
-            lsd
-            mkalias
-            nixfmt-rfc-style
-            neovim
-            obsidian
-            ripgrep
-            rm-improved
-            slack
-            sops
-            starship
-            tldr
-            vim
-            vscode
-            wezterm
-            yq
-            zellij
-            zoxide
-          ];
 
           homebrew = {
             enable = true;
