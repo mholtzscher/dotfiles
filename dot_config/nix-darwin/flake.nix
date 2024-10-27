@@ -22,15 +22,6 @@
       configuration =
         { pkgs, config, ... }:
         {
-          users.users.michael = {
-            name = "michael";
-            home = "/Users/michael";
-          };
-          users.users.michaelholtzcher = {
-            name = "michaelholtzcher";
-            home = "/Users/michaelholtzcher";
-          };
-
           nixpkgs.config.allowUnfree = true;
 
           # Auto upgrade nix package and the daemon service.
@@ -67,6 +58,12 @@
           modules = [
             ./modules/darwin
             configuration
+            {
+              users.users.michael = {
+                name = "michael";
+                home = "/Users/michael";
+              };
+            }
             nix-homebrew.darwinModules.nix-homebrew
             {
               nix-homebrew = {
@@ -95,6 +92,12 @@
           modules = [
             ./modules/darwin
             configuration
+            {
+              users.users.michael = {
+                name = "michaelholtzcher";
+                home = "/Users/michaelholtzcher";
+              };
+            }
             nix-homebrew.darwinModules.nix-homebrew
             {
               nix-homebrew = {
@@ -112,7 +115,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
-              home-manager.users.michaelholtzcher = import ./modules/home-manager/home.nix;
+              home-manager.users.michael = import ./modules/home-manager/home.nix;
 
               # Optionally, use home-manager.extraSpecialArgs to pass
               # arguments to home.nix
