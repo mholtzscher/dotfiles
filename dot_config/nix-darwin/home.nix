@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -202,6 +202,7 @@
         sso = "aws_change_profile";
       };
       interactiveShellInit = ''
+        brew shellenv 2>/dev/null | source || true
         fish_add_path "$ASDF_DIR/bin"
         fish_add_path "$HOME/.asdf/shims"
 
