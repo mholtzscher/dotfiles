@@ -69,8 +69,8 @@
   programs.home-manager.enable = true;
 
   imports = [
-    ./git.nix
-    ./starship.nix
+    ./programs/git.nix
+    ./programs/starship.nix
   ];
 
   programs = {
