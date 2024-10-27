@@ -52,6 +52,7 @@
     in
     {
       darwinConfigurations = {
+        # Personal Mac
         "Michaels-M1-Max" = nix-darwin.lib.darwinSystem {
           modules = [
             ./hosts/personal-mac.nix
@@ -61,6 +62,7 @@
             home-manager.darwinModules.home-manager
           ];
         };
+        # Work Mac
         "Michaels-MacBook-Pro" = nix-darwin.lib.darwinSystem {
           modules = [
             ./hosts/paytient-mac.nix
