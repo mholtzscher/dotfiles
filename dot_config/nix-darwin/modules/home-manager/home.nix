@@ -23,6 +23,8 @@
         sha256 = "sha256-udiU2TOh0lYL7K7ylbt+BGlSDgCjMpy75vQ98C1kFcc=";
       }
       + "/themes/Catppuccin Mocha.theme";
+    ".config/fish/functions/update.fish".source = ./files/fish/functions/update.fish;
+    ".config/fish/fish_variables".source = ./files/fish_variables;
   };
 
   home.sessionVariables = {
