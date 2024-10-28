@@ -41,6 +41,7 @@
         "/Applications/IntelliJ IDEA.app"
         "/System/Applications/Mail.app"
         "/System/Applications/Calendar.app"
+        "/Applications/TickTick.app"
         "/System/Applications/Music.app"
         "/System/Applications/News.app"
       ];
