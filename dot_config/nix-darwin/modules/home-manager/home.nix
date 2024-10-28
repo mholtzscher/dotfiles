@@ -11,11 +11,11 @@
 
   home.file = {
     ".ssh/config".source = ./files/ssh-config;
-    ".config/zellij/config.kdl".source = ./files/zellij.kdl;
+    "${config.xdg.configHome}/zellij/config.kdl".source = ./files/zellij.kdl;
     ".asdfrc".source = ./files/asdfrc;
-    ".config/kafkactl/config.yml".source = ./files/kafkactl.yaml;
-    ".config/1Password/ssh/agent.toml".source = ./files/1password-agent.toml;
-    ".config/fish/themes/catppuccin-mocha.theme".source =
+    "${config.xdg.configHome}/kafkactl/config.yml".source = ./files/kafkactl.yaml;
+    "${config.xdg.configHome}/1Password/ssh/agent.toml".source = ./files/1password-agent.toml;
+    "${config.xdg.configHome}/fish/themes/catppuccin-mocha.theme".source =
       pkgs.fetchFromGitHub {
         owner = "catppuccin";
         repo = "fish";
@@ -23,9 +23,9 @@
         sha256 = "sha256-udiU2TOh0lYL7K7ylbt+BGlSDgCjMpy75vQ98C1kFcc=";
       }
       + "/themes/Catppuccin Mocha.theme";
-    ".config/fish/functions/update.fish".source = ./files/fish/functions/update.fish;
-    ".config/fish/fish_variables".source = ./files/fish_variables;
-    "${config.xdg.configHome}/nvim" = {
+    "$${config.xdg.configHome}.xdg.configHome}/fish/functions/update.fish".source = ./files/fish/functions/update.fish;
+    "${config.xdg.configHome}/fish/fish_variables".source = ./files/fish_variables;
+    "$${config.xdg.configHome}.xdg.configHome}/nvim" = {
       source = ./files/nvim;
       recursive = true;
     };
