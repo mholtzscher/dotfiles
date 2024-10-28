@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
 
   imports = [
@@ -25,6 +25,10 @@
       + "/themes/Catppuccin Mocha.theme";
     ".config/fish/functions/update.fish".source = ./files/fish/functions/update.fish;
     ".config/fish/fish_variables".source = ./files/fish_variables;
+    "${config.xdg.configHome}/nvim" = {
+      source = ./files/nvim;
+      recursive = true;
+    };
   };
 
   home.sessionVariables = {
