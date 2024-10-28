@@ -33,6 +33,11 @@
           description = "build project";
         };
 
+        cacheclear = {
+          body = "sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder $argv";
+          description = " clear dns cache";
+        };
+
         clean = {
           body = "git clean -Xdf $argv";
           description = "clean untracked files";
@@ -46,6 +51,19 @@
         gitignore = {
           body = "curl -sL https://www.gitignore.io/api/$argv";
           description = "get gitgnore for language";
+        };
+
+        gradle = {
+          body = ''
+            if test -e ./gradlew
+                ./gradlew $argv
+            else
+                echo "No gradlew found"
+            end
+          '';
+          description = "swaps ./gradlew for gradle";
+          wraps = "./gradlew";
+
         };
 
         ip = {
@@ -115,6 +133,11 @@
           body = "lsd --tree -a -d --ignore-glob .git --ignore-glob gen $argv";
           description = "pretty tree view of only directories";
           wraps = "lsd";
+        };
+
+        tst = {
+          body = builtins.readFile ../files/fish/functions/tst.fish;
+          description = "Run tests based on the project type";
         };
 
         watch = {
