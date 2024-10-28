@@ -66,6 +66,19 @@
 
         };
 
+        ifactive = {
+          body = ''
+            for interface in (networksetup -listallhardwareports | awk '/^Device:/ {print $2}')
+                set ip (ipconfig getifaddr $interface)
+                if test -n "$ip"
+                    echo "$interface: $ip"
+                end
+            end
+          '';
+          description = "List network interfaces and IP addresses for all active network interfaces";
+
+        };
+
         ip = {
           body = "dig +short myip.opendns.com @resolver1.opendns.com $argv";
           wraps = "dig +short myip.opendns.com @resolver1.opendns.com";
