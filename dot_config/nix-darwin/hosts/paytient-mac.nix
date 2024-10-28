@@ -1,9 +1,9 @@
 { ... }:
 let
-  user = "michaelholtzscher";
+  user = "michaelholtzcher";
 in
 {
-  users.users.michael = {
+  users.users.${user} = {
     name = user;
     home = "/Users/${user}";
   };
@@ -12,7 +12,7 @@ in
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "backup";
-    users.michael = import ../modules/home-manager/home.nix;
+    users.${user} = import ../modules/home-manager/home.nix;
   };
 
   nix-homebrew = {
