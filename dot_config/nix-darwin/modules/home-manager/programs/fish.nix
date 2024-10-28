@@ -28,6 +28,31 @@
       '';
 
       functions = {
+        aws_ecr_login = {
+          body = "aws ecr get-login-password | docker login --username AWS --password-stdin 188442536245.dkr.ecr.us-west-2.amazonaws.com";
+          description = "Login to AWS ECR";
+        };
+
+        aws_export_envs = {
+          body = "export (aws configure export-credentials --profile $AWS_PROFILE --format env-no-export )";
+          description = "Export AWS credentials as environment variables";
+        };
+
+        aws_local = {
+          body = "env AWS_PROFILE=localstack aws --endpoint-url=http://localhost.localstack.cloud:4566 $argv";
+          description = "Run AWS CLI commands against LocalStack";
+        };
+
+        aws_logout = {
+          body = ''
+            if aws configure get sso_start_url --profile $AWS_PROFILE >/dev/null 2>&1
+                aws sso logout
+            end
+            set -e AWS_PROFILE
+          '';
+          description = "logout from AWS SSO";
+        };
+
         build = {
           body = "gradle build --parallel";
           description = "build project";
