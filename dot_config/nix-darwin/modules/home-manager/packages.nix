@@ -2,6 +2,7 @@
 
 with pkgs;
 [
+  asdf
   atuin
   awscli2
   bat
@@ -17,6 +18,7 @@ with pkgs;
   gh
   gnused
   grpcurl
+  gum
   hey
   httpie
   hugo
@@ -34,6 +36,7 @@ with pkgs;
   ripgrep
   rm-improved
   slack
+  slides
   sops
   starship
   thefuck

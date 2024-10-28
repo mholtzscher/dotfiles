@@ -8,12 +8,8 @@
       autoUpdate = true;
     };
     brews = [
-      "asdf"
       "go"
-      "gum"
       "mas"
-      "slides"
-      "watch"
     ];
     casks = [
       "1password"
@@ -26,6 +22,7 @@
       "nightfall"
       "postman"
       "raycast"
+      "ticktick"
     ];
     masApps = {
       "In Your Face" = 1476964367;
