@@ -8,7 +8,7 @@
       autoUpdate = true;
     };
     brews = [
-      "go"
+      # "go"
       "mas"
     ];
     casks = [

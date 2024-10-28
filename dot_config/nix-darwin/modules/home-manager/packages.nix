@@ -17,6 +17,7 @@ with pkgs;
   fzf
   gh
   gnused
+  go
   grpcurl
   gum
   hey
