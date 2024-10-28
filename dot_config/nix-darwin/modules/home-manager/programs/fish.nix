@@ -6,6 +6,7 @@
       shellAbbrs = {
         sso = "aws_change_profile";
       };
+
       interactiveShellInit = ''
         brew shellenv 2>/dev/null | source || true
         fish_add_path "$ASDF_DIR/bin"
