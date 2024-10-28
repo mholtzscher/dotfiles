@@ -1,26 +1,14 @@
 function update --description "Update all the things"
-    #_homebrew
-    #_neovim_plugins
-    #_fisher_plugins
-    #_asdf_plugins
-    #_go_tools
+    _neovim_plugins
+    _asdf_plugins
+    _go_tools
 
     gum log --time kitchen --level info Finished
-end
-
-function _homebrew
-    gum log --time kitchen --level info "Updating Homebrew Bundle"
-    brew bundle --no-lock --file=~/Brewfile
 end
 
 function _neovim_plugins
     gum log --time kitchen --level info "Updating neovim plugins"
     nvim --headless "+Lazy! sync" +qa
-end
-
-function _fisher_plugins
-    gum log --time kitchen --level info "Updating fisher plugins"
-    fisher update
 end
 
 function _asdf_plugins
