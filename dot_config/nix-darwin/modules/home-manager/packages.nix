@@ -2,7 +2,7 @@
 
 with pkgs;
 [
-  asdf
+  asdf-vm
   atuin
   awscli2
   bat
