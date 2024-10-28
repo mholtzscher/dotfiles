@@ -23,9 +23,9 @@
         sha256 = "sha256-udiU2TOh0lYL7K7ylbt+BGlSDgCjMpy75vQ98C1kFcc=";
       }
       + "/themes/Catppuccin Mocha.theme";
-    "$${config.xdg.configHome}.xdg.configHome}/fish/functions/update.fish".source = ./files/fish/functions/update.fish;
+    "${config.xdg.configHome}/fish/functions/update.fish".source = ./files/fish/functions/update.fish;
     "${config.xdg.configHome}/fish/fish_variables".source = ./files/fish_variables;
-    "$${config.xdg.configHome}.xdg.configHome}/nvim" = {
+    "${config.xdg.configHome}/nvim" = {
       source = ./files/nvim;
       recursive = true;
     };
