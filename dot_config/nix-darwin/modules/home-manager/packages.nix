@@ -2,7 +2,12 @@
 
 with pkgs;
 [
-  asdf-vm
+  go
+  nodejs_22
+  lua
+]
+++ [
+  # asdf-vm
   atuin
   awscli2
   bat
@@ -17,7 +22,6 @@ with pkgs;
   fzf
   gh
   gnused
-  go
   grpcurl
   gum
   hey

@@ -9,6 +9,7 @@
     };
     brews = [
       # "go"
+      "asdf"
       "mas"
     ];
     casks = [
