@@ -32,6 +32,7 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
+    COMPOSE_PROFILES = "default"; # TODO: set only for paytient mac
   };
 
   # Let Home Manager install and manage itself.
