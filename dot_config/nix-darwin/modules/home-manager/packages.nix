@@ -5,6 +5,7 @@ with pkgs;
   go
   nodejs_22
   lua
+  terraform
 ]
 ++ [
   # asdf-vm
