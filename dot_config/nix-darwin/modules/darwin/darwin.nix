@@ -25,7 +25,7 @@
     dock = {
       autohide = false;
       tilesize = 48;
-      orientation = "right";
+      orientation = "left";
       minimize-to-application = true;
       show-process-indicators = true;
       show-recents = false;
