@@ -24,10 +24,10 @@
       }
       + "/themes/Catppuccin Mocha.theme";
     "${config.xdg.configHome}/fish/functions/update.fish".source = ./files/fish/functions/update.fish;
-    "${config.xdg.configHome}/nvim" = {
-      source = ./files/nvim;
-      recursive = true;
-    };
+    # "${config.xdg.configHome}/nvim" = {
+    #   source = ./files/nvim;
+    #   recursive = true;
+    # };
   };
 
   home.sessionVariables = {
