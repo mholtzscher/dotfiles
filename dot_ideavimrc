@@ -1,4 +1,4 @@
-set scrolloff=5
+set scrolloff=10
 set history=1000
 
 " status bar

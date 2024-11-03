@@ -66,6 +66,12 @@
     loginwindow.GuestEnabled = false;
 
     CustomUserPreferences = {
+      "com.jetbrains.intellij" = {
+        ApplePressAndHoldEnabled = false;
+      };
+      "com.jetbrains.intellij.ce" = {
+        ApplePressAndHoldEnabled = false;
+      };
       "com.pointum.hazeover" = {
         Enabled = 1;
         Intensity = "70";
