@@ -1,30 +1,75 @@
-set scrolloff=10
-set history=1000
+" https://github.com/JetBrains/ideavim/wiki/set-commands
+set scrolloff=10 " Minimal number of lines above and below the cursor
+set history=1000 " Number of command-lines that are remembered
+set showmode " Show the current mode in the status bar
 
-" status bar
-set showmode
-
-" leader
+" set leader to space
 map <space> <nop>
 let mapleader=" "
 
+set clipboard+=unnamed " Use the system clipboard
+
 " find and replace
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-set gdefault
-nunmap zz
+set hlsearch " Highlight matches with the last search pattern
+set incsearch " Show where search pattern typed so far matches
+set ignorecase " Ignore case in search patterns
+set smartcase " Use case sensitive search if any character in the pattern is uppercase
+set gdefault " The ':substitute' flag 'g' is by default
 nmap <leader>nh :noh<CR>
+
+" quickly open and edit ideavimrc
 nnoremap <leader>fc :edit ~/.ideavimrc<CR>
 nnoremap <leader>lp :source ~/.ideavimrc
 
 " ideavim settings
 set ideajoin
-set ideamarks
-set idearefactormode=normal
-set ideastatusicon=gray
+set ideamarks " Maps Vim's global marks to IDE bookmarks.
+set idearefactormode=normal " Specifies the mode to be used when a refactoring selects text to be edited (e.g. renaming, live template fields, introduce variable, etc)
 
+" text-object (bundle plugin)
+set vim-paragraph-motion
+set textobj-indent
+set textobj-entire
+set argtextobj
+
+" ############## PLUGINS ################
+" jump-motion (required idea plugin: IdeaVim-EasyMotion, AceJump)
+set easymotion
+
+" which-key (required idea plugin: IdeaVim-WhichKey)
+set which-key
+set timeoutlen=5000
+
+" string manipulate (required idea plugin: String Manipulation)
+" nmap <leader>ss <Action>(osmedile.intellij.stringmanip.PopupChoiceAction)
+
+" code screenshot (required idea plugin: Code Screenshots)
+" nmap <leader>cs <Action>(one.util.ideaplugin.screenshoter.CopyImageAction)
+
+" nerdtree (bundle plugin)
+set NERDTree
+nnoremap - :NERDTree<CR>
+nmap <Leader>- :NERDTreeToggle<CR>
+
+" surround (bundle plugin)
+" usage: https://github.com/tpope/vim-surround
+set surround
+
+" exchange (bundle plugin)
+" usage: https://github.com/tommcdo/vim-exchange
+set exchange
+
+" replace with register (bundle plugin)
+" usage: https://github.com/vim-scripts/ReplaceWithRegister
+set ReplaceWithRegister
+
+set commentary
+" highlight yank (bundle plugin)
+set highlightedyank
+let g:highlightedyank_highlight_duration = "100"
+let g:highlightedyank_highlight_color = "rgba(57, 197, 187, 155)"
+
+" ####### Key Mappings #######
 " better escape
 imap jk <Esc>
 
@@ -73,7 +118,6 @@ nmap <leader>mg <Action>(GoToMenu)
 nmap <leader>ms <Action>(ScopeViewPopupMenu)
 nmap <leader>mt <Action>(EditorTabPopupMenu)
 nmap <leader>mw <Action>(ToolWindowsGroup)
-
 
 " file
 nmap <leader>of <Action>(OpenFile)
@@ -137,7 +181,6 @@ nmap zc <Action>(ExpandCollapseToggleAction)
 nmap za <Action>(CollapseAllRegions)
 nmap zA <Action>(ExpandAllRegions)
 
-
 " []
 nmap [b <Action>(PreviousTab)
 nmap ]b <Action>(NextTab)
@@ -189,56 +232,9 @@ nmap \\cg <Action>(Github.Create.Gist)
 " open IdeaVim settings
 nmap \\v <Action>(VimActions)
 
-" text-object (bundle plugin)
-set vim-paragraph-motion
-set textobj-indent
-set textobj-entire
-set argtextobj
-
-" jump-motion (required idea plugin: IdeaVim-EasyMotion, AceJump)
-set easymotion
-
-" highlight yank (bundle plugin)
-set highlightedyank
-let g:highlightedyank_highlight_duration = "100"
-let g:highlightedyank_highlight_color = "rgba(57, 197, 187, 155)"
-
-" translation (required idea plugin: Translation)
-nmap \\tt <Action>($ShowTranslationDialogAction)
-nmap \\ts <Action>($TranslateTextComponent)
-nmap \\ti <Action>($InclusiveTranslateAction)
-nmap \\te <Action>($ExclusiveTranslateAction)
-
-" string manipulate (required idea plugin: String Manipulation)
-nmap <leader>ss <Action>(osmedile.intellij.stringmanip.PopupChoiceAction)
-
-" code screenshot (required idea plugin: Code Screenshots)
-nmap <leader>cs <Action>(one.util.ideaplugin.screenshoter.CopyImageAction)
-
-nnoremap - :NERDTree<CR>
-nmap <Leader>- :NERDTreeToggle<CR>
-
-" surround (bundle plugin)
-" usage: https://github.com/tpope/vim-surround
-set surround
-
-" exchange (bundle plugin)
-" usage: https://github.com/tommcdo/vim-exchange
-set exchange
-
-" nerdtree (bundle plugin)
-set NERDTree
-
-" replace with register (bundle plugin)
-" usage: https://github.com/vim-scripts/ReplaceWithRegister
-set ReplaceWithRegister
-
-set commentary
-
 " continuous shift
 xnoremap < <gv
 xnoremap > >gv
 
 " alias
 nmap <C-a> ggVG"+y
-
