@@ -89,35 +89,33 @@ nmap <C-o> <Action>(Back)
 let g:WhichKeyDesc_buffer_actions = "<leader>b Buffer Actions"
 nmap <leader>bd <Action>(CloseContent)
 nmap <leader>ba <Action>(CloseAllEditors)
+nmap <leader>bl <Action>(CloseAllToTheLeft)
+nmap <leader>br <Action>(CloseAllToTheRight)
 nmap <leader>bo <Action>(CloseAllEditorsButActive)
-nmap <leader>bp <Action>(CloseAllUnpinnedEditors)
-
-"nmap <leader>d "_d
-"vmap <leader>d "_d
-"xmap <leader>p "_dP
-"xmap <leader>y "+y
 
 " tab and window actions
 let g:WhichKeyDesc_window_actions = "<leader>w Window Actions"
 nmap <S-h> <Action>(PreviousTab)
 nmap <leader>wh <Action>(PreviousTab)
 nmap <S-l> <Action>(NextTab)
-nmap <leader>wl <Action>(NextTab)
-map <leader>wS <Action>(SplitHorizontally)
-map <leader>wv <Action>(SplitVertically)
-" nmap <C-p> <Action>(JumpToLastWindow)
+nmap <leader>wh <Action>(SplitHorizontally)
+nmap <leader>wv <Action>(SplitVertically)
+nmap <leader>wx <Action>(UnsplitAll)
+nmap <leader>wr <Action>(MoveTabRight)
+nmap <leader>wl <Action>(MoveTabLeft)
+nmap <leader>wm <Action>(MoveEditorToOppositeTabGroup)
 nmap <C-k> <C-w>k
 nmap <C-j> <C-w>j
 nmap <C-h> <C-w>h
 nmap <C-l> <C-w>l
 
-nmap <leader>ww <Action>(HideAllWindows)
-nmap <leader>wk <Action>(StretchSplitToTop)
-nmap <leader>wj <Action>(StretchSplitToBottom)
-nmap <C-,> <Action>(StretchSplitToLeft)
-nmap <C-.> <Action>(StretchSplitToRight)
-nmap <leader>wm <Action>(MaximizeEditorInSplit)
-nmap <leader>wu <Action>(UnsplitAll)
+" nmap <C-p> <Action>(JumpToLastWindow)
+"nmap <leader>ww <Action>(HideAllWindows)
+"nmap <leader>wk <Action>(StretchSplitToTop)
+"nmap <leader>wj <Action>(StretchSplitToBottom)
+"nmap <C-,> <Action>(StretchSplitToLeft)
+"nmap <C-.> <Action>(StretchSplitToRight)
+"nmap <leader>wm <Action>(MaximizeEditorInSplit)
 
 " menu
 let g:WhichKeyDesc_menu_actions = "<leader>m Menu Actions"
