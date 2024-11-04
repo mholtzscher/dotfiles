@@ -148,7 +148,6 @@ nmap <leader>dv <Action>(ViewBreakpoints)
 " file
 let g:WhichKeyDesc_file_actions = "<leader>f File Actions"
 nmap <leader>fo <Action>(OpenFile)
-"nmap <leader>fp <Action>(CopyAbsolutePath)
 nmap <leader><leader> <Action>(SearchEverywhere)
 nmap <leader>, <Action>(RecentFiles)
 nmap <leader>fl <Action>(RecentLocations)
@@ -157,8 +156,8 @@ nmap <leader>fh <Action>(LocalHistory.ShowHistory)
 nmap <leader>ff <Action>(ShowFilePath)
 nmap <leader>fi <Action>(SelectIn)
 nmap <leader>/ <Action>(FindInPath)
-"nmap <leader>rp <Action>(ReplaceInPath)
-"nmap <leader>sw <Action>($SearchWeb)
+nmap <leader>sR <Action>(ReplaceInPath)
+nmap <leader>sr <Action>(Replace)
 
 " goto
 let g:WhichKeyDesc_goto_actions = "g Goto Actions"
