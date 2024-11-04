@@ -34,15 +34,18 @@ set textobj-entire
 set argtextobj
 
 " jump-motion (required idea plugin: IdeaVim-EasyMotion, AceJump)
-set easymotion
+"set easymotion
 set notimeout
+
+" vim-flash (required plugin: vim-flash)
+map s <Action>(flash.search)
 
 " which-key (required idea plugin: IdeaVim-WhichKey)
 set which-key
 set timeoutlen=5000
 
 " sneak (required idea plugin: IdeaVim-Sneak)
-set sneak
+"set sneak
 
 " string manipulate (required idea plugin: String Manipulation)
 " nmap <leader>ss <Action>(osmedile.intellij.stringmanip.PopupChoiceAction)
