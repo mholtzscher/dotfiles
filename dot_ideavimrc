@@ -26,19 +26,23 @@ set ideajoin
 set ideamarks " Maps Vim's global marks to IDE bookmarks.
 set idearefactormode=normal " Specifies the mode to be used when a refactoring selects text to be edited (e.g. renaming, live template fields, introduce variable, etc)
 
+" ############## PLUGINS ################
 " text-object (bundle plugin)
 set vim-paragraph-motion
 set textobj-indent
 set textobj-entire
 set argtextobj
 
-" ############## PLUGINS ################
 " jump-motion (required idea plugin: IdeaVim-EasyMotion, AceJump)
 set easymotion
+set notimeout
 
 " which-key (required idea plugin: IdeaVim-WhichKey)
 set which-key
 set timeoutlen=5000
+
+" sneak (required idea plugin: IdeaVim-Sneak)
+set sneak
 
 " string manipulate (required idea plugin: String Manipulation)
 " nmap <leader>ss <Action>(osmedile.intellij.stringmanip.PopupChoiceAction)
@@ -49,7 +53,7 @@ set timeoutlen=5000
 " nerdtree (bundle plugin)
 set NERDTree
 nnoremap - :NERDTree<CR>
-nmap <Leader>- :NERDTreeToggle<CR>
+nmap <Leader>e :NERDTreeToggle<CR>
 
 " surround (bundle plugin)
 " usage: https://github.com/tpope/vim-surround
@@ -63,7 +67,9 @@ set exchange
 " usage: https://github.com/vim-scripts/ReplaceWithRegister
 set ReplaceWithRegister
 
+" commentary (bundle plugin)
 set commentary
+
 " highlight yank (bundle plugin)
 set highlightedyank
 let g:highlightedyank_highlight_duration = "100"
@@ -90,11 +96,15 @@ vmap <leader>d "_d
 xmap <leader>p "_dP
 xmap <leader>y "+y
 
-" tab
-map <leader>sH <Action>(SplitHorizontally)
-map <leader>sV <Action>(SplitVertically)
-
-nmap <C-p> <Action>(JumpToLastWindow)
+" tab and window actions
+let g:WhichKeyDesc_window_actions = "<leader>w Window Actions"
+nmap <S-h> <Action>(PreviousTab)
+nmap <leader>wh <Action>(PreviousTab)
+nmap <S-l> <Action>(NextTab)
+nmap <leader>wl <Action>(NextTab)
+map <leader>wS <Action>(SplitHorizontally)
+map <leader>wv <Action>(SplitVertically)
+" nmap <C-p> <Action>(JumpToLastWindow)
 nmap <C-k> <C-w>k
 nmap <C-j> <C-w>j
 nmap <C-h> <C-w>h
@@ -120,18 +130,19 @@ nmap <leader>mt <Action>(EditorTabPopupMenu)
 nmap <leader>mw <Action>(ToolWindowsGroup)
 
 " file
-nmap <leader>of <Action>(OpenFile)
-nmap <leader>yp <Action>(CopyAbsolutePath)
+let g:WhichKeyDesc_file_actions = "<leader>f File Actions"
+nmap <leader>fo <Action>(OpenFile)
+"nmap <leader>fp <Action>(CopyAbsolutePath)
 nmap <leader><leader> <Action>(SearchEverywhere)
 nmap <leader>, <Action>(RecentFiles)
-nmap <leader>rl <Action>(RecentLocations)
-nmap <leader>rp <Action>(ManageRecentProjects)
-nmap <leader>sh <Action>(LocalHistory.ShowHistory)
-nmap <leader>sf <Action>(ShowFilePath)
-nmap <leader>si <Action>(SelectIn)
-nmap <leader>fp <Action>(FindInPath)
+nmap <leader>fl <Action>(RecentLocations)
+nmap <leader>fp <Action>(ManageRecentProjects)
+nmap <leader>fh <Action>(LocalHistory.ShowHistory)
+nmap <leader>ff <Action>(ShowFilePath)
+nmap <leader>fi <Action>(SelectIn)
+nmap <leader>/ <Action>(FindInPath)
 nmap <leader>rp <Action>(ReplaceInPath)
-nmap <leader>sw <Action>($SearchWeb)
+"nmap <leader>sw <Action>($SearchWeb)
 
 " tag
 nmap <leader>fu <Action>(FindUsages)
@@ -182,10 +193,8 @@ nmap za <Action>(CollapseAllRegions)
 nmap zA <Action>(ExpandAllRegions)
 
 " []
-nmap [b <Action>(PreviousTab)
-nmap ]b <Action>(NextTab)
-nmap [g <Action>(GotoPreviousError)
-nmap ]g <Action>(GotoNextError)
+nmap [e <Action>(GotoPreviousError)
+nmap ]e <Action>(GotoNextError)
 nmap [u <Action>(GotoPrevElementUnderCaretUsage)
 nmap ]u <Action>(GotoNextElementUnderCaretUsage)
 nmap [o <Action>(PreviousOccurence)
