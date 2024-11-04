@@ -5,6 +5,7 @@ with pkgs;
   go
   nodejs_22
   lua
+  python3
   terraform
 ]
 ++ [
