@@ -63,7 +63,7 @@
           ];
         };
         # Work Mac
-        "Michaels-MacBook-Pro" = nix-darwin.lib.darwinSystem {
+        "Michael Holtzscher Paytient" = nix-darwin.lib.darwinSystem {
           modules = [
             ./hosts/paytient-mac.nix
             ./modules/darwin
