@@ -2,7 +2,6 @@
 
 with pkgs;
 [
-  go
   nodejs_22
   lua
   python3
@@ -10,19 +9,12 @@ with pkgs;
 ]
 ++ [
   # asdf-vm
-  atuin
   awscli2
-  bat
-  bottom
   buf
   chezmoi
   discord
   dive
   dust
-  fd
-  fish
-  fzf
-  gh
   gnused
   grpcurl
   gum
@@ -31,10 +23,8 @@ with pkgs;
   hugo
   jc
   jq
-  k9s
   ko
   kubernetes-helm
-  lazygit
   lsd
   mkalias
   nixfmt-rfc-style
@@ -46,13 +36,9 @@ with pkgs;
   slack
   slides
   sops
-  starship
-  thefuck
   tldr
   vim
   vscode
-  wezterm
   yq
   zellij
-  zoxide
 ]
