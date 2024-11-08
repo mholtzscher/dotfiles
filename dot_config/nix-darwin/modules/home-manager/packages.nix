@@ -31,7 +31,6 @@ with pkgs;
   neovim
   obsidian
   oras # TODO: set only for paytient mac
-  ripgrep
   rm-improved
   slack
   slides

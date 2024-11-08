@@ -170,7 +170,7 @@
           wraps = "lsd";
         };
 
-        nu = {
+        nup = {
           body = "darwin-rebuild switch --flake ~/.config/nix-darwin";
           description = "Rebuild nix-darwin";
         };

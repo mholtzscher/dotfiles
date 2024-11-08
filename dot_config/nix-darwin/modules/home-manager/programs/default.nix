@@ -12,6 +12,7 @@
     ./git.nix
     ./k9s.nix
     ./lazygit.nix
+    ./nushell.nix
     ./ripgrep.nix
     ./starship.nix
     ./thefuck.nix
