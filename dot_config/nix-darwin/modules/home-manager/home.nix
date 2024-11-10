@@ -6,7 +6,7 @@
   ];
 
   home.stateVersion = "23.05";
-
+  xdg.enable = true;
   home.packages = [ ] ++ (import ./packages.nix { inherit pkgs; });
 
   home.file = {
