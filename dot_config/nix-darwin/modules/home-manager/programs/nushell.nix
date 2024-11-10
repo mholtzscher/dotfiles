@@ -3,9 +3,10 @@
   programs = {
     nushell = {
       enable = true;
-      environmentVariables = {
-        EDITOR = "^nvim";
-      };
+      extraConfig = builtins.readFile ../files/nushell/functions/fmt.nu;
+      # environmentVariables = {
+      #   EDITOR = "nvim";
+      # };
       shellAliases = {
         ll = "ls -al";
         vim = "nvim";
