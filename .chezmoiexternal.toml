@@ -1,12 +1,3 @@
-[".config/nvim-kick"]
-type = "git-repo"
-url = "git@github.com:mholtzscher/kickstart.nvim.git"
-refreshPeriod = "168h"
-
 ["notes"]
 type = "git-repo"
 url = "git@github.com:mholtzscher/obsidian.git"
-
-["nix-config"]
-type = "git-repo"
-url = "git@github.com:mholtzscher/nix-config.git"
