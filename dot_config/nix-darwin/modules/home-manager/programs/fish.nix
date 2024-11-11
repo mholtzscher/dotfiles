@@ -131,7 +131,6 @@
             end
           '';
           description = "List network interfaces and IP addresses for all active network interfaces";
-
         };
 
         ip = {
