@@ -4,9 +4,6 @@
     nushell = {
       enable = true;
       extraConfig = builtins.readFile ../files/nushell/functions.nu;
-      # environmentVariables = {
-      #   EDITOR = "nvim";
-      # };
       shellAliases = {
         build = "./gradlew build --parallel";
         fmt = "./gradlew spotlessApply --parallel";
@@ -14,7 +11,7 @@
         ll = "ls -al";
         c = "clear";
         lg = "lazygit";
-        pbj = "pbpaste | jq";
+        sso = "aws_change_profile";
       };
     };
   };
