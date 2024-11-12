@@ -26,7 +26,6 @@
 
           # Auto upgrade nix package and the daemon service.
           services.nix-daemon.enable = true;
-          # nix.package = pkgs.nix;
 
           # Set Git commit hash for darwin-version.
           system.configurationRevision = self.rev or self.dirtyRev or null;
@@ -37,6 +36,7 @@
 
           nix = {
             settings.experimental-features = "nix-command flakes";
+            package = pkgs.nix;
             gc = {
               automatic = true;
               interval = {
