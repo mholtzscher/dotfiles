@@ -5,7 +5,7 @@
     ./programs
   ];
 
-  home.stateVersion = "23.05";
+  home.stateVersion = "24.11";
   # xdg.enable = true;
   home.packages = [ ] ++ (import ./packages.nix { inherit pkgs; });
 
