@@ -17,6 +17,7 @@
     ./starship.nix
     ./thefuck.nix
     ./wezterm.nix
+    ./zellij.nix
     ./zsh.nix
     ./zoxide.nix
   ];

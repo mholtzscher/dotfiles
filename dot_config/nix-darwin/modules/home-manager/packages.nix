@@ -39,5 +39,4 @@ with pkgs;
   vim
   vscode
   yq
-  zellij
 ]

@@ -11,7 +11,7 @@
 
   home.file = {
     ".ssh/config".source = ./files/ssh-config;
-    "${config.xdg.configHome}/zellij/config.kdl".source = ./files/zellij.kdl;
+    # "${config.xdg.configHome}/zellij/config.kdl".source = ./files/zellij.kdl;
     ".asdfrc".source = ./files/asdfrc;
     "${config.xdg.configHome}/kafkactl/config.yml".source = ./files/kafkactl.yaml;
     "${config.xdg.configHome}/1Password/ssh/agent.toml".source = ./files/1password-agent.toml;
