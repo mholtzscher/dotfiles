@@ -2,7 +2,7 @@
 
 with pkgs;
 [
-  nodejs_22
+  nodejs_23
   lua
   python3
   terraform
