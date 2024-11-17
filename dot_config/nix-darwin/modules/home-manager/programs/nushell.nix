@@ -13,7 +13,6 @@
         chd = "chezmoi diff";
         chda = "chezmoi data";
         chs = "chezmoi status";
-        # fmt = "./gradlew spotlessApply --parallel";
         gradle = "./gradlew";
         ll = "ls -al";
         c = "clear";
