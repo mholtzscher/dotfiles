@@ -29,6 +29,7 @@ with pkgs;
   mkalias
   nixfmt-rfc-style
   neovim
+  nufmt
   obsidian
   oras # TODO: set only for paytient mac
   rm-improved

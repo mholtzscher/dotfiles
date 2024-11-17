@@ -6,6 +6,7 @@
       shellAbbrs = {
         ch = "chezmoi";
         chad = "chezmoi add";
+        chrad = "chezmoi re-add";
         chap = "chezmoi apply";
         chd = "chezmoi diff";
         chda = "chezmoi data";
@@ -178,6 +179,11 @@
         nup = {
           body = "darwin-rebuild switch --flake ~/.config/nix-darwin";
           description = "Rebuild nix-darwin";
+        };
+
+        nfu = {
+          body = "nix flake update";
+          description = "Nix update flakes";
         };
 
         ngc = {
