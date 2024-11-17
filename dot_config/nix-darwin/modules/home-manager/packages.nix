@@ -30,6 +30,7 @@ with pkgs;
   nixfmt-rfc-style
   neovim
   nufmt
+  nushellPlugins.polars
   obsidian
   oras # TODO: set only for paytient mac
   rm-improved
