@@ -4,6 +4,12 @@
     fish = {
       enable = true;
       shellAbbrs = {
+        ch = "chezmoi";
+        chad = "chezmoi add";
+        chap = "chezmoi apply";
+        chd = "chezmoi diff";
+        chda = "chezmoi data";
+        chs = "chezmoi status";
         sso = "aws_change_profile";
       };
 
@@ -172,6 +178,11 @@
         nup = {
           body = "darwin-rebuild switch --flake ~/.config/nix-darwin";
           description = "Rebuild nix-darwin";
+        };
+
+        ngc = {
+          body = "nix-collect-garbage -d";
+          description = "Nix collect garbage";
         };
 
         pbj = {
