@@ -6,10 +6,11 @@
       shellAbbrs = {
         ch = "chezmoi";
         chad = "chezmoi add";
-        chrad = "chezmoi re-add";
+        chradd = "chezmoi re-add";
         chap = "chezmoi apply";
         chd = "chezmoi diff";
         chda = "chezmoi data";
+        chu = "chezmoi update";
         chs = "chezmoi status";
         sso = "aws_change_profile";
       };
