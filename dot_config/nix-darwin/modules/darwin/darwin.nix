@@ -72,10 +72,10 @@
       "com.jetbrains.intellij.ce" = {
         ApplePressAndHoldEnabled = false;
       };
-      "com.pointum.hazeover" = {
-        Enabled = 1;
-        Intensity = "70";
-      };
+      # "com.pointum.hazeover" = {
+      #   Enabled = 1;
+      #   Intensity = "70";
+      # };
       "com.surteesstudios.Bartender" = {
         UseBartenderBar = 1;
         TriggerSettings = {
