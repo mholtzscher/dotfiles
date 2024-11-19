@@ -32,6 +32,7 @@ with pkgs;
   nufmt
   nushellPlugins.polars
   obsidian
+  pokemon-colorscripts-mac
   oras # TODO: set only for paytient mac
   rm-improved
   slack

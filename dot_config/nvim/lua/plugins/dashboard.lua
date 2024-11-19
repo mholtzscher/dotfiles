@@ -9,11 +9,25 @@ local logo = [[
 
 return {
   {
-    "nvimdev/dashboard-nvim",
-    event = "VimEnter",
-    opts = function(_, opts)
-      logo = string.rep("\n", 8) .. logo .. "\n\n"
-      opts.config.header = vim.split(logo, "\n")
-    end,
+    "folke/snacks.nvim",
+    event = "WinEnter",
+    opts = {
+      dashboard = {
+        -- preset = { header = logo },
+        sections = {
+          { section = "header" },
+          { section = "keys", gap = 1, padding = 1 },
+          { section = "startup" },
+          {
+            section = "terminal",
+            cmd = "pokemon-colorscripts -r | tail -n +2; sleep .1",
+            random = 10,
+            pane = 2,
+            indent = 4,
+            height = 30,
+          },
+        },
+      },
+    },
   },
 }
