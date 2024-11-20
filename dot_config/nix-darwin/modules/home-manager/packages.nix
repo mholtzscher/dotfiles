@@ -5,7 +5,7 @@ with pkgs;
   nodejs_23
   lua
   python3
-  terraform
+  # terraform
 ]
 ++ [
   # asdf-vm
