@@ -11,7 +11,6 @@
       # "go"
       "asdf"
       "mas"
-      "terraform" # use this until symlink can be setup
     ];
     casks = [
       "1password"
