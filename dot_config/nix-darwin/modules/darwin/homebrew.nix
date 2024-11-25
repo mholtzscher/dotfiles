@@ -11,6 +11,7 @@
       # "go"
       "asdf"
       "mas"
+      "terraform"
     ];
     casks = [
       "1password"
