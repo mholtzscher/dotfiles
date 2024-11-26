@@ -1,5 +1,8 @@
 source ~/.idea-lazy.vim
 
+
+set flash
+map s <Action>(flash.search)
 " " https://github.com/JetBrains/ideavim/wiki/set-commands
 " set scrolloff=10 " Minimal number of lines above and below the cursor
 " set history=1000 " Number of command-lines that are remembered
