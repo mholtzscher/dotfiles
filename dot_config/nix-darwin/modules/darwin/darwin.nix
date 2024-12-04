@@ -4,7 +4,7 @@
   nixpkgs.hostPlatform = "aarch64-darwin";
 
   fonts.packages = [
-    (pkgs.nerdfonts.override { fonts = [ "Iosevka" ]; })
+    pkgs.nerd-fonts.iosevka
   ];
 
   # Create /etc/zshrc that loads the nix-darwin environment.
