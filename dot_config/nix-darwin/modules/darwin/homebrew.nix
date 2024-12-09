@@ -22,6 +22,7 @@
       "deskpad"
       "docker"
       "intellij-idea"
+      "jetbrains-toolbox"
       "nightfall"
       "postman"
       "raycast"
