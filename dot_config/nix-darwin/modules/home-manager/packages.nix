@@ -23,6 +23,7 @@ with pkgs;
   hugo
   jc
   jq
+  kdlfmt
   ko
   kubernetes-helm
   lsd
