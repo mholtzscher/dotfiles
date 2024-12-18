@@ -16,7 +16,6 @@
     casks = [
       "1password"
       "1password-cli"
-      "nikitabobko/tap/aerospace"
       "arc"
       "bartender"
       "deskpad"
