@@ -38,7 +38,7 @@ with pkgs;
   rm-improved
   slack
   slides
-  sops
+  # sops
   tldr
   vim
   vscode

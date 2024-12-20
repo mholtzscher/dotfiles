@@ -11,6 +11,7 @@
       # "go"
       "asdf"
       "mas"
+      "sops"
       "terraform"
     ];
     casks = [
