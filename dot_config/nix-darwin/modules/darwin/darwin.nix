@@ -31,6 +31,7 @@
       show-recents = false;
       persistent-apps = [
         "/Applications/Arc.app"
+        "${pkgs.obsidian}/Applications/Obsidian.app"
         "/System/Applications/Messages.app"
         "/Applications/WhatsApp.app"
         "${pkgs.discord}/Applications/Discord.app"
@@ -39,7 +40,6 @@
         "${pkgs.wezterm}/Applications/WezTerm.app"
         "/Applications/Postico.app"
         "/Applications/IntelliJ IDEA.app"
-        "${pkgs.obsidian}/Applications/Obsidian.app"
         "/System/Applications/Mail.app"
         "/System/Applications/Calendar.app"
         "/Applications/TickTick.app"
