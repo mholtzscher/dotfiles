@@ -21,6 +21,7 @@
       "bartender"
       "deskpad"
       "docker"
+      "ghostty"
       "intellij-idea"
       "jetbrains-toolbox"
       "nightfall"

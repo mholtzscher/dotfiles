@@ -37,6 +37,7 @@
         "${pkgs.discord}/Applications/Discord.app"
         "${pkgs.slack}/Applications/Slack.app"
         "/Applications/1Password.app"
+        "/Applications/Ghostty.app"
         "${pkgs.wezterm}/Applications/WezTerm.app"
         "/Applications/Postico.app"
         "/Applications/IntelliJ IDEA.app"
