@@ -11,3 +11,8 @@ mouse-hide-while-typing = true
 window-decoration = true
 keybind = global:cmd+/=toggle_quick_terminal
 macos-option-as-alt = true
+
+window-height = 60
+window-width = 200
+quick-terminal-position = "center"
+quick-terminal-screen = "macos-menu-bar"
