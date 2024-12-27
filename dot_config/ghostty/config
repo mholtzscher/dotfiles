@@ -1,7 +1,7 @@
 font-family = "Iosevka Nerd Font Mono"
-font-family-bold = "Iosevka NFM Bold"
-font-family-italic = "Iosevka NFM Italic"
-font-family-bold-italic = "Iosevka NFM Bold Italic"
+#font-family-bold = "Iosevka NFM Bold"
+#font-family-italic = "Iosevka NFM Italic"
+#font-family-bold-italic = "Iosevka NFM Bold Italic"
 font-size = "13"
 
 theme = "catppuccin-mocha"
