@@ -7,12 +7,15 @@
       upgrade = true;
       autoUpdate = true;
     };
+    taps = [
+      "hashicorp/tap"
+    ];
     brews = [
       # "go"
       "asdf"
       "mas"
       "sops"
-      "terraform"
+      "hashicorp/tap/terraform"
     ];
     casks = [
       "1password"
