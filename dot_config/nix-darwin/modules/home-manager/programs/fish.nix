@@ -206,7 +206,7 @@
           body = ''
             set -l AWS_PROFILE m3p_staging
             set -l SOPS_KMS_ARN "arn:aws:kms:us-west-2:211125772151:key/mrk-d167c0b6c99945fabfc4b629d52450ad"
-            command sops $argv
+            sops $argv
           '';
           description = "Run sops with the staging profile";
         };
@@ -215,7 +215,7 @@
           body = ''
             set -l AWS_PROFILE m3p_uat
             set -l SOPS_KMS_ARN "arn:aws:kms:us-west-2:590183679435:key/mrk-3c092342ff9a488399c0ffee8e89eb53"
-            command sops $argv
+            sops $argv
           '';
           description = "Run sops with the uat profile";
         };
@@ -224,7 +224,7 @@
           body = ''
             set -l AWS_PROFILE m3p_production
             set -l SOPS_KMS_ARN "arn:aws:kms:us-west-2:533267267027:key/mrk-17f6bf15417942fd9237ed50d33363ca"
-            command sops $argv
+            sops $argv
           '';
           description = "Run sops with the production profile";
         };
