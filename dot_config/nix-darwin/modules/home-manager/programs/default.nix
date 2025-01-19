@@ -7,9 +7,10 @@
     ./fd.nix
     ./fish.nix
     ./fzf.nix
-    ./go.nix
     ./gh.nix
+    ./go.nix
     ./git.nix
+    ./helix.nix
     ./k9s.nix
     ./lazygit.nix
     ./nushell.nix

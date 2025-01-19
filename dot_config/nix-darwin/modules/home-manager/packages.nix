@@ -18,7 +18,6 @@ with pkgs;
   gnused
   grpcurl
   gum
-  helix
   hey
   httpie
   hugo
