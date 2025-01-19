@@ -5,6 +5,9 @@ with pkgs;
   nodejs_23
   lua
   python3
+  # python313Packages.python-lsp-server
+  # python313Packages.python-lsp-ruff
+  # python313Packages.python-lsp-ruff
   # terraform
 ]
 ++ [
@@ -33,6 +36,7 @@ with pkgs;
   nufmt
   nushellPlugins.polars
   obsidian
+  poetry
   pokemon-colorscripts-mac
   oras # TODO: set only for paytient mac
   rm-improved
