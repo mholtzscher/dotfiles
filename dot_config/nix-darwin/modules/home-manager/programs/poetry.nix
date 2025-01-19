@@ -1,0 +1,8 @@
+{ ... }:
+{
+  programs = {
+    poetry = {
+      enable = true;
+    };
+  };
+}
