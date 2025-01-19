@@ -14,6 +14,8 @@
     ./k9s.nix
     ./lazygit.nix
     ./nushell.nix
+    ./poetry.nix
+    ./pyenv.nix
     ./ripgrep.nix
     ./starship.nix
     ./thefuck.nix

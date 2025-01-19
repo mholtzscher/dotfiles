@@ -36,7 +36,6 @@ with pkgs;
   nufmt
   nushellPlugins.polars
   obsidian
-  poetry
   pokemon-colorscripts-mac
   oras # TODO: set only for paytient mac
   rm-improved

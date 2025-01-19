@@ -16,6 +16,7 @@
       "mas"
       "sops"
       "hashicorp/tap/terraform"
+      "pyenv-virtualenv"
     ];
     casks = [
       "1password"
