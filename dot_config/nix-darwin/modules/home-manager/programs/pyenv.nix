@@ -2,7 +2,7 @@
 {
   programs = {
     pyenv = {
-      enable = true;
+      enable = false;
     };
   };
 }
