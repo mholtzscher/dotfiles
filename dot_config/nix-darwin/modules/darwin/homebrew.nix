@@ -31,6 +31,7 @@
       "nightfall"
       "postman"
       "raycast"
+      "slack"
       "ticktick"
     ];
     masApps = {

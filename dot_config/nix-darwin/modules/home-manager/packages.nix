@@ -39,7 +39,6 @@ with pkgs;
   pokemon-colorscripts-mac
   oras # TODO: set only for paytient mac
   rm-improved
-  slack
   slides
   # sops
   tldr
