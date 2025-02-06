@@ -21,7 +21,7 @@
         fish_add_path "$HOME/.asdf/shims"
 
         if status --is-interactive && type -q asdf
-            source (brew --prefix asdf)/libexec/asdf.fish
+            source (brew --prefix asdf)/share/fish/vendor_completions.d/asdf.fish
         end
 
         for kubeconfigFile in (fd -e yml -e yaml . "$HOME/.kube")
