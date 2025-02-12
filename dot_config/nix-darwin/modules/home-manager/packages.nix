@@ -12,7 +12,7 @@ with pkgs;
 ]
 ++ [
   # asdf-vm
-  awscli2
+  #awscli2
   buf
   chezmoi
   discord
