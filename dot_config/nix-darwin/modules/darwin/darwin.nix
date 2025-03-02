@@ -11,7 +11,7 @@
   programs.zsh.enable = true; # default shell on catalina
   # programs.fish.enable = true;
 
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   system.defaults = {
     NSGlobalDomain = {
