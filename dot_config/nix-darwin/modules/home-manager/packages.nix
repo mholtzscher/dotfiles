@@ -35,7 +35,6 @@ with pkgs;
   neovim
   nufmt
   nushellPlugins.polars
-  obsidian
   pokemon-colorscripts-mac
   oras # TODO: set only for paytient mac
   rm-improved
@@ -43,6 +42,6 @@ with pkgs;
   # sops
   tldr
   vim
-  vscode
+  # vscode
   yq
 ]

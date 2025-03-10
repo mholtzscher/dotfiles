@@ -30,10 +30,10 @@
       "intellij-idea"
       "jetbrains-toolbox"
       "nightfall"
+      "obsidian"
       "postman"
       "raycast"
       "slack"
-      "ticktick"
     ];
     masApps = {
       "In Your Face" = 1476964367;
@@ -43,6 +43,7 @@
       "Better Snap Tool" = 417375580;
       "Hazeover" = 430798174;
       "Postico" = 6446933691;
+      "Things 3" = 904280696;
     };
   };
 
