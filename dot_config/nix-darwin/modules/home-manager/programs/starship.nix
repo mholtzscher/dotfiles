@@ -4,7 +4,7 @@
 {
   programs = {
     starship = {
-      enable = false;
+      enable = true;
       settings = {
         character = {
           success_symbol = "[[♥](green) ❯](maroon)";
