@@ -245,7 +245,7 @@
         zig = {
           symbol = "zig ";
         };
-        palette = "catppuccin_mocha";
+        # palette = "catppuccin_mocha";
         palettes.catppuccin_mocha = {
           rosewater = "#f5e0dc";
           flamingo = "#f2cdcd";
