@@ -16,37 +16,63 @@
       };
 
       interactiveShellInit = ''
-        brew shellenv 2>/dev/null | source || true
+          brew shellenv 2>/dev/null | source || true
 
-        # ASDF configuration code
-        if test -z $ASDF_DATA_DIR
-            set _asdf_shims "$HOME/.asdf/shims"
-        else
-            set _asdf_shims "$ASDF_DATA_DIR/shims"
-        end
+          # ASDF configuration code
+          if test -z $ASDF_DATA_DIR
+              set _asdf_shims "$HOME/.asdf/shims"
+          else
+              set _asdf_shims "$ASDF_DATA_DIR/shims"
+          end
 
-        # Do not use fish_add_path (added in Fish 3.2) because it
-        # potentially changes the order of items in PATH
-        if not contains $_asdf_shims $PATH
-            set -gx --prepend PATH $_asdf_shims
-        end
-        set --erase _asdf_shims
+          # Do not use fish_add_path (added in Fish 3.2) because it
+          # potentially changes the order of items in PATH
+          if not contains $_asdf_shims $PATH
+              set -gx --prepend PATH $_asdf_shims
+          end
+          set --erase _asdf_shims
 
-        # if status --is-interactive && type -q asdf
-        #     asdf completion fish > ~/.config/fish/completions/asdf.fish
-        #     # source (brew --prefix asdf)/share/fish/vendor_completions.d/asdf.fish
-        # end
+          # if status --is-interactive && type -q asdf
+          #     asdf completion fish > ~/.config/fish/completions/asdf.fish
+          #     # source (brew --prefix asdf)/share/fish/vendor_completions.d/asdf.fish
+          # end
 
-        for kubeconfigFile in (fd -e yml -e yaml . "$HOME/.kube")
-            set -gx KUBECONFIG "$kubeconfigFile:$KUBECONFIG"
-        end
+          for kubeconfigFile in (fd -e yml -e yaml . "$HOME/.kube")
+              set -gx KUBECONFIG "$kubeconfigFile:$KUBECONFIG"
+          end
 
-        set -Ux FZF_DEFAULT_OPTS "\
-        --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
-        --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
-        --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
-        --color=selected-bg:#45475a \
-        --multi"
+          # catppuccin theme
+          # set -Ux FZF_DEFAULT_OPTS "\
+          # --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+          # --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+          # --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
+          # --color=selected-bg:#45475a \
+          # --multi"
+
+          # tokyonight_night theme
+          export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
+          --highlight-line \
+          --info=inline-right \
+          --ansi \
+          --layout=reverse \
+          --border=none \
+          --color=bg+:#283457 \
+          --color=bg:#16161e \
+          --color=border:#27a1b9 \
+          --color=fg:#c0caf5 \
+          --color=gutter:#16161e \
+          --color=header:#ff9e64 \
+          --color=hl+:#2ac3de \
+          --color=hl:#2ac3de \
+          --color=info:#545c7e \
+          --color=marker:#ff007c \
+          --color=pointer:#ff007c \
+          --color=prompt:#2ac3de \
+          --color=query:#c0caf5:regular \
+          --color=scrollbar:#27a1b9 \
+          --color=separator:#ff9e64 \
+          --color=spinner:#ff007c \
+        "
       '';
 
       functions = {
