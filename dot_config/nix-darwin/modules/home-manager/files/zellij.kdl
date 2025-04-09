@@ -348,6 +348,52 @@ keybinds clear-defaults=true {
         }
     }
     shared_among "normal" "locked" {
+        bind "Alt y" {
+            LaunchOrFocusPlugin "file:~/.config/zellij/plugins/zellij_forgot.wasm" {
+                lock "ctrl + g"
+                unlock "ctrl + g"
+                "new pane" "Alt + n || ctrl + g + p + n"
+                "change focus of pane" "Alt + arrow key || ctrl + g + p + arrow key"
+                "close pane" "ctrl + g + p + x"
+                "rename pane" "ctrl + g + p + c"
+                "toggle fullscreen" "ctrl + g + p + f"
+                "toggle floating pane" "Alt + f || ctrl + g + p + w"
+                "toggle embed pane" "ctrl + g + p + e"
+                "choose right pane" "ctrl + g + p + l"
+                "choose left pane" "ctrl + g + p + r"
+                "choose upper pane" "ctrl + g + p + k"
+                "choose lower pane" "ctrl + g + p + j"
+                "new tab" "ctrl + g + t + n"
+                "close tab" "ctrl + g + t + x"
+                "change focus of tab" "ctrl + g + t + arrow key"
+                "rename tab" "ctrl + g + t + r"
+                "sync tab" "ctrl + g + t + s"
+                "brake pane to new tab" "ctrl + g + t + b"
+                "brake pane left" "ctrl + g + t + ["
+                "brake pane right" "ctrl + g + t + ]"
+                "toggle tab" "ctrl + g + t + tab"
+                "increase pane size" "ctrl + g + n + +"
+                "decrease pane size" "ctrl + g + n + -"
+                "increase pane top" "ctrl + g + n + k"
+                "increase pane right" "ctrl + g + n + l"
+                "increase pane bottom" "ctrl + g + n + j"
+                "increase pane left" "ctrl + g + n + h"
+                "decrease pane top" "ctrl + g + n + K"
+                "decrease pane right" "ctrl + g + n + L"
+                "decrease pane bottom" "ctrl + g + n + J"
+                "decrease pane left" "ctrl + g + n + H"
+                "move pane to top" "ctrl + g + h + k"
+                "move pane to right" "ctrl + g + h + l"
+                "move pane to bottom" "ctrl + g + h + j"
+                "move pane to left" "ctrl + g + h + h"
+                search "ctrl + g + s + s"
+                "go into edit mode" "ctrl + g + s + e"
+                "detach session" "ctrl + g + o + w"
+                "open session manager" "ctrl + g + o + w"
+                "quit zellij" "ctrl + g + q"
+                floating true
+            }
+        }
         bind "Alt left" {
             MoveFocusOrTab "left"
         }
@@ -441,6 +487,11 @@ keybinds clear-defaults=true {
     shared_among "normal" "resize" "tab" "scroll" "prompt" "tmux" {
         bind "p" {
             SwitchToMode "pane"
+        }
+    }
+    shared_among "normal" "resize" "tab" "scroll" "prompt" "tmux" {
+        bind "o" {
+            SwitchToMode "session"
         }
     }
     shared_except "locked" "resize" "pane" "tab" "entersearch" "renametab" "renamepane" {
@@ -542,9 +593,21 @@ plugins {
         welcome_screen true
     }
 }
+// Plugins to load in the background when a new session starts
+// eg. "file:/path/to/my-plugin.wasm"
+// eg. "https://example.com/my-plugin.wasm"
 load_plugins {
 
 }
+// Use a simplified UI without special fonts (arrow glyphs)
+// Options:
+//   - true
+//   - false (Default)
+//
+// simplified_ui true
+// Choose the theme that is specified in the themes section.
+// Default: default
+//
 themes {
     tokyonight_night {
         fg "#c0caf5"
@@ -563,5 +626,6 @@ themes {
 theme "tokyonight_night"
 default_mode "locked"
 default_shell "fish"
-show_release_notes false
+scrollback_editor "nvim"
+show_release_notes true
 
