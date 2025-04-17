@@ -20,6 +20,7 @@
     ./starship.nix
     ./thefuck.nix
     ./wezterm.nix
+    ./yazi.nix
     ./zellij.nix
     ./zsh.nix
     ./zoxide.nix
