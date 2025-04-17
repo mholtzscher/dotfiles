@@ -36,7 +36,7 @@
             key = "O";
             description = "Open Pull Request with GitHub CLI";
             context = "global";
-            command = "gh pr create -df && gh pr view --web";
+            command = "gh pr create -df --head && gh pr view --web";
             loadingText = "Creating Pull Request";
           }
           # {
