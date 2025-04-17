@@ -187,6 +187,14 @@
           description = "Run the formatter for the current project";
         };
 
+        ghpr = {
+          body = ''
+            gh pr create -df
+            gh pr view --web
+          '';
+          description = "Create a pull request on GitHub";
+        };
+
         gitignore = {
           body = "curl -sL https://www.gitignore.io/api/$argv";
           description = "get gitgnore for language";
