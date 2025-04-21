@@ -36,8 +36,9 @@ with pkgs;
   neovim
   nufmt
   nushellPlugins.polars
-  pokemon-colorscripts-mac
   oras # TODO: set only for paytient mac
+  pokemon-colorscripts-mac
+  procs
   rm-improved
   slides
   # sops
