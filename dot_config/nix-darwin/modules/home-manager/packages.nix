@@ -29,7 +29,6 @@ with pkgs;
   kdlfmt
   ko
   kubernetes-helm
-  lazydocker
   lsd
   mkalias
   nixfmt-rfc-style
