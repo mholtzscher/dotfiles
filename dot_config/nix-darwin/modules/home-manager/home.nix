@@ -10,7 +10,7 @@
   home.packages = [ ] ++ (import ./packages.nix { inherit pkgs; });
 
   home.file = {
-    ".ssh/config".source = ./files/ssh-config;
+    # ".ssh/config".source = ./files/ssh-config;
     "${config.xdg.configHome}/zellij/config.kdl".source = ./files/zellij.kdl;
     ".asdfrc".source = ./files/asdfrc;
     "${config.xdg.configHome}/kafkactl/config.yml".source = ./files/kafkactl.yaml;

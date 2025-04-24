@@ -13,12 +13,14 @@
     ./git.nix
     ./helix.nix
     ./k9s.nix
+    ./lazydocker.nix
     ./lazygit.nix
     ./nushell.nix
     ./poetry.nix
     ./pyenv.nix
     ./ripgrep.nix
     ./starship.nix
+    ./ssh.nix
     ./thefuck.nix
     ./wezterm.nix
     ./yazi.nix
