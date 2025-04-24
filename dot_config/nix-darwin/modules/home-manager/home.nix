@@ -23,11 +23,6 @@
       }
       + "/themes/Catppuccin Mocha.theme";
     "${config.xdg.configHome}/fish/functions/update.fish".source = ./files/fish/functions/update.fish;
-    # ".local/bin/terraform".source = "${pkgs.terraform}/bin/terraform";
-    # "${config.xdg.configHome}/nvim" = {
-    #   source = ./files/nvim;
-    #   recursive = true;
-    # };
   };
 
   home.sessionVariables = {
