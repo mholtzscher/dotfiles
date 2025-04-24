@@ -8,9 +8,7 @@ def fmt [] {
       echo "build.gradle found. Running ./gradlew spotlessApply..."
       run-external "./gradlew" "spotlessApply" "--parallel"
       # ./gradlew spotlessApply --parallel
-    } else {
-      echo "no supported files found"
-    }
+    } 
   }
 }
 
