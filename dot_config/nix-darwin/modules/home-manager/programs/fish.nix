@@ -1,4 +1,7 @@
 { ... }:
+let
+  brew_setup = "brew shellenv 2>/dev/null | source || true";
+in
 {
   programs = {
     fish = {
@@ -16,7 +19,7 @@
       };
 
       interactiveShellInit = ''
-          brew shellenv 2>/dev/null | source || true
+          # ${brew_setup}
 
           # ASDF configuration code
           if test -z $ASDF_DATA_DIR
