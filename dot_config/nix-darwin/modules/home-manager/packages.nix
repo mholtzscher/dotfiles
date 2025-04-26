@@ -29,7 +29,6 @@ with pkgs;
   kdlfmt
   ko
   kubernetes-helm
-  lsd
   mkalias
   nixfmt-rfc-style
   neovim

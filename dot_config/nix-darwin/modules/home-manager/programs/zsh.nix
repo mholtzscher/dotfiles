@@ -7,10 +7,7 @@
         vim = "nvim";
         c = "clear";
         lg = "lazygit";
-        ls = "lsd";
-        ll = "lsd -al";
-        tree = "lsd --tree -a --ignore-glob .git";
-        treed = "lsd --tree -a -d --ignore-glob .git --ignore-glob gen";
+        ltd = "eza --tree --only-dirs";
         pbj = "pbpaste | jq";
         cacheclear = "sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder";
         ip = "dig +short myip.opendns.com @resolver1.opendns.com";

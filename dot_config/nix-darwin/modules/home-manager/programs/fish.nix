@@ -15,6 +15,7 @@ in
         chda = "chezmoi data";
         chu = "chezmoi update";
         chs = "chezmoi status";
+        ltd = "eza --tree --only-dirs";
         sso = "aws_change_profile";
       };
 
@@ -35,16 +36,12 @@ in
           end
           set --erase _asdf_shims
 
-          # if status --is-interactive && type -q asdf
-          #     asdf completion fish > ~/.config/fish/completions/asdf.fish
-          #     # source (brew --prefix asdf)/share/fish/vendor_completions.d/asdf.fish
-          # end
-
+          # Kubernetes config setup
           for kubeconfigFile in (fd -e yml -e yaml . "$HOME/.kube")
               set -gx KUBECONFIG "$kubeconfigFile:$KUBECONFIG"
           end
 
-          # catppuccin theme
+          # FZF catppuccin theme
           # set -Ux FZF_DEFAULT_OPTS "\
           # --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
           # --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
@@ -52,7 +49,7 @@ in
           # --color=selected-bg:#45475a \
           # --multi"
 
-          # tokyonight_night theme
+          # FZF tokyonight_night theme
           set -Ux FZF_DEFAULT_OPTS " \
           --highlight-line \
           --info=inline-right \
@@ -77,7 +74,7 @@ in
           --color=spinner:#ff007c \
         "
 
-        # TokyoNight Color Palette
+        # Fish TokyoNight Color Palette
         set -l foreground c0caf5
         set -l selection 283457
         set -l comment 565f89
@@ -247,21 +244,9 @@ in
           wraps = "lazygit";
         };
 
-        ll = {
-          body = "lsd -al $argv";
-          description = "lsd -al";
-          wraps = "lsd";
-        };
-
         localip = {
           body = "ipconfig getifaddr en0 $argv";
           description = "get local ip address";
-        };
-
-        ls = {
-          body = "lsd $argv";
-          description = "lsd";
-          wraps = "lsd";
         };
 
         nup = {
@@ -320,18 +305,6 @@ in
           body = "terraform $argv";
           description = "terraform";
           wraps = "terraform";
-        };
-
-        tree = {
-          body = "lsd --tree -a --ignore-glob .git $argv";
-          description = "pretty tree view of all files";
-          wraps = "lsd";
-        };
-
-        treed = {
-          body = "lsd --tree -a -d --ignore-glob .git --ignore-glob gen $argv";
-          description = "pretty tree view of only directories";
-          wraps = "lsd";
         };
 
         tst = {
