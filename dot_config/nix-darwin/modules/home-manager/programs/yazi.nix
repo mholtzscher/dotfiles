@@ -14,12 +14,23 @@ in
   programs = {
     yazi = {
       enable = true;
+
       flavors = {
         tokyonight = "${yazi-flavors}";
       };
+
       theme = {
         flavor = {
           dark = "tokyonight";
+        };
+      };
+
+      settings = {
+        manager = {
+          show_hidden = true;
+          # sort_by = "mtime";
+          # sort_dir_first = true;
+          # sort_reverse = true;
         };
       };
     };

@@ -15,7 +15,7 @@ in
         chda = "chezmoi data";
         chu = "chezmoi update";
         chs = "chezmoi status";
-        ltd = "eza --tree --only-dirs";
+        ltd = "eza --tree --only-dirs --level 3";
         sso = "aws_change_profile";
       };
 
