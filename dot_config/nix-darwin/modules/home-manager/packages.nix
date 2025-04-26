@@ -11,7 +11,7 @@ with pkgs;
   # terraform
 ]
 ++ [
-  # asdf-vm
+  asdf-vm
   #awscli2
   buf
   chezmoi

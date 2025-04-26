@@ -11,8 +11,6 @@
       "hashicorp/tap"
     ];
     brews = [
-      # "go"
-      "asdf"
       "awscli"
       "mas"
       "sops"
