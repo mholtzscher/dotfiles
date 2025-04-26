@@ -10,6 +10,7 @@
     ./fzf.nix
     ./gh.nix
     ./go.nix
+    ./gh-dash.nix
     ./git.nix
     ./helix.nix
     ./k9s.nix

@@ -20,6 +20,7 @@
         weather = "curl wttr.in";
         clean = "git clean -Xdf";
       };
+      # deprecated
       initExtra = ''
         if [ -f /Users/michaelholtzcher/code/onboarding/engineering.sh ]; then
             source /Users/michaelholtzcher/code/onboarding/engineering.sh
