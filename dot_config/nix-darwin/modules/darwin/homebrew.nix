@@ -12,6 +12,7 @@
     ];
     brews = [
       "awscli"
+      "asdf"
       "mas"
       "sops"
       "hashicorp/tap/terraform"
