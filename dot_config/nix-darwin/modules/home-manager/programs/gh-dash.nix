@@ -7,11 +7,7 @@
         prSections = [
           {
             title = "Legends";
-            filters = "org:paytient team:paytient/legends-of-the-ledger updated>={{ nowModify '-1w' }}";
-          }
-          {
-            title = "Legends 2";
-            filters = "org:paytient team-review-requested:legends-of-the-ledger updated>={{ nowModify '-1w' }}";
+            filters = ''org:paytient team-review-requested:paytient/legends-of-the-ledger updated:>={{ nowModify "-2w" }}'';
           }
           {
             title = "Paytient Mine";
@@ -23,7 +19,7 @@
           }
           {
             title = "M3P Recent";
-            filters = "repo:paytient/m3p updated>={{ nowModify '-1w' }}";
+            filters = ''repo:paytient/m3p updated:>={{ nowModify "-1w" }}'';
           }
           {
             title = "Personal";
