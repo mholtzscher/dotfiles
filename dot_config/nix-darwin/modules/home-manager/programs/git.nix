@@ -12,11 +12,8 @@
       lfs.enable = true;
       delta = {
         enable = true;
-        options = {
-          # dark = true;
-        };
       };
-      # includes = [ { path = ../themes/catppuccin.gitconfig; } ];
+      includes = [ { path = ../themes/catppuccin.gitconfig; } ];
     };
   };
 }
