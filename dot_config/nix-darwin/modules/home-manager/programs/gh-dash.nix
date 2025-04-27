@@ -6,26 +6,38 @@
       settings = {
         prSections = [
           {
-            title = "Legends";
-            filters = ''org:paytient team-review-requested:paytient/legends-of-the-ledger updated:>={{ nowModify "-2w" }}'';
+            title = "My Pull Requests";
+            filters = "is:open author:@me";
           }
           {
-            title = "Paytient Mine";
-            filters = "is:open org:paytient author:@me";
+            title = "Legends Review Requested";
+            filters = "is:open org:paytient team-review-requested:paytient/legends-of-the-ledger";
           }
           {
-            title = "M3P Open";
+            title = "Review Requested";
+            filters = "is:open review-requested:@me";
+          }
+          {
             filters = "is:open repo:paytient/m3p";
+            title = "M3P Open";
           }
           {
-            title = "M3P Recent";
-            filters = ''repo:paytient/m3p updated:>={{ nowModify "-1w" }}'';
-          }
-          {
-            title = "Personal";
-            filters = "is:open -org:paytient author:@me";
+            filters = "repo:paytient/m3p";
+            title = "M3P All";
+            limit = 20;
           }
         ];
+
+        pager = {
+          diff = "delta";
+        };
+
+        defaults = {
+          preview = {
+            open = true;
+            width = 150;
+          };
+        };
       };
     };
   };
