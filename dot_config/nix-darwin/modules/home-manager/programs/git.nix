@@ -13,7 +13,7 @@
       delta = {
         enable = true;
       };
-      includes = [ { path = ../themes/catppuccin.gitconfig; } ];
+      includes = [ { path = ../themes/themes.gitconfig; } ];
     };
   };
 }
