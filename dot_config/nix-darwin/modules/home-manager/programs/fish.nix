@@ -114,6 +114,7 @@ in
       '';
 
       functions = {
+        # TODO: can be removed
         __aws_sso_login = {
           body = builtins.readFile ../files/fish/functions/__aws_sso_login.fish;
           description = "Login to AWS SSO";
