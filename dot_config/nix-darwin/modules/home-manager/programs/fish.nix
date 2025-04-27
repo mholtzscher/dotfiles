@@ -115,26 +115,12 @@ in
 
       functions = {
         __aws_sso_login = {
-          body = ''
-            if aws sts get-caller-identity >/dev/null 2>&1
-                echo "Found valid AWS session"
-            else
-                echo "Logging into AWS"
-                aws sso login
-            end
-          '';
+          body = builtins.readFile ../files/fish/functions/__aws_sso_login.fish;
           description = "Login to AWS SSO";
         };
 
         __ssh_tunnel = {
-          body = ''
-            set -l KEY_FILE_PATH $argv[1]
-            set -l LOCAL_PORT $argv[2]
-            set -l ENDPOINT $argv[3]
-            set -l USER_HOSTNAME $argv[4]
-
-            ssh -i $KEY_FILE_PATH -v -N -L $LOCAL_PORT:$ENDPOINT $USER_HOSTNAME
-          '';
+          body = builtins.readFile ../files/fish/functions/__ssh_tunnel.fish;
           description = "Create an SSH tunnel";
         };
 
@@ -159,12 +145,7 @@ in
         };
 
         aws_logout = {
-          body = ''
-            if aws configure get sso_start_url --profile $AWS_PROFILE >/dev/null 2>&1
-                aws sso logout
-            end
-            set -e AWS_PROFILE
-          '';
+          body = builtins.readFile ../files/fish/functions/aws_logout.fish;
           description = "logout from AWS SSO";
         };
 
@@ -202,27 +183,14 @@ in
         };
 
         gradle = {
-          body = ''
-            if test -e ./gradlew
-                ./gradlew $argv
-            else
-                echo "No gradlew found"
-            end
-          '';
+          body = builtins.readFile ../files/fish/functions/gradle.fish;
           description = "swaps ./gradlew for gradle";
           wraps = "./gradlew";
 
         };
 
         ifactive = {
-          body = ''
-            for interface in (networksetup -listallhardwareports | awk '/^Device:/ {print $2}')
-                set ip (ipconfig getifaddr $interface)
-                if test -n "$ip"
-                    echo "$interface: $ip"
-                end
-            end
-          '';
+          body = builtins.readFile ../files/fish/functions/ifactive.fish;
           description = "List network interfaces and IP addresses for all active network interfaces";
         };
 
@@ -324,37 +292,12 @@ in
         };
 
         y = {
-          body = ''
-            set tmp (mktemp -t "yazi-cwd.XXXXXX")
-            yazi $argv --cwd-file="$tmp"
-            if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-              builtin cd -- "$cwd"
-            end
-            rm -f -- "$tmp"
-          '';
+          body = builtins.readFile ../files/fish/functions/y.fish;
           description = "yazi";
         };
 
         zoxide_register_children = {
-          body = ''
-            set -f target_dir (prompt_pwd)
-
-            echo "Scanning for child directories in: $target_dir"
-            set -l count 0
-            fd --type d --maxdepth 1 . | while read -L child_dir
-                if test -n "$child_dir" # Ensure read command got a non-empty string
-                    echo "  Adding: $child_dir"
-                    zoxide add "$child_dir"
-                    set count (math $count + 1)
-                end
-            end
-
-            if test $count -eq 0
-                echo "No child directories found to add."
-            else
-                echo "Done. Added $count child directories to zoxide."
-            end
-          '';
+          body = builtins.readFile ../files/fish/functions/zoxide_register_children.fish;
           description = "Adds immediate child directories of the current directory to zoxide's database.";
         };
       };

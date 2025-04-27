@@ -21,5 +21,10 @@ set -gx AWS_PROFILE "$profile"
 echo -e "Using AWS profile: $AWS_PROFILE"
 
 if aws configure get sso_start_url --profile $AWS_PROFILE >/dev/null 2>&1
-    __aws_sso_login
+    if aws sts get-caller-identity >/dev/null 2>&1
+        echo "Found valid AWS session"
+    else
+        echo "Logging into AWS"
+        aws sso login
+    end
 end

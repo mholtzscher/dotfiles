@@ -11,6 +11,7 @@
     ./gh.nix
     ./go.nix
     ./gh-dash.nix
+    ./ghostty.nix
     ./git.nix
     ./helix.nix
     ./k9s.nix
