@@ -1,9 +1,6 @@
 return {
-  -- I don't know why I added this...
-  -- "ibhagwan/fzf-lua",
-  -- -- optional for icon support
-  -- dependencies = { "nvim-tree/nvim-web-devicons", "echasnovski/mini.icons" },
-  -- -- or if using mini.icons/mini.nvim
-  -- -- dependencies = { "echasnovski/mini.icons" },
-  -- opts = {},
+  -- this is needed fro octo.nvim to work. there is open pr for snacks to work
+  "ibhagwan/fzf-lua",
+  dependencies = { "nvim-tree/nvim-web-devicons", "echasnovski/mini.icons" },
+  opts = {},
 }
