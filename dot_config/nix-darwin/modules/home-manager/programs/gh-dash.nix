@@ -26,6 +26,11 @@
             title = "M3P All";
             limit = 20;
           }
+          {
+            filters = "is:open owner:mholtzscher";
+            title = "mholtzscher";
+            limit = 20;
+          }
         ];
 
         pager = {
