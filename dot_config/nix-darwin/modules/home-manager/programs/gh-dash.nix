@@ -34,7 +34,7 @@
         ];
 
         pager = {
-          diff = "bat";
+          diff = "delta";
         };
 
         defaults = {
