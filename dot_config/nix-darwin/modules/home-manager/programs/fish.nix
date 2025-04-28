@@ -17,6 +17,9 @@ in
         chs = "chezmoi status";
         ghd = "gh dash";
         ltd = "eza --tree --only-dirs --level 3";
+        nfu = "nix flake update";
+        ngc = "nix-collect-garbage -d";
+        nup = "darwin-rebuild switch --flake ~/.config/nix-darwin";
         sso = "aws_change_profile";
       };
 
@@ -217,21 +220,6 @@ in
         localip = {
           body = "ipconfig getifaddr en0 $argv";
           description = "get local ip address";
-        };
-
-        nup = {
-          body = "darwin-rebuild switch --flake ~/.config/nix-darwin";
-          description = "Rebuild nix-darwin";
-        };
-
-        nfu = {
-          body = "nix flake update";
-          description = "Nix update flakes";
-        };
-
-        ngc = {
-          body = "nix-collect-garbage -d";
-          description = "Nix collect garbage";
         };
 
         pbj = {
