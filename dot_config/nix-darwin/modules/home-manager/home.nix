@@ -3,8 +3,8 @@ let
   tokyonight = pkgs.fetchFromGitHub {
     owner = "folke";
     repo = "tokyonight.nvim";
-    rev = "main";
-    sha256 = "sha256-mriZ9QBe1QIDsBkGd+tmg4bNFtD0evuSom2pWyQ1yEM=";
+    rev = "057ef5d260c1931f1dffd0f052c685dcd14100a3";
+    sha256 = "sha256-1xZhQR1BhH2eqax0swlNtnPWIEUTxSOab6sQ3Fv9WQA=";
   };
 in
 {
@@ -22,13 +22,13 @@ in
     "${config.xdg.configHome}/kafkactl/config.yml".source = ./files/kafkactl.yaml;
     "${config.xdg.configHome}/1Password/ssh/agent.toml".source = ./files/1password-agent.toml;
     "${config.xdg.configHome}/fish/functions/update.fish".source = ./files/fish/functions/update.fish;
-    "${config.xdg.configHome}/eza/theme.yml".source = "${tokyonight}/extras/eza/tokyonight.yml";
+    # "${config.xdg.configHome}/eza/theme.yml".source = "${tokyonight}/extras/eza/tokyonight.yml";
+    "Library/Application Support/eza/theme.yml".source = "${tokyonight}/extras/eza/tokyonight.yml";
   };
 
   home.sessionVariables = {
     EDITOR = "nvim";
     COMPOSE_PROFILES = "default"; # TODO: set only for paytient mac
-    EZA_CONFIG_DIR = "~/.config/eza";
   };
 
   # Let Home Manager install and manage itself.
