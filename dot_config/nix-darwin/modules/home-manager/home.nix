@@ -22,7 +22,6 @@ in
     "${config.xdg.configHome}/kafkactl/config.yml".source = ./files/kafkactl.yaml;
     "${config.xdg.configHome}/1Password/ssh/agent.toml".source = ./files/1password-agent.toml;
     "${config.xdg.configHome}/fish/functions/update.fish".source = ./files/fish/functions/update.fish;
-    # "${config.xdg.configHome}/eza/theme.yml".source = "${tokyonight}/extras/eza/tokyonight.yml";
     "Library/Application Support/eza/theme.yml".source = "${tokyonight}/extras/eza/tokyonight.yml";
   };
 
