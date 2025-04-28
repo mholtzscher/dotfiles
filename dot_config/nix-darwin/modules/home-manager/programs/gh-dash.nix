@@ -48,6 +48,8 @@
           "paytient/m3p" = "~/code/m3p";
         };
 
+        smartFilteringAtLaunch = false;
+
         keybindings = {
           prs = [
             {
