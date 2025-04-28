@@ -31,8 +31,8 @@ in
     "Library/Application Support/eza/theme.yml".source = "${tokyonight}/extras/eza/tokyonight.yml";
     # "${config.xdg.configHome}/starship.toml".source =
     #   "${starship}/docs/public/presets/toml/pure-preset.toml";
-    "${config.xdg.configHome}/starship.toml".source =
-      "${starship}/docs/public/presets/toml/jetpack.toml";
+    # "${config.xdg.configHome}/starship.toml".source =
+    #   "${starship}/docs/public/presets/toml/jetpack.toml";
   };
 
   home.sessionVariables = {
