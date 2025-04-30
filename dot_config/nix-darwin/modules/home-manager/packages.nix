@@ -26,6 +26,7 @@ with pkgs;
   hugo
   jc
   jq
+  just
   kdlfmt
   ko
   kubernetes-helm
