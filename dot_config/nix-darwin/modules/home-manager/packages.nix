@@ -15,6 +15,7 @@ with pkgs;
   #awscli2
   buf
   chezmoi
+  cowsay
   discord
   dive
   dust
