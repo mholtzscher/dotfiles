@@ -20,6 +20,9 @@ in
       # signing.signByDefault = true;
       lfs.enable = true;
       delta = {
+        options = {
+          dark = true;
+        };
         enable = true;
       };
       includes = [ { path = "${tokyonight}/extras/delta/tokyonight_night.gitconfig"; } ];
