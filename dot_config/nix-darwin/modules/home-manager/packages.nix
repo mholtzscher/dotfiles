@@ -40,6 +40,7 @@ with pkgs;
   pokemon-colorscripts-mac
   procs
   rm-improved
+  sl
   slides
   # sops
   tldr
