@@ -16,7 +16,7 @@
         chad = "chezmoi add";
         chrad = "chezmoi re-add";
         chap = "chezmoi apply";
-        chd = "chezmoi diff";
+        chd = "chezmoi diff --pager delta";
         chda = "chezmoi data";
         chs = "chezmoi status";
 
