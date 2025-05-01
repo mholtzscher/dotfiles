@@ -30,6 +30,7 @@ with pkgs;
   kdlfmt
   ko
   kubernetes-helm
+  lolcat
   mkalias
   nixfmt-rfc-style
   neovim
