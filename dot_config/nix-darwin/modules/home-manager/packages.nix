@@ -31,7 +31,7 @@ with pkgs;
   kdlfmt
   ko
   kubernetes-helm
-  lolcat
+  # lolcat
   mkalias
   nixfmt-rfc-style
   neovim

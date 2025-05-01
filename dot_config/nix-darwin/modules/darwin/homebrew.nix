@@ -13,6 +13,7 @@
     brews = [
       "awscli"
       "asdf"
+      "lolcat"
       "mas"
       "sops"
       "hashicorp/tap/terraform"
