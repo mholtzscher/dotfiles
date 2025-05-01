@@ -17,6 +17,7 @@
     ./k9s.nix
     ./lazydocker.nix
     ./lazygit.nix
+    ./navi.nix
     ./nushell.nix
     ./poetry.nix
     ./pyenv.nix
