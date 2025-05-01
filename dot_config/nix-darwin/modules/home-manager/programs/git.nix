@@ -21,6 +21,7 @@ in
       lfs.enable = true;
       delta = {
         options = {
+          side-by-side = true;
           dark = true;
         };
         enable = true;

@@ -63,7 +63,7 @@
       Clicking = true;
     };
 
-    screencapture.location = "~/Library/Mobile Documents/com~apple~CloudDocs/ScreenShots";
+    screencapture.location = "~/Downloads/ScreenShots";
     loginwindow.GuestEnabled = false;
 
     CustomUserPreferences = {
