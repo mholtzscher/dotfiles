@@ -16,6 +16,7 @@ in
         chu = "chezmoi update";
         chs = "chezmoi status";
         ghd = "gh dash";
+        j = "just";
         ltd = "eza --tree --only-dirs --level 3";
         nfu = "nix flake update";
         ngc = "nix-collect-garbage -d";
