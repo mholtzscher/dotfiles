@@ -17,6 +17,7 @@
       "mas"
       "sops"
       "hashicorp/tap/terraform"
+      "pulumi"
       "pyenv-virtualenv"
     ];
     casks = [

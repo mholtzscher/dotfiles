@@ -40,7 +40,6 @@ with pkgs;
   oras # TODO: set only for paytient mac
   pokemon-colorscripts-mac
   procs
-  pulumi
   rm-improved
   sl
   slides
