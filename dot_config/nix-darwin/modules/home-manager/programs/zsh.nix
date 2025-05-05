@@ -19,6 +19,7 @@
       };
       initContent = ''
         if [ -f /Users/michaelholtzcher/code/onboarding/engineering.sh ]; then
+            export GITHUB_PAT=$(op read "op://Personal/Github/paytient-pat")
             source /Users/michaelholtzcher/code/onboarding/engineering.sh
         fi
       '';
