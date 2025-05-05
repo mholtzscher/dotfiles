@@ -118,6 +118,10 @@ in
       '';
 
       functions = {
+        pat = {
+          body = ''set -gx GITHUB_PAT (op read "op://Personal/Github/paytient-pat")'';
+          description = "Set the GITHUB_PAT environment variable";
+        };
         # TODO: can be removed
         __aws_sso_login = {
           body = builtins.readFile ../files/fish/functions/__aws_sso_login.fish;
