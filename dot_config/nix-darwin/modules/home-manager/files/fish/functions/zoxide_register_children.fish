@@ -1,4 +1,4 @@
-set -f target_dir (prompt_pwd)
+set -f target_dir (pwd)
 
 echo "Adding current directory to zoxide: $target_dir"
 zoxide add "$target_dir"
