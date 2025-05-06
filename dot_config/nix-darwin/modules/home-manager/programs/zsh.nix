@@ -7,7 +7,7 @@
         vim = "nvim";
         c = "clear";
         lg = "lazygit";
-        ltd = "eza --tree --only-dirs";
+        ltd = "eza --tree --only-dirs --level 3";
         pbj = "pbpaste | jq";
         cacheclear = "sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder";
         ip = "dig +short myip.opendns.com @resolver1.opendns.com";
