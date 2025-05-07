@@ -45,6 +45,8 @@ function _worky_init -d "Clones a Git repository as a bare repo."
     else
         echo "Error cloning repository. Please check the URL and your network connection."
     end
+
+    _worky_add -n main
 end
 
 function _worky_add -d "Creates a new Git worktree."
@@ -55,7 +57,12 @@ function _worky_add -d "Creates a new Git worktree."
         return 1
     end
 
-    set -l path $_flag_name
+    _worky_cd
+    if test $status -ne 0
+        echo "Error: Not in a git repository."
+        return 1
+    end
+
     set -l branch $_flag_branch
     set -l force_flag ""
 
@@ -63,12 +70,18 @@ function _worky_add -d "Creates a new Git worktree."
         set force_flag --force
     end
 
+    if test (basename (pwd)) = "project.git"
+        set path "../$_flag_name"
+    else
+        set path (dirname (git rev-parse --show-toplevel))/$flag_name
+    end
+
     if string length --quiet $branch
         echo "Creating worktree at '$path' for branch '$branch'..."
         git worktree add $force_flag "$path" -b "$branch"
     else
-        echo "Creating worktree at '../$path'..."
-        git worktree add "../$path"
+        echo "Creating worktree at '$path'..."
+        git worktree add "$path"
     end
 
     if test $status -eq 0
@@ -80,17 +93,10 @@ end
 
 function _worky_list -d "Lists Git worktrees and navigates to the selected one using fzf."
     # check if in git repo
-    set -l worktrees (git worktree list --porcelain 2>&1)
+    _worky_cd
     if test $status -ne 0
-        echo "No worktrees found in current directory."
-        # check if project.git folder exists 
-        if test -d "project.git"
-            echo "Found project.git. Changing to project.git..."
-            cd "project.git"
-        else
-            echo "This is not a git repository."
-            return 1
-        end
+        echo "Error: Not in a git repository."
+        return 1
     end
 
     set -l selected (git worktree list | sed -r 's/^(.*\/([^[:space:]]* ))/\1 \2/g' | fzf --with-nth=2,4 --height 10 --border --prompt "tree: ")
@@ -167,5 +173,20 @@ function _worky_delete -d "Deletes a Git worktree."
         end
     else
         echo "Deletion cancelled."
+    end
+end
+
+function _worky_cd
+    set -l worktrees (git worktree list --porcelain 2>&1)
+    if test $status -ne 0
+        echo "No worktrees found in current directory."
+        # check if project.git folder exists 
+        if test -d "project.git"
+            echo "Found project.git. Changing to project.git..."
+            cd "project.git"
+        else
+            echo "This is not a git repository."
+            return 1
+        end
     end
 end
