@@ -18,9 +18,9 @@ function worky -d "Manages git worktrees"
             _worky_init $args
         case ls or list
             _worky_list $args
-        case add
+        case a or add
             _worky_add $args
-        case delete
+        case d or delete
             _worky_delete $args
         case '*'
             echo "Usage: worktree <setup|add|list|delete>..."
@@ -77,8 +77,12 @@ function _worky_add -d "Creates a new Git worktree."
     end
 
     if string length --quiet $branch
+        if git rev-parse --verify --quiet $branch >/dev/null
+            echo "A ref named '$branch' (local branch, tag, or commit) exists. Exiting."
+            return 1
+        end
         echo "Creating worktree at '$path' for branch '$branch'..."
-        git worktree add $force_flag "$path" -b "$branch"
+        git worktree add $force_flag "$path" -B "$branch"
     else
         echo "Creating worktree at '$path'..."
         git worktree add "$path"
@@ -146,33 +150,36 @@ function _worky_list -d "Lists Git worktrees and navigates to the selected one u
 end
 
 function _worky_delete -d "Deletes a Git worktree."
-    argparse 'p/path=' f/force -- $argv
+    argparse f/force -- $argv
 
-    if not set -q _flag_path
-        echo "Usage: worktree delete -p <worktree_path> [-f]"
+    _worky_cd
+    if test $status -ne 0
+        echo "Error: Not in a git repository."
         return 1
     end
 
-    set -l worktree_path $_flag_path
     set -l force_flag ""
-
     if set -q _flag_force
         set force_flag --force
     end
 
-    read -l -P "Are you sure you want to delete the worktree at '$worktree_path'? [y/N]: " confirm
+    set -l selected (git worktree list | sed -r 's/^(.*\/([^[:space:]]* ))/\1 \2/g' | fzf --with-nth=2,4 --height 10 --border --prompt "tree: ")
 
-    if test "$confirm" = y -o "$confirm" = Y
-        echo "Deleting worktree at '$worktree_path'..."
-        git worktree remove $force_flag "$worktree_path"
+    if test -z "$selected"
+        echo "No worktree selected."
+        return 0
+    end
 
-        if test $status -eq 0
-            echo "Worktree at '$worktree_path' deleted successfully."
-        else
-            echo "Error deleting worktree. Please check the path or try with --force."
-        end
+    echo "selected: $selected"
+    set -l selected_dir (string trim (echo $selected | cut -d" " -f3))
+
+    echo "Deleting worktree '$selected_dir'..."
+    git worktree remove $selected_dir $force_flag
+
+    if test $status -eq 0
+        echo "Worktree '$selected_dir' deleted successfully."
     else
-        echo "Deletion cancelled."
+        echo "Error deleting worktree. Please check the path or try with --force."
     end
 end
 
