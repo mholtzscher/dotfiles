@@ -71,9 +71,9 @@ function _worky_add -d "Creates a new Git worktree."
     end
 
     if test (basename (pwd)) = "project.git"
-        set path "../$_flag_name"
+        set path (realpath "../")/$_flag_name
     else
-        set path (dirname (git rev-parse --show-toplevel))/$flag_name
+        set path (dirname (git rev-parse --show-toplevel))/$_flag_name
     end
 
     if string length --quiet $branch
