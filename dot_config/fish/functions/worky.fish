@@ -1,4 +1,5 @@
 function worky -d "Manages git worktrees"
+    argparse h/help -- $argv
     set -l subcommand $argv[1]
     set -l args $argv[2..-1]
 
@@ -16,14 +17,22 @@ function worky -d "Manages git worktrees"
         case i or init
             echo "Initializing worktree..."
             _worky_init $args
-        case ls or list
-            _worky_list $args
         case a or add
             _worky_add $args
         case d or delete
             _worky_delete $args
-        case '*'
-            echo "Usage: worktree <setup|add|list|delete>..."
+        case $_flag_help
+            echo "Worky is an opinionated tool for working with Git Worktrees"
+            echo ""
+            echo "Usage: worky <command> [options]"
+            echo "Commands:"
+            echo "  init,i     - Init a bare repo for worky usage"
+            echo "  list,ls    - List worktrees and navigate to one"
+            echo "  add,a      - Add a new worktree"
+            echo "  delete,d   - Delete a worktree"
+        case ls or list or "*"
+            _worky_list $args
+
     end
 end
 
