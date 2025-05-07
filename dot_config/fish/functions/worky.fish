@@ -31,15 +31,14 @@ function _worky_init -d "Clones a Git repository as a bare repo."
     argparse 'u/url=' -- $argv
 
     if not set -q _flag_url
-        echo "Usage: worktree setup -u <repository_url>"
+        echo "Usage: worktree init -u <repository_url>"
         return 1
     end
 
     set -l url $_flag_url
-    set -l repo_name (string replace -r '.git$' '' (basename $url))
 
-    echo "Cloning bare repository from '$url' to '$repo_name.git'..."
-    git clone --bare "$url" "$repo_name.git"
+    echo "Cloning bare repository from '$url' to 'project.git'..."
+    git clone --bare "$url" "project.git"
 
     if test $status -eq 0
         echo "Bare repository cloned successfully to '$repo_name.git'."
