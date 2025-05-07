@@ -86,7 +86,7 @@ function _worky_list -d "Lists Git worktrees and navigates to the selected one u
         echo "No worktrees found in current directory."
         # check if project.git folder exists 
         if test -d "project.git"
-            echo "Found project.git. Chaning to project.git..."
+            echo "Found project.git. Changing to project.git..."
             cd "project.git"
         else
             echo "This is not a git repository."
@@ -96,11 +96,15 @@ function _worky_list -d "Lists Git worktrees and navigates to the selected one u
 
     set -l selected (git worktree list | sed -r 's/^(.*\/([^[:space:]]* ))/\1 \2/g' | fzf --with-nth=2,4 --height 10 --border --prompt "tree: ")
 
-    echo "Selected worktree: $selected"
+    if test -z "$selected"
+        echo "No worktree selected."
+        return 0
+    end
 
+    set -l selected_branch (echo $selected | cut -d" " -f3)
     set -l selected_dir (echo $selected | cut -d" " -f1)
 
-    echo "Selected directory: $selected_dir"
+    echo "Selected branch: [$selected_branch]. Selected directory: [$selected_dir]"
 
     cd $selected_dir
     ####################################################### works above here
