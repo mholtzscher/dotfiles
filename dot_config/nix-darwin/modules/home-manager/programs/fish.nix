@@ -8,7 +8,7 @@ in
       enable = true;
       shellAbbrs = {
         ch = "chezmoi";
-        chad = "chezmoi add";
+        # chad = "chezmoi add";
         chradd = "chezmoi re-add";
         chap = "chezmoi apply";
         chd = "chezmoi diff";
@@ -172,6 +172,11 @@ in
           description = " clear dns cache";
         };
 
+        chad = {
+          body = builtins.readFile ../files/fish/functions/chad.fish;
+          description = "chezmoi add with fzf";
+        };
+
         clean = {
           body = "git clean -Xdf $argv";
           description = "clean untracked files";
@@ -234,6 +239,11 @@ in
         pbj = {
           body = "pbpaste | jq $argv";
           description = "pretty print json from clipboard";
+        };
+
+        raycast = {
+          body = builtins.readFile ../files/fish/functions/raycast.fish;
+          description = "kill and restart raycast";
         };
 
         show = {
