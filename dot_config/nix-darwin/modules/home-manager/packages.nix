@@ -47,6 +47,6 @@ with pkgs;
   tldr
   vim
   # vscode
-  wget2
+  wget
   yq
 ]
