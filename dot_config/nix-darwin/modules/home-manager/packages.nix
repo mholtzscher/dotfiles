@@ -2,7 +2,7 @@
 
 with pkgs;
 [
-  nodejs_23
+  nodejs
   lua
   python3
   # python313Packages.python-lsp-server
@@ -47,6 +47,6 @@ with pkgs;
   tldr
   vim
   # vscode
-  wget
+  wget2
   yq
 ]
