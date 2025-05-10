@@ -171,10 +171,10 @@ in
           description = " clear dns cache";
         };
 
-        chad = {
-          body = builtins.readFile ../files/fish/functions/chad.fish;
-          description = "chezmoi add with fzf";
-        };
+        # chad = {
+        #   body = builtins.readFile ../files/fish/functions/chad.fish;
+        #   description = "chezmoi add with fzf";
+        # };
 
         chf = {
           body = builtins.readFile ../files/fish/functions/chf.fish;
@@ -313,6 +313,7 @@ in
           description = "Adds immediate child directories of the current directory to zoxide's database.";
         };
       };
+      plugins = [ ];
     };
   };
 }
