@@ -8,7 +8,6 @@ in
       enable = true;
       shellAbbrs = {
         ch = "chezmoi";
-        # chad = "chezmoi add";
         chradd = "chezmoi re-add";
         chap = "chezmoi apply";
         chd = "chezmoi diff";
@@ -175,6 +174,11 @@ in
         chad = {
           body = builtins.readFile ../files/fish/functions/chad.fish;
           description = "chezmoi add with fzf";
+        };
+
+        chf = {
+          body = builtins.readFile ../files/fish/functions/chf.fish;
+          description = "chezmoi forget with fzf";
         };
 
         clean = {

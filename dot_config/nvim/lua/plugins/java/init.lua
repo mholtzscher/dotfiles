@@ -33,7 +33,14 @@
 
 return {
   "nvim-java/nvim-java",
-  config = false,
+  config = function()
+    require("java").setup({
+      jdtls = {
+        version = "v1.46.1",
+      },
+    })
+  end,
+  -- config = false,
   dependencies = {
     {
       "neovim/nvim-lspconfig",
@@ -43,13 +50,13 @@ return {
             -- your jdtls configuration goes here
           },
         },
-        setup = {
-          jdtls = function()
-            require("java").setup({
-              -- your nvim-java configuration goes here
-            })
-          end,
-        },
+        -- setup = {
+        --   jdtls = function()
+        --     require("java").setup({
+        --       -- your nvim-java configuration goes here
+        --     })
+        --   end,
+        -- },
       },
     },
   },
