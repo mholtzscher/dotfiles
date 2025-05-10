@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 let
   brew_setup = "brew shellenv 2>/dev/null | source || true";
 in
@@ -171,10 +171,10 @@ in
           description = " clear dns cache";
         };
 
-        # chad = {
-        #   body = builtins.readFile ../files/fish/functions/chad.fish;
-        #   description = "chezmoi add with fzf";
-        # };
+        chad = {
+          body = builtins.readFile ../files/fish/functions/chad.fish;
+          description = "chezmoi add with fzf";
+        };
 
         chf = {
           body = builtins.readFile ../files/fish/functions/chf.fish;
@@ -313,7 +313,17 @@ in
           description = "Adds immediate child directories of the current directory to zoxide's database.";
         };
       };
-      plugins = [ ];
+      plugins = [
+        {
+          name = "z";
+          src = pkgs.fetchFromGitHub {
+            owner = "mholtzscher";
+            repo = "worky";
+            rev = "main";
+            sha256 = "sha256-JahuuKLKO3CYYtdcLxhBCwgvDTIE3Jpwi0g1CJQN/ug=";
+          };
+        }
+      ];
     };
   };
 }
