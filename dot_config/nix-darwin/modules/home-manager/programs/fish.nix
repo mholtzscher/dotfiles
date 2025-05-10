@@ -319,8 +319,8 @@ in
           src = pkgs.fetchFromGitHub {
             owner = "mholtzscher";
             repo = "worky";
-            rev = "main";
-            sha256 = "sha256-JahuuKLKO3CYYtdcLxhBCwgvDTIE3Jpwi0g1CJQN/ug=";
+            rev = "1.0.0";
+            sha256 = "sha256-YS7gZdRgKP7V9TXWkuffyBo0bMA9okAyTbpJvVTVwI0=";
           };
         }
       ];
