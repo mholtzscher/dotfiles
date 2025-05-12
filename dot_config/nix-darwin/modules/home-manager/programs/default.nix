@@ -27,6 +27,7 @@
     ./thefuck.nix
     ./wezterm.nix
     ./yazi.nix
+    ./zed.nix
     ./zellij.nix
     ./zsh.nix
     ./zoxide.nix
