@@ -46,7 +46,7 @@ with pkgs;
   # sops
   tldr
   vim
-  # vscode
+  vscode
   wget
   yq
 ]
