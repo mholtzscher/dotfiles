@@ -35,7 +35,6 @@
       "postman"
       "raycast"
       "slack"
-      "todoist"
     ];
     masApps = {
       "In Your Face" = 1476964367;

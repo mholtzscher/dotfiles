@@ -42,7 +42,8 @@
         "/Applications/IntelliJ IDEA.app"
         "/System/Applications/Mail.app"
         "/System/Applications/Calendar.app"
-        "/Applications/Things3.app"
+        "/Applications/Todoist.app"
+        # "/Applications/Things3.app"
         "/System/Applications/Music.app"
         "/System/Applications/News.app"
       ];
