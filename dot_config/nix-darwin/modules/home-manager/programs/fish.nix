@@ -151,7 +151,7 @@ in
           description = "Export AWS credentials as environment variables";
         };
 
-        aws_local = {
+        awslocal = {
           body = "env AWS_PROFILE=localstack aws --endpoint-url=http://localhost.localstack.cloud:4566 $argv";
           description = "Run AWS CLI commands against LocalStack";
         };
