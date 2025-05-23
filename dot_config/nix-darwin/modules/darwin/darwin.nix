@@ -46,8 +46,8 @@
         # "/Applications/Things3.app"
         "/System/Applications/Music.app"
         "/System/Applications/News.app"
-        "~/Applications/Google Gemini.app"
-        "~/Applications/Reclaim.app"
+        "/Users/michaelholtzcher/Applications/Google Gemini.app"
+        "/Users/michaelholtzcher/Applications/Reclaim.app"
       ];
       wvous-bl-corner = 1;
       wvous-br-corner = 1;
