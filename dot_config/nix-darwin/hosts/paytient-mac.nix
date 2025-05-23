@@ -24,4 +24,13 @@ in
 
     autoMigrate = true;
   };
+
+  system.defaults = {
+    dock = {
+      persistent-apps = [
+        "/Users/michaelholtzcher/Applications/Google Gemini.app"
+        "/Users/michaelholtzcher/Applications/Reclaim.app"
+      ];
+    };
+  };
 }
