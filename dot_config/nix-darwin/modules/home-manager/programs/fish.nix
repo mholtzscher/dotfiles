@@ -20,7 +20,7 @@ in
         n = "nvim=";
         nfu = "nix flake update";
         ngc = "nix-collect-garbage -d";
-        nup = "darwin-rebuild switch --flake ~/.config/nix-darwin";
+        nup = "sudo darwin-rebuild switch --flake ~/.config/nix-darwin";
         sso = "aws_change_profile";
       };
 

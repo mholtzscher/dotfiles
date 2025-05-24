@@ -628,4 +628,5 @@ default_mode "locked"
 default_shell "fish"
 scrollback_editor "nvim"
 show_release_notes true
+ // pane_frames false
 
