@@ -8,10 +8,10 @@ return {
       -- refer to the configuration section below
     },
   },
-  {
-    "Jay-Madden/auto-fix-return.nvim",
-    config = function()
-      require("auto-fix-return").setup({})
-    end,
-  },
+  -- {
+  --   "Jay-Madden/auto-fix-return.nvim",
+  --   config = function()
+  --     require("auto-fix-return").setup({})
+  --   end,
+  -- },
 }
