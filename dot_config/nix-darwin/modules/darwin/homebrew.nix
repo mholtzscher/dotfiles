@@ -17,7 +17,6 @@
       "mas"
       "sops"
       "hashicorp/tap/terraform"
-      "pulumi"
       "pyenv-virtualenv"
     ];
     casks = [
@@ -28,7 +27,6 @@
       "deskpad"
       "docker"
       "ghostty"
-      "intellij-idea"
       "jetbrains-toolbox"
       "nightfall"
       "obsidian"

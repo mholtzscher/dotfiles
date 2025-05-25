@@ -13,7 +13,7 @@ return {
     event = "WinEnter",
     opts = {
       dashboard = {
-        -- preset = { header = logo },
+        preset = { header = logo },
         sections = {
           { section = "header" },
           { section = "keys", gap = 1, padding = 1 },

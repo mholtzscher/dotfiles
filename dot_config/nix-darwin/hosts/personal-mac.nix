@@ -15,6 +15,12 @@ in
     users.${user} = import ../modules/home-manager/home.nix;
   };
 
+  homebrew = {
+    casks = [
+      "intellij-idea-ce"
+    ];
+  };
+
   nix-homebrew = {
     enable = true;
     # Apple Silicon Only
@@ -35,11 +41,9 @@ in
           "/System/Applications/Messages.app"
           "/Applications/WhatsApp.app"
           "${pkgs.discord}/Applications/Discord.app"
-          # "/Applications/Slack.app"
           "/Applications/1Password.app"
           "/Applications/Ghostty.app"
-          # "/Applications/Postico.app"
-          # "/Applications/IntelliJ IDEA.app"
+          "/Applications/IntelliJ IDEA CE.app"
           "/System/Applications/Mail.app"
           "/System/Applications/Calendar.app"
           "/Applications/Todoist.app"

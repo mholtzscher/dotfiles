@@ -15,6 +15,12 @@ in
     users.${user} = import ../modules/home-manager/home.nix;
   };
 
+  homebrew = {
+    casks = [
+      "intellij-idea"
+    ];
+  };
+
   nix-homebrew = {
     enable = true;
     # Apple Silicon Only
