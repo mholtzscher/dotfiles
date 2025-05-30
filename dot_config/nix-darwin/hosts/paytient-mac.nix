@@ -19,6 +19,9 @@ in
     casks = [
       "intellij-idea"
     ];
+    masApps = {
+      "In Your Face" = 1476964367;
+    };
   };
 
   nix-homebrew = {
