@@ -39,7 +39,7 @@
       "WhatsApp" = 310633997;
       "Microsoft Remote Desktop" = 1295203466;
       "Numbers" = 409203825;
-      "Better Snap Tool" = 417375580;
+      # "Better Snap Tool" = 417375580;
       "Hazeover" = 430798174;
       "Postico" = 6446933691;
       "Things 3" = 904280696;
