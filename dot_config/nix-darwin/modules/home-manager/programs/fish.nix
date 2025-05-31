@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  brew_setup = "brew shellenv 2>/dev/null | source || true";
+  brew_setup = "/opt/homebrew/bin/brew shellenv 2>/dev/null | source || true";
 in
 {
   programs = {
@@ -25,7 +25,7 @@ in
       };
 
       interactiveShellInit = ''
-          # ${brew_setup}
+          ${brew_setup}
 
           set -x GOPATH (go env GOPATH)
           set -x PATH $PATH (go env GOPATH)/bin
