@@ -29,7 +29,7 @@ in
 
   home.file = {
     "${config.xdg.configHome}/zellij/config.kdl".source = ./files/zellij.kdl;
-    # ".asdfrc".source = ./files/asdfrc;
+    ".asdfrc".source = ./files/asdfrc;
     "${config.xdg.configHome}/kafkactl/config.yml".source = ./files/kafkactl.yaml;
     "${config.xdg.configHome}/1Password/ssh/agent.toml".source = ./files/1password-agent.toml;
     "${config.xdg.configHome}/fish/functions/update.fish".source = ./files/fish/functions/update.fish;
