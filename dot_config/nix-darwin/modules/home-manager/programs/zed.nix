@@ -2,7 +2,7 @@
 {
   programs = {
     zed-editor = {
-      enable = true;
+      enable = false;
       userSettings = {
         "vim_mode" = true;
       };
