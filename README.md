@@ -1,10 +1,17 @@
 # Setup
 
 - [Setup](#setup)
+  - [Install Homebrew](#install-homebrew)
   - [Setup 1Password](#setup-1password)
   - [Setup Chezmoi](#setup-chezmoi)
   - [Install Nix](#install-nix)
   - [Setup Nix](#setup-nix)
+
+## Install Homebrew
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
 ## Setup 1Password
 
