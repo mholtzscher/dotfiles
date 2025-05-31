@@ -8,19 +8,13 @@
   - [Setup Chezmoi](#setup-chezmoi)
   - [Install Additional Tools](#install-additional-tools)
   - [Theming](#theming)
-  <!--toc:end-->
+      <!--toc:end-->
+    :
 
-## Install Homebrew
-
-```sh
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-Note: need to run the following lines and restart shell to get homebrew into path
+## Install Nix
 
 ```sh
-(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> ~/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)"
+sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install)
 ```
 
 ## Setup 1Password
