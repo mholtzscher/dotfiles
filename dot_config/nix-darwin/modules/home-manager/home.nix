@@ -40,6 +40,12 @@ in
     #   "${starship}/docs/public/presets/toml/pure-preset.toml";
     # "${config.xdg.configHome}/starship.toml".source =
     #   "${starship}/docs/public/presets/toml/jetpack.toml";
+    ".config/awesome/calendar".source = pkgs.fetchFromGitHub {
+      owner = "yrashk";
+      repo = "calendar";
+      rev = "1ed19a3";
+      sha256 = "1xfax18y4ddafzmwqp8qfs6k34nh163bwjxb7llvls5hxr79vr9s";
+    };
   };
 
   home.sessionVariables = {

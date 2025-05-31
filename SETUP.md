@@ -1,21 +1,11 @@
 # Setup
 
-<!--toc:start-->
-
 - [Setup](#setup)
-  - [Install Homebrew](#install-homebrew)
   - [Setup 1Password](#setup-1password)
   - [Setup Chezmoi](#setup-chezmoi)
-  - [Install Additional Tools](#install-additional-tools)
-  - [Theming](#theming)
+  - [Setup Nix](#setup-nix)
+  - [Install Nix](#install-nix)
       <!--toc:end-->
-    :
-
-## Install Nix
-
-```sh
-sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install)
-```
 
 ## Setup 1Password
 
@@ -41,8 +31,14 @@ chezmoi init git@github.com:mholtzscher/dotfiles.git
 chezmoi apply
 ```
 
-## Install Additional Tools
+## Install Nix
 
 ```sh
-galactus
+sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install)
+```
+
+## Setup Nix
+
+```sh
+sudo nix run nix-darwin --extra-experimental-features nix-command --extra-experimental-features flakes -- switch --flake ~/.config/nix-darwin
 ```
