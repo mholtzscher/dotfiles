@@ -12,6 +12,11 @@ let
     rev = "ed87dc5750338d37bfc2c17568ae3a9b589a8e8e";
     sha256 = "sha256-kPvyCKf62x+hXAxL5+sdWHLVoUx/n96EFEBOTpXnQhw=";
   };
+  lazyIdeaVim = pkgs.fetchurl {
+    url = "https://gist.githubusercontent.com/mikeslattery/d2f2562e5bbaa7ef036cf9f5a13deff5/raw/31278677c945d5f7be6f9c1e37a9779542ff1376/.idea-lazy.vim";
+    # Replace with the actual SHA256 hash of the file
+    sha256 = "sha256-WC8jzKir2LRMVOgyNJwDYH26mpIf9UCVTi6wOHdfDXo=";
+  };
 in
 {
   imports = [
@@ -29,6 +34,8 @@ in
     "${config.xdg.configHome}/1Password/ssh/agent.toml".source = ./files/1password-agent.toml;
     "${config.xdg.configHome}/fish/functions/update.fish".source = ./files/fish/functions/update.fish;
     "Library/Application Support/eza/theme.yml".source = "${tokyonight}/extras/eza/tokyonight.yml";
+    ".ideavimrc".source = ./files/ideavimrc;
+    ".idea-lazy.vim".source = lazyIdeaVim;
     # "${config.xdg.configHome}/starship.toml".source =
     #   "${starship}/docs/public/presets/toml/pure-preset.toml";
     # "${config.xdg.configHome}/starship.toml".source =
