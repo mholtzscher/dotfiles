@@ -5,7 +5,11 @@
       enable = true;
       package = null;
       settings = {
-        font-family = "Iosevka Nerd Font Mono";
+        # font-family = "GoMono Nerd Font";
+        # font-family = "BlexMono Nerd Font Mono";
+        # font-family = "Terminess Nerd Font";
+        # font-family = "Iosevka Nerd Font Mono";
+        font-family = "Iosevka Nerd Font";
         #font-family-bold = "Iosevka NFM Bold"
         #font-family-italic = "Iosevka NFM Italic"
         #font-family-bold-italic = "Iosevka NFM Bold Italic"

@@ -5,6 +5,9 @@
 
   fonts.packages = [
     pkgs.nerd-fonts.iosevka
+    pkgs.nerd-fonts.go-mono
+    pkgs.nerd-fonts.terminess-ttf
+    pkgs.nerd-fonts.blex-mono
   ];
 
   # Create /etc/zshrc that loads the nix-darwin environment.
