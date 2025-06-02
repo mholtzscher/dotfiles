@@ -24,7 +24,6 @@
     ./ripgrep.nix
     ./starship.nix
     ./ssh.nix
-    ./thefuck.nix
     ./wezterm.nix
     ./yazi.nix
     ./zed.nix
