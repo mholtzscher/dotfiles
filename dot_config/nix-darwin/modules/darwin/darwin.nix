@@ -8,6 +8,7 @@
     pkgs.nerd-fonts.go-mono
     pkgs.nerd-fonts.terminess-ttf
     pkgs.nerd-fonts.blex-mono
+    pkgs.nerd-fonts.jetbrains-mono
   ];
 
   # Create /etc/zshrc that loads the nix-darwin environment.
