@@ -43,7 +43,6 @@ in
           "/Applications/Obsidian.app"
           "/System/Applications/Messages.app"
           "/Applications/WhatsApp.app"
-          "${pkgs.discord}/Applications/Discord.app"
           "/Applications/Slack.app"
           "/Applications/1Password.app"
           "/Applications/Ghostty.app"

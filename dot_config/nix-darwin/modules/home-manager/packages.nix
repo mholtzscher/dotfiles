@@ -16,7 +16,6 @@ with pkgs;
   buf
   chezmoi
   cowsay
-  discord
   dive
   dust
   gnused

@@ -17,7 +17,6 @@ in
 
   homebrew = {
     casks = [
-      "capacities"
       "intellij-idea-ce"
     ];
   };
@@ -31,6 +30,8 @@ in
 
     autoMigrate = true;
   };
+
+  home.packages = with pkgs; [ discord ];
 
   system = {
     primaryUser = user;
