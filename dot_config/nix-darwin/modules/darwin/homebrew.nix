@@ -24,7 +24,6 @@
       "1password-cli"
       "arc"
       "bartender"
-      "capacities"
       "deskpad"
       "docker"
       "ghostty"
