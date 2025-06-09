@@ -17,6 +17,7 @@ in
 
   homebrew = {
     casks = [
+      "capacities"
       "intellij-idea-ce"
     ];
   };
