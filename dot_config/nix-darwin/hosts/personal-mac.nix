@@ -32,8 +32,6 @@ in
     autoMigrate = true;
   };
 
-  home.packages = with pkgs; [ discord ];
-
   system = {
     primaryUser = user;
     defaults = {
