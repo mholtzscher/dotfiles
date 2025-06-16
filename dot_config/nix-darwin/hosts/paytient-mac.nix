@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 let
   user = "michaelholtzcher";
 in
@@ -40,7 +40,6 @@ in
       dock = {
         persistent-apps = [
           "/Applications/Arc.app"
-          "/Applications/Obsidian.app"
           "/System/Applications/Messages.app"
           "/Applications/WhatsApp.app"
           "/Applications/Slack.app"
