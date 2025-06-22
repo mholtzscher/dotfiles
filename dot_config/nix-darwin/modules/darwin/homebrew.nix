@@ -27,6 +27,7 @@
       "docker"
       "ghostty"
       "jetbrains-toolbox"
+      "mockery"
       "nightfall"
       "obsidian"
       "postman"
