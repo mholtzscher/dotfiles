@@ -16,6 +16,7 @@
       "mas"
       "sops"
       "hashicorp/tap/terraform"
+      "mockery"
       "pyenv-virtualenv"
     ];
     casks = [
@@ -27,7 +28,6 @@
       "docker"
       "ghostty"
       "jetbrains-toolbox"
-      "mockery"
       "nightfall"
       "obsidian"
       "postman"
