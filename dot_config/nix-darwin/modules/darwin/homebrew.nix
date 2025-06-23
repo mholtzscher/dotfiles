@@ -25,7 +25,7 @@
       "arc"
       "bartender"
       "deskpad"
-      "docker"
+      "docker-desktop"
       "ghostty"
       "jetbrains-toolbox"
       "nightfall"
