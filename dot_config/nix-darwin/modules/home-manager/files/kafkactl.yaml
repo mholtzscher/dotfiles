@@ -1,5 +1,5 @@
 contexts:
-  default:
+  wanda:
     brokers:
-      - localhost:9092
-current-context: default
+      - 10.69.69.60:9092
+current-context: wanda
