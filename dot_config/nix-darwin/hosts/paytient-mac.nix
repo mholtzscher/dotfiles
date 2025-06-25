@@ -16,6 +16,9 @@ in
   };
 
   homebrew = {
+    brews = [
+      "tfenv"
+    ];
     casks = [
       "intellij-idea"
     ];

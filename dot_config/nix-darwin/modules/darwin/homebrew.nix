@@ -15,7 +15,7 @@
       "asdf"
       "mas"
       "sops"
-      "hashicorp/tap/terraform"
+      # "hashicorp/tap/terraform"
       "mockery"
       "pyenv-virtualenv"
     ];

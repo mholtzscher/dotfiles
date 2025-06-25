@@ -16,6 +16,9 @@ in
   };
 
   homebrew = {
+    brews = [
+      "hashicorp/tap/terraform"
+    ];
     casks = [
       "capacities"
       "intellij-idea-ce"
