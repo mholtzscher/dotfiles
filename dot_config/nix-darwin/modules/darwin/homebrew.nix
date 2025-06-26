@@ -13,6 +13,7 @@
     brews = [
       "awscli"
       "asdf"
+      "gemini-cli"
       "mas"
       "sops"
       # "hashicorp/tap/terraform"
