@@ -1,5 +1,5 @@
-set ZONE_ID (op item get cloudflare.com --fields cli-zone-id --reveal)
-set API_TOKEN (op item get cloudflare.com --fields zone-holtzscher.com)
+set API_TOKEN (op item get cloudflare.com --fields cli-api-token --reveal)
+set ZONE_ID (op item get cloudflare.com --fields zone-holtzscher-com)
 set URL https://api.cloudflare.com/client/v4/zones/$ZONE_ID/purge_cache
 set EMAIL (op item get cloudflare.com --fields username)
 
