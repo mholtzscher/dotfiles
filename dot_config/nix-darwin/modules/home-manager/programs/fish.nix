@@ -30,8 +30,10 @@ in
           # Enable fish vi mode
           set -g fish_key_bindings fish_vi_key_bindings
 
-          set -x GOPATH (go env GOPATH)
-          set -x PATH $PATH (go env GOPATH)/bin
+          # set -x GOPATH (go env GOPATH)
+          # set -x PATH $PATH (go env GOPATH)/bin
+          set -x GOPATH $HOME/go
+          set -x PATH $PATH $HOME/go/bin
 
           # ASDF configuration code
           if test -z $ASDF_DATA_DIR
@@ -120,7 +122,6 @@ in
         set -g fish_pager_color_completion $foreground
         set -g fish_pager_color_description $comment
         set -g fish_pager_color_selected_background --background=$selection
-
       '';
 
       functions = {
