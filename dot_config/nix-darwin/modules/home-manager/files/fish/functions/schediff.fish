@@ -49,6 +49,6 @@ end
 # This avoids creating temporary files on disk.
 # The first object (index 0) is passed as the first file.
 # The second object (index 1) is passed as the second file.
-delta --side-by-side --paging=never \
+delta --side-by-side --diff-args=-U999 --paging=never \
     (echo "$json_string" | jq '.[0]' | psub) \
     (echo "$json_string" | jq '.[1]' | psub)
