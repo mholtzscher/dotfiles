@@ -255,6 +255,11 @@ in
           description = "kill and restart raycast";
         };
 
+        schediff = {
+          body = builtins.readFile ../files/fish/functions/schediff.fish;
+          description = "Diff array of payment schedules";
+        };
+
         show = {
           body = "defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder";
           description = "show hidden files in finder";
