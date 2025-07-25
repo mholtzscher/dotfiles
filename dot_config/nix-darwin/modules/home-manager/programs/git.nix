@@ -34,6 +34,12 @@ in
         branch = {
           sort = "-committerdate";
         };
+        tag = {
+          sort = "version:refname";
+        };
+        init = {
+          defaultBranch = "main";
+        };
       };
 
     };
