@@ -40,6 +40,29 @@ in
         init = {
           defaultBranch = "main";
         };
+        diff = {
+          algorithm = "histogram";
+          colorMoved = "plain";
+          mnemonicPrefix = true;
+          renames = true;
+        };
+        push = {
+          autoSetupRemote = true;
+          # followTags = true;
+        };
+        fetch = {
+          prune = true;
+          pruneTags = true;
+          all = true;
+        };
+        rebase = {
+          autoSquash = true;
+          autoStash = true;
+          updateRefs = true;
+        };
+        pull = {
+          rebase = true;
+        };
       };
 
     };
