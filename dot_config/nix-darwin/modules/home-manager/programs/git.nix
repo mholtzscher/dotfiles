@@ -27,6 +27,15 @@ in
         enable = true;
       };
       includes = [ { path = "${tokyonight}/extras/delta/tokyonight_night.gitconfig"; } ];
+      extraConfig = {
+        column = {
+          ui = "auto";
+        };
+        branch = {
+          sort = "-committerdate";
+        };
+      };
+
     };
   };
 }
