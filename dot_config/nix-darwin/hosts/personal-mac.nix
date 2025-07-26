@@ -16,8 +16,12 @@ in
   };
 
   homebrew = {
+    taps = [
+      "sst/tap"
+    ];
     brews = [
       "hashicorp/tap/terraform"
+      "sst/tap/opencode"
     ];
     casks = [
       "capacities"
