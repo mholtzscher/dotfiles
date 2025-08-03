@@ -12,12 +12,12 @@ return {
     --   end,
     --   desc = "Toggle FFF",
     -- },
-    {
-      "<leader><leader>", -- try it if you didn't it is a banger keybinding for a picker
-      function()
-        require("fff").find_files()
-      end,
-      desc = "Toggle FFF",
-    },
+    -- {
+    --   "<leader><leader>", -- try it if you didn't it is a banger keybinding for a picker
+    --   function()
+    --     require("fff").find_files()
+    --   end,
+    --   desc = "Toggle FFF",
+    -- },
   },
 }
