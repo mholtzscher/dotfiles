@@ -322,7 +322,27 @@ in
           body = builtins.readFile ../files/fish/functions/zoxide_register_children.fish;
           description = "Adds immediate child directories of the current directory to zoxide's database.";
         };
+
+        nv = {
+          body = ''
+            set -l config_dir "$HOME/.config"
+            set -l configs (find "$config_dir" -maxdepth 1 -name "nvim*" -type d | sed "s|$config_dir/||" | sort)
+
+            if test (count $configs) -eq 0
+                echo "No Neovim configurations found in $config_dir"
+                return 1
+            end
+
+            set -l selected_config (printf '%s\n' $configs | fzf --prompt="Select Neovim config: " --height=40% --border)
+
+            if test -n "$selected_config"
+                env NVIM_APPNAME="$selected_config" nvim $argv
+            end
+          '';
+          description = "Select and launch Neovim with a specific configuration using fzf";
+        };
       };
+
       plugins = [
         {
           name = "z";
