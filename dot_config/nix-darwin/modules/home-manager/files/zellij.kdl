@@ -599,6 +599,7 @@ plugins {
 load_plugins {
 
 }
+default_layout "compact"
 // Use a simplified UI without special fonts (arrow glyphs)
 // Options:
 //   - true
