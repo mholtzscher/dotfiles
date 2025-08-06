@@ -25,6 +25,7 @@ in
     ];
     casks = [
       "capacities"
+      "claude-code"
       "intellij-idea-ce"
     ];
   };
