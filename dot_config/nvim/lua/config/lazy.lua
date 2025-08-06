@@ -44,5 +44,3 @@ require("lazy").setup({
     },
   },
 })
-
-vim.lsp.enable("kotlin_lsp")
