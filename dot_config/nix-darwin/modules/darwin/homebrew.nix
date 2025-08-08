@@ -14,7 +14,6 @@
     brews = [
       "awscli"
       "asdf"
-      "gemini-cli"
       "JetBrains/utils/kotlin-lsp"
       "mas"
       "sops"

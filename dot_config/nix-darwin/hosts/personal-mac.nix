@@ -20,6 +20,7 @@ in
       "sst/tap"
     ];
     brews = [
+      "gemini-cli"
       "hashicorp/tap/terraform"
       "sst/tap/opencode"
     ];
