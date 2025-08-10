@@ -1,23 +1,14 @@
 return {
   "dmtrKovalenko/fff.nvim",
   build = "cargo build --release",
-  opts = {
-    -- pass here all the options
-  },
+  opts = {},
   keys = {
-    -- {
-    --   "<leader>ff", -- try it if you didn't it is a banger keybinding for a picker
-    --   function()
-    --     require("fff").toggle()
-    --   end,
-    --   desc = "Toggle FFF",
-    -- },
-    -- {
-    --   "<leader><leader>", -- try it if you didn't it is a banger keybinding for a picker
-    --   function()
-    --     require("fff").find_files()
-    --   end,
-    --   desc = "Toggle FFF",
-    -- },
+    {
+      "<leader>sf",
+      function()
+        require("fff").find_files()
+      end,
+      desc = "Toggle FFF",
+    },
   },
 }
