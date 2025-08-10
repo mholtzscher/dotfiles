@@ -1,5 +1,6 @@
 return {
   "nvim-java/nvim-java",
+  lazy = true,
   config = false,
   dependencies = {
     {
