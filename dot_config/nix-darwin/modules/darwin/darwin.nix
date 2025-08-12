@@ -27,7 +27,7 @@
     };
 
     dock = {
-      autohide = false;
+      autohide = true;
       tilesize = 48;
       orientation = "left";
       minimize-to-application = true;
