@@ -138,7 +138,7 @@ def zoxide_register_children [] {
 
 # Chezmoi add with fzf selection
 def chad [] {
-  if not (which fzf | is-empty) and not (which bat | is-empty) and not (which fd | is-empty) {
+  if (which fzf | is-empty) or (which bat | is-empty) or (which fd | is-empty) {
     print "fzf, bat, or fd is not installed."
     return 1
   }
@@ -166,7 +166,7 @@ def chad [] {
 
 # Chezmoi forget with fzf selection
 def chf [] {
-  if not (which fzf | is-empty) and not (which bat | is-empty) and not (which fd | is-empty) {
+  if (which fzf | is-empty) or (which bat | is-empty) or (which fd | is-empty) {
     print "fzf, bat, or fd is not installed."
     return 1
   }
