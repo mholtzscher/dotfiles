@@ -17,7 +17,7 @@ in
         ghd = "gh dash";
         j = "just";
         ltd = "eza --tree --only-dirs --level 3";
-        n = "nvim=";
+        n = "nvim";
         nfu = "nix flake update";
         ngc = "nix-collect-garbage -d";
         nup = "sudo darwin-rebuild switch --flake ~/.config/nix-darwin";

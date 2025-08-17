@@ -628,7 +628,7 @@ themes {
 }
 theme "tokyonight_night"
 default_mode "locked"
-default_shell "fish"
+default_shell "nu"
 scrollback_editor "nvim"
 show_release_notes true
  // pane_frames false
