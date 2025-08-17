@@ -9,7 +9,7 @@
         ch = "chezmoi";
         chradd = "chezmoi re-add";
         chap = "chezmoi apply";
-        chd = "chezmoi diff";
+        chd = "chezmoi diff --pager delta";
         chda = "chezmoi data";
         chu = "chezmoi update";
         chs = "chezmoi status";
@@ -17,6 +17,7 @@
         ghd = "gh dash";
         j = "just";
         ltd = "eza --tree --only-dirs --level 3";
+        ll = "ls -al";
         n = "nvim";
 
         nfu = "nix flake update";
