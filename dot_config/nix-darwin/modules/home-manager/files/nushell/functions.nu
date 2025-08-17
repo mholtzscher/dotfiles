@@ -1,4 +1,3 @@
-
 # Test function to detect project type and run appropriate tests
 def tst [] {
   if ("go.mod" | path exists) {
@@ -299,61 +298,6 @@ def schediff [] {
 }
 
 # Update system, neovim plugins, asdf, and go tools
-def update [] {
-  _neovim_plugins
-  _asdf_plugins
-  _go_tools
-  gum log --time kitchen --level info "Finished"
-}
-
-def _neovim_plugins [] {
-  gum log --time kitchen --level info "Updating neovim plugins"
-  nvim --headless "+Lazy! sync" +qa
-}
-
-def _asdf_plugins [] {
-  gum log --time kitchen --level info "Installing asdf plugins"
-  
-  let plugins = [
-    "java", "nodejs", "python", "terraform", "rust", "lua"
-  ]
-  
-  $plugins | each { |plugin|
-    gum log --time kitchen --level info $"Installing asdf plugin: ($plugin)"
-    asdf plugin add $plugin
-    gum log --time kitchen --level info $"Installing latest ($plugin)"
-    asdf install $plugin latest
-    gum log --time kitchen --level info $"Setting global ($plugin) to latest"
-    asdf global $plugin latest
-  }
-  
-  gum log --time kitchen --level info "Updating asdf plugins"
-  asdf plugin update --all
-}
-
-def _go_tools [] {
-  gum log --time kitchen --level info "Installing go tools"
-  
-  let tools = [
-    "github.com/srikrsna/protoc-gen-gotag@latest",
-    "github.com/joho/godotenv/cmd/godotenv@latest", 
-    "golang.org/x/vuln/cmd/govulncheck@latest",
-    "google.golang.org/protobuf/cmd/protoc-gen-go@latest",
-    "connectrpc.com/connect/cmd/protoc-gen-connect-go@latest",
-    "github.com/vektra/mockery/v2@latest",
-    "github.com/pressly/goose/v3/cmd/goose@latest",
-    "github.com/sqlc-dev/sqlc/cmd/sqlc@latest",
-    "github.com/air-verse/air@latest",
-    "github.com/spf13/cobra-cli@latest"
-  ]
-  
-  $tools | each { |tool|
-    let tool_name = ($tool | split row "/" | last | split row "@" | first)
-    gum log --time kitchen --level info $"Installing ($tool_name)"
-    go install $tool
-  }
-}
-
 # SOPS functions for different environments
 def sops_staging --env [...args: string] {
   aws_change_profile m3p_staging
@@ -393,3 +337,58 @@ def aws_export_envs --env [] {
   }
 }
 
+# def update [] {
+#   _neovim_plugins
+#   _asdf_plugins
+#   _go_tools
+#   gum log --time kitchen --level info "Finished"
+# }
+#
+# def _neovim_plugins [] {
+#   gum log --time kitchen --level info "Updating neovim plugins"
+#   nvim --headless "+Lazy! sync" +qa
+# }
+#
+# def _asdf_plugins [] {
+#   gum log --time kitchen --level info "Installing asdf plugins"
+#
+#   let plugins = [
+#     "java", "nodejs", "python", "terraform", "rust", "lua"
+#   ]
+#
+#   $plugins | each { |plugin|
+#     gum log --time kitchen --level info $"Installing asdf plugin: ($plugin)"
+#     asdf plugin add $plugin
+#     gum log --time kitchen --level info $"Installing latest ($plugin)"
+#     asdf install $plugin latest
+#     gum log --time kitchen --level info $"Setting global ($plugin) to latest"
+#     asdf global $plugin latest
+#   }
+#
+#   gum log --time kitchen --level info "Updating asdf plugins"
+#   asdf plugin update --all
+# }
+#
+# def _go_tools [] {
+#   gum log --time kitchen --level info "Installing go tools"
+#
+#   let tools = [
+#     "github.com/srikrsna/protoc-gen-gotag@latest",
+#     "github.com/joho/godotenv/cmd/godotenv@latest", 
+#     "golang.org/x/vuln/cmd/govulncheck@latest",
+#     "google.golang.org/protobuf/cmd/protoc-gen-go@latest",
+#     "connectrpc.com/connect/cmd/protoc-gen-connect-go@latest",
+#     "github.com/vektra/mockery/v2@latest",
+#     "github.com/pressly/goose/v3/cmd/goose@latest",
+#     "github.com/sqlc-dev/sqlc/cmd/sqlc@latest",
+#     "github.com/air-verse/air@latest",
+#     "github.com/spf13/cobra-cli@latest"
+#   ]
+#
+#   $tools | each { |tool|
+#     let tool_name = ($tool | split row "/" | last | split row "@" | first)
+#     gum log --time kitchen --level info $"Installing ($tool_name)"
+#     go install $tool
+#   }
+# }
+#
