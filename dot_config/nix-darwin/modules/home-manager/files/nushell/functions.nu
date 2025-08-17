@@ -221,7 +221,7 @@ def cloudcache [] {
   let url = $"https://api.cloudflare.com/client/v4/zones/($zone_id)/purge_cache"
   
   print $"Purging Cloudflare cache for ZONE_ID: ($zone_id)"
-  http post $url -H ["Content-Type" "application/json"] -H ["X-Auth-Email" $email] -H ["Authorization" $"Bearer ($api_token)"] {"purge_everything": true}
+  http post --content-type application/json -H {"X-Auth-Email": $email, "Authorization": $"Bearer ($api_token)"} $url {"purge_everything": true}
 }
 
 # Select and launch Neovim with specific configuration
