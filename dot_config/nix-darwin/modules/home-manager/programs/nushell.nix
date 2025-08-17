@@ -26,6 +26,7 @@
         sso = "aws_change_profile";
       };
       settings = {
+        edit_mode = "vi";
         show_banner = false;
       };
     };
