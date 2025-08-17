@@ -234,8 +234,8 @@ def nv [...args: string] {
     return 1
   }
   
-  # let selected_config = ($configs | str join "\n" | fzf --prompt="Select Neovim config: " --height=40% --border)
-  let selected_config = ($configs | input list --fuzzy "Select Neovim config: ")
+  let selected_config = ($configs | str join "\n" | fzf --prompt="Select Neovim config: " --height=40% --border)
+  # let selected_config = ($configs | input list --fuzzy "Select Neovim config: ")
   
   if ($selected_config | is-not-empty) {
     with-env {NVIM_APPNAME: $selected_config} { nvim ...$args }
