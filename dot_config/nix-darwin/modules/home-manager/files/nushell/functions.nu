@@ -193,25 +193,25 @@ def chf [] {
 }
 
 # Restart Raycast
-# def raycast [] {
-#   print "Attempting to restart Raycast..."
-#
-#   let kill_result = (pkill -f Raycast | complete)
-#   if $kill_result.exit_code == 0 {
-#     print "Raycast process found and terminated."
-#   } else {
-#     print "Raycast process not found or already terminated."
-#   }
-#
-#   sleep 1sec
-#
-#   let open_result = (open -a Raycast | complete)
-#   if $open_result.exit_code == 0 {
-#     print "Raycast launched successfully."
-#   } else {
-#     print "Failed to launch Raycast. Make sure it's installed correctly."
-#   }
-# }
+def raycast [] {
+  print "Attempting to restart Raycast..."
+
+  let kill_result = (pkill -f Raycast | complete)
+  if $kill_result.exit_code == 0 {
+    print "Raycast process found and terminated."
+  } else {
+    print "Raycast process not found or already terminated."
+  }
+
+  sleep 1sec
+
+  let open_result = (^open -a Raycast | complete)
+  if $open_result.exit_code == 0 {
+    print "Raycast launched successfully."
+  } else {
+    print "Failed to launch Raycast. Make sure it's installed correctly."
+  }
+}
 
 # Clear Cloudflare cache
 def cloudcache [] {
