@@ -18,6 +18,7 @@
         j = "just";
         ltd = "eza --tree --only-dirs --level 3";
         ll = "ls -al";
+        lg = "lazygit";
         n = "nvim";
 
         nfu = "nix flake update";
