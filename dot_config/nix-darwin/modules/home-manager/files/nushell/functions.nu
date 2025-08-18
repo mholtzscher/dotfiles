@@ -27,7 +27,7 @@ def fmt [] {
 # AWS profile management with SSO login
 def aws_change_profile --env [ profile?: string ] {
     let profile = if ($profile | is-empty) {
-        aws configure list-profiles | lines | input list
+        aws configure list-profiles | lines | input list --fuzzy "Select AWS Profile:"
     } else {
         $profile
     }
@@ -42,7 +42,7 @@ def aws_change_profile --env [ profile?: string ] {
 
     if (aws configure get sso_start_url --profile $env.AWS_PROFILE | complete | get exit_code ) == 0 {
       let result = aws sts get-caller-identity | complete 
-      if (result | get exit_code) == 0 {
+      if ($result | get exit_code) != 0 {
           print "Logging into AWS"
           aws sso login
       } else {
@@ -155,7 +155,7 @@ def chad [] {
   let confirmation = (input "Proceed with 'chezmoi add'? (Y/n) ")
   
   if ($confirmation | str downcase) != "n" {
-    print "Adding files to chezmoi..."
+    print "Adding files to chezmoi..."                        e
     chezmoi add ...$selected_files
     print "Files successfully added to chezmoi."
   } else {
