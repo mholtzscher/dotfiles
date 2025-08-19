@@ -30,6 +30,10 @@
       settings = {
         edit_mode = "vi";
         show_banner = false;
+        cursor_shape = {
+          vi_insert = "line";
+          vi_normal = "block";
+        };
       };
     };
   };
