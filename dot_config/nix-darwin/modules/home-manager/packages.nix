@@ -46,6 +46,7 @@ with pkgs;
   tldr
   vim
   vscode
+  websocat
   wget
   yq
 ]
