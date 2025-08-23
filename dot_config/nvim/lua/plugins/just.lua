@@ -9,4 +9,6 @@ return {
   --   "al1-ce/jsfunc.nvim", -- extension library
   -- },
   -- config = true,
+  "mistweaverco/kulala.nvim",
+  branch = "develop",
 }
