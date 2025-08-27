@@ -1,6 +1,7 @@
 return {
   {
     "mistweaverco/kulala.nvim",
+    branch = "develop",
     ft = "http",
     keys = {
       { "<leader>R", "", desc = "+Rest", ft = "http" },
