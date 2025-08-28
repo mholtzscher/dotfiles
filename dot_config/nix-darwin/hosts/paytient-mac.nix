@@ -21,6 +21,7 @@ in
     ];
     casks = [
       "intellij-idea"
+      "ijhttp"
     ];
     masApps = {
       "In Your Face" = 1476964367;
