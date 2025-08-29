@@ -3,6 +3,7 @@
   programs = {
     ssh = {
       enable = true;
+      enableDefaultConfig = false;
       includes = [
         "~/.ssh/1Password/config"
       ];
@@ -21,12 +22,10 @@
           hostname = "10.69.69.60";
           user = "michael";
         };
+        "*" = {
+          identityAgent = "\"~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock\"";
+        };
       };
-
-      extraConfig = ''
-        Host *
-          IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
-      '';
     };
   };
 }
