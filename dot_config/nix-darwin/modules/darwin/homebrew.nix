@@ -11,10 +11,12 @@
       "hashicorp/tap"
       "jetbrains/utils"
       "nikitabobko/tap"
+      "FelixKratz/formulae"
     ];
     brews = [
       "awscli"
       "asdf"
+      "borders"
       "JetBrains/utils/kotlin-lsp"
       "mas"
     ];
