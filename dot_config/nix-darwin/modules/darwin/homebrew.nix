@@ -16,10 +16,6 @@
       "asdf"
       "JetBrains/utils/kotlin-lsp"
       "mas"
-      "sops"
-      # "hashicorp/tap/terraform"
-      "mockery"
-      "pyenv-virtualenv"
     ];
     casks = [
       "1password"

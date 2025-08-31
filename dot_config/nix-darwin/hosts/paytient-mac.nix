@@ -18,6 +18,7 @@ in
   homebrew = {
     brews = [
       "tfenv"
+      "sops"
     ];
     casks = [
       "intellij-idea"
