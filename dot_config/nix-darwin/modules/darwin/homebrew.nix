@@ -10,6 +10,7 @@
     taps = [
       "hashicorp/tap"
       "jetbrains/utils"
+      "nikitabobko/tap"
     ];
     brews = [
       "awscli"
@@ -20,6 +21,7 @@
     casks = [
       "1password"
       "1password-cli"
+      "aerospace"
       "arc"
       "bartender"
       "deskpad"
