@@ -19,6 +19,7 @@
       "borders"
       "JetBrains/utils/kotlin-lsp"
       "mas"
+      # "sketchybar"
     ];
     casks = [
       "1password"
