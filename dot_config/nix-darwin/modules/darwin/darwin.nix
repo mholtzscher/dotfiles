@@ -33,6 +33,7 @@
       minimize-to-application = true;
       show-process-indicators = true;
       show-recents = false;
+      expose-group-apps = true;
       # persistent-apps = [
       #   "/Applications/Arc.app"
       #   "/Applications/Obsidian.app"
