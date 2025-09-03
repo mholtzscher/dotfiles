@@ -37,7 +37,10 @@ in
     ".ideavimrc".source = ./files/ideavimrc;
     ".idea-lazy.vim".source = lazyIdeaVim;
     "${config.xdg.configHome}/aerospace/aerospace.toml".source = ./files/aerospace.toml;
-    "${config.xdg.configHome}/borders/bordersrc".source = ./files/bordersrc;
+    "${config.xdg.configHome}/borders/bordersrc" = {
+      source = ./files/bordersrc;
+      executable = true;
+    };
     # "${config.xdg.configHome}/starship.toml".source =
     #   "${starship}/docs/public/presets/toml/pure-preset.toml";
     # "${config.xdg.configHome}/starship.toml".source =
