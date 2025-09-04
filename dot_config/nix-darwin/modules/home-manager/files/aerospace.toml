@@ -202,6 +202,10 @@ run = ['layout floating']
 if.app-name-regex-substring = 'Gmail'
 run = ['move-node-to-workspace Reclaim']
 
+[[on-window-detected]]
+if.app-name-regex-substring = 'Music'
+run = ['move-node-to-workspace Tools']
+
 # [[on-window-detected]]
 # if.app-name-regex-substring = 'Docker'
 # run = ['move-node-to-workspace 6']
