@@ -193,7 +193,8 @@ if.app-name-regex-substring = 'Google Gemini'
 run = ['move-node-to-workspace Tools']
 
 [[on-window-detected]]
-if.app-name-regex-substring = '1Password'
+if.app-id = "com.1password.1password"
+# if.app-name-regex-substring = '1Password'
 run = ['move-node-to-workspace Tools']
 
 # [[on-window-detected]]
