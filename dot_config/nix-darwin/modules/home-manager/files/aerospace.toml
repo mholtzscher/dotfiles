@@ -175,7 +175,7 @@ run = ['move-node-to-workspace IntelliJ']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Todoist'
-run = ['move-node-to-workspace Reclaim']
+run = ['move-node-to-workspace Tools']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Reclaim'
@@ -196,7 +196,11 @@ run = ['move-node-to-workspace Tools']
 [[on-window-detected]]
 if.app-id = "com.1password.1password"
 # if.app-name-regex-substring = '1Password'
-run = ['move-node-to-workspace Tools']
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Gmail'
+run = ['move-node-to-workspace Reclaim']
 
 # [[on-window-detected]]
 # if.app-name-regex-substring = 'Docker'
