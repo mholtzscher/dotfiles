@@ -54,8 +54,8 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 [gaps]
 inner.horizontal = 20
 inner.vertical = 20
-outer.right = [{ monitor.'DeskPad Display' = 0 }, { monitor.main = 1200 }, 24]
-outer.left = [{ monitor.'DeskPad Display' = 0 }, { monitor.main = 1200 }, 24]
+outer.right = [{ monitor.'DeskPad Display' = 0 }, { monitor.main = 300 }, 24]
+outer.left = [{ monitor.'DeskPad Display' = 0 }, { monitor.main = 300 }, 24]
 outer.bottom = 10
 outer.top = 10
 
@@ -102,6 +102,7 @@ alt-ctrl-cmd-i = 'workspace IntelliJ'
 alt-ctrl-cmd-p = 'workspace Postico'
 alt-ctrl-cmd-d = 'workspace Deskpad'
 alt-ctrl-cmd-r = 'workspace Reclaim'
+alt-ctrl-cmd-t = 'workspace Tools'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-cmd-ctrl-a = 'move-node-to-workspace Arc'
@@ -112,6 +113,7 @@ alt-shift-cmd-ctrl-i = 'move-node-to-workspace IntelliJ'
 alt-shift-cmd-ctrl-p = 'move-node-to-workspace Postico'
 alt-shift-cmd-ctrl-d = 'move-node-to-workspace Deskpad'
 alt-shift-cmd-ctrl-r = 'move-node-to-workspace Reclaim'
+alt-shift-cmd-ctrl-t = 'move-node-to-workspace Tools'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
@@ -127,6 +129,7 @@ IntelliJ = ['DeskPad Display', 'main']
 Postico = ['DeskPad Display', 'main']
 Deskpad = ['main']
 Reclaim = ['main']
+Tools = ['main']
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -154,16 +157,16 @@ if.app-name-regex-substring = 'Slack'
 run = ['move-node-to-workspace Slack']
 
 [[on-window-detected]]
-if.app-id = "com.mitchellh.ghostty"
+if.app-name-regex-substring = "Ghostty"
 run = ["move-node-to-workspace Ghostty"]
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'WhatsApp'
-run = ['layout floating', 'move-node-to-workspace Messaging']
+run = ['move-node-to-workspace Messaging']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Messages'
-run = ['layout floating', 'move-node-to-workspace Messaging']
+run = ['move-node-to-workspace Messaging']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Intellij'
@@ -187,7 +190,11 @@ run = ['move-node-to-workspace Deskpad']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Google Gemini'
-run = ['move-node-to-workspace 7']
+run = ['move-node-to-workspace Tools']
+
+[[on-window-detected]]
+if.app-name-regex-substring = '1Password'
+run = ['move-node-to-workspace Tools']
 
 # [[on-window-detected]]
 # if.app-name-regex-substring = 'Docker'
