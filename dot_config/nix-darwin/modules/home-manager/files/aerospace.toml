@@ -87,82 +87,46 @@ alt-ctrl-cmd-j = 'focus down'
 alt-ctrl-cmd-k = 'focus up'
 alt-ctrl-cmd-l = 'focus right'
 alt-ctrl-cmd-minus = 'layout floating tiling'
-alt-ctrl-cmd-m = 'resize width -100'
+alt-ctrl-cmd-period = 'resize width -100'
 alt-ctrl-cmd-comma = 'resize width +100'
 alt-ctrl-cmd-u = 'resize width 2400'
-alt-ctrl-cmd-i = 'fullscreen --no-outer-gaps'
+alt-ctrl-cmd-f = 'fullscreen --no-outer-gaps'
 
 alt-shift-semicolon = 'mode service'
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-alt-ctrl-cmd-1 = 'workspace 1'
-alt-ctrl-cmd-2 = 'workspace 2'
-alt-ctrl-cmd-3 = 'workspace 3'
-alt-ctrl-cmd-4 = 'workspace 4'
-alt-ctrl-cmd-5 = 'workspace 5'
-alt-ctrl-cmd-6 = 'workspace 6'
-alt-ctrl-cmd-7 = 'workspace 7'
-alt-ctrl-cmd-8 = 'workspace 8'
-alt-ctrl-cmd-9 = 'workspace 9'
-alt-ctrl-cmd-backtick = 'workspace 10'
-alt-cmd-ctrl-q = 'workspace 11'
-alt-cmd-ctrl-w = 'workspace 12'
-alt-cmd-ctrl-e = 'workspace 13'
-alt-cmd-ctrl-r = 'workspace 14'
-alt-cmd-ctrl-t = 'workspace 15'
-alt-cmd-ctrl-tab = 'workspace 16'
-# cmd-q = 'workspace 1'
-# cmd-a = 'workspace 2'
-# cmd-w = 'workspace 3'
-# cmd-e = 'workspace 4'
-# cmd-d = 'workspace 5'
-# cmd-r = 'workspace 6'
-# cmd-s = 'workspace 7'
+alt-ctrl-cmd-a = 'workspace Arc'
+alt-ctrl-cmd-s = 'workspace Slack'
+alt-ctrl-cmd-g = 'workspace Ghostty'
+alt-ctrl-cmd-m = 'workspace Messaging'
+alt-ctrl-cmd-i = 'workspace IntelliJ'
+alt-ctrl-cmd-p = 'workspace Postico'
+alt-ctrl-cmd-d = 'workspace Deskpad'
+alt-ctrl-cmd-r = 'workspace Reclaim'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-cmd-ctrl-1 = 'move-node-to-workspace 1'
-alt-shift-cmd-ctrl-2 = 'move-node-to-workspace 2'
-alt-shift-cmd-ctrl-3 = 'move-node-to-workspace 3'
-alt-shift-cmd-ctrl-4 = 'move-node-to-workspace 4'
-alt-shift-cmd-ctrl-5 = 'move-node-to-workspace 5'
-alt-shift-cmd-ctrl-6 = 'move-node-to-workspace 6'
-alt-shift-cmd-ctrl-7 = 'move-node-to-workspace 7'
-alt-shift-cmd-ctrl-8 = 'move-node-to-workspace 8'
-alt-shift-cmd-ctrl-9 = 'move-node-to-workspace 9'
-alt-shift-cmd-ctrl-backtick = 'move-node-to-workspace 10'
-alt-shift-cmd-ctrl-q = 'move-node-to-workspace 11'
-alt-shift-cmd-ctrl-w = 'move-node-to-workspace 12'
-alt-shift-cmd-ctrl-e = 'move-node-to-workspace 13'
-alt-shift-cmd-ctrl-r = 'move-node-to-workspace 14'
-alt-shift-cmd-ctrl-t = 'move-node-to-workspace 15'
-alt-shift-cmd-ctrl-tab = 'move-node-to-workspace 16'
-# cmd-shift-q = 'move-node-to-workspace 1'
-# cmd-shift-a = 'move-node-to-workspace 2'
-# cmd-shift-w = 'move-node-to-workspace 3'
-# cmd-shift-d = 'move-node-to-workspace 4'
-# cmd-shift-r = 'move-node-to-workspace 5'
-# cmd-shift-g = 'move-node-to-workspace 6'
-# cmd-shift-s = 'move-node-to-workspace 7'
+alt-shift-cmd-ctrl-a = 'move-node-to-workspace Arc'
+alt-shift-cmd-ctrl-s = 'move-node-to-workspace Slack'
+alt-shift-cmd-ctrl-g = 'move-node-to-workspace Ghostty'
+alt-shift-cmd-ctrl-m = 'move-node-to-workspace Messaging'
+alt-shift-cmd-ctrl-i = 'move-node-to-workspace IntelliJ'
+alt-shift-cmd-ctrl-p = 'move-node-to-workspace Postico'
+alt-shift-cmd-ctrl-d = 'move-node-to-workspace Deskpad'
+alt-shift-cmd-ctrl-r = 'move-node-to-workspace Reclaim'
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 [workspace-to-monitor-force-assignment]
-1 = ['built-in', 'main']
-2 = ['DeskPad Display', 'main']
-3 = ['DeskPad Display', 'main']
-4 = ['DeskPad Display', 'main']
-5 = ['DeskPad Display', 'main']
-6 = ['DeskPad Display', 'main']
-7 = ['DeskPad Display', 'main']
-8 = ['DeskPad Display', 'main']
-9 = ['main']
-10 = ['main']
-11 = ['main']
-12 = ['main']
-13 = ['main']
-14 = ['main']
-15 = ['main']
+Arc = ['main', 'built-in']
+Slack = ['main', 'built-in']
+Ghostty = ['DeskPad Display', 'main']
+Messaging = ['main', 'built-in']
+IntelliJ = ['DeskPad Display', 'main']
+Postico = ['DeskPad Display', 'main']
+Deskpad = ['main']
+Reclaim = ['main']
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -182,48 +146,56 @@ alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'Slack'
-run = ["layout floating", 'move-node-to-workspace 1']
-
-# [[on-window-detected]]
-# if.app-name-regex-substring = 'Obsidian'
-# run = ["layout floating", 'move-node-to-workspace 2']
-
-[[on-window-detected]]
 if.app-name-regex-substring = 'Arc'
-run = ['move-node-to-workspace 2']
+run = ['move-node-to-workspace Arc']
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'Zen'
-run = ['move-node-to-workspace 2']
+if.app-name-regex-substring = 'Slack'
+run = ['move-node-to-workspace Slack']
 
 [[on-window-detected]]
 if.app-id = "com.mitchellh.ghostty"
-run = ["move-node-to-workspace 3"]
+run = ["move-node-to-workspace Ghostty"]
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'WhatsApp'
+run = ['layout floating', 'move-node-to-workspace Messaging']
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Messages'
+run = ['layout floating', 'move-node-to-workspace Messaging']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Intellij'
-run = ['move-node-to-workspace 4']
-
-# [[on-window-detected]]
-# if.app-name-regex-substring = 'Youtube Music'
-# run = ['move-node-to-workspace 5']
+run = ['move-node-to-workspace IntelliJ']
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'Docker'
-run = ['move-node-to-workspace 6']
+if.app-name-regex-substring = 'Todoist'
+run = ['move-node-to-workspace Reclaim']
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Reclaim'
+run = ['move-node-to-workspace Reclaim']
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Postico'
+run = ['move-node-to-workspace Postico']
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Deskpad'
+run = ['move-node-to-workspace Deskpad']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Google Gemini'
 run = ['move-node-to-workspace 7']
 
 # [[on-window-detected]]
+# if.app-name-regex-substring = 'Docker'
+# run = ['move-node-to-workspace 6']
+
+# [[on-window-detected]]
 # if.app-name-regex-substring = 'Postman'
 # run = ['move-node-to-workspace 8']
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'Deskpad'
-run = ['move-node-to-workspace 9']
 
 # [[on-window-detected]]
 # if.app-name-regex-substring = 'Vial Web'
@@ -245,9 +217,9 @@ run = ['move-node-to-workspace 9']
 # if.app-name-regex-substring = 'Jira PWA'
 # run = ['move-node-to-workspace 13']
 
-[[on-window-detected]]
-if.app-name-regex-substring = 'Reclaim'
-run = ['move-node-to-workspace 14']
+# [[on-window-detected]]
+# if.app-name-regex-substring = 'Youtube Music'
+# run = ['move-node-to-workspace 5']
 
 # [[on-window-detected]]
 # if.app-name-regex-substring = 'GibHub'
