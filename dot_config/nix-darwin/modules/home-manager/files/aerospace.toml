@@ -90,7 +90,7 @@ alt-ctrl-cmd-minus = 'layout floating tiling'
 alt-ctrl-cmd-period = 'resize width -100'
 alt-ctrl-cmd-comma = 'resize width +100'
 alt-ctrl-cmd-u = 'resize width 2400'
-alt-ctrl-cmd-f = 'fullscreen --no-outer-gaps'
+alt-ctrl-cmd-o = 'fullscreen --no-outer-gaps'
 
 alt-shift-semicolon = 'mode service'
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
