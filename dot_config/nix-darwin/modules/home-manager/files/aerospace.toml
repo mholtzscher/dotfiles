@@ -157,6 +157,10 @@ if.app-name-regex-substring = 'Arc'
 run = ['move-node-to-workspace Arc']
 
 [[on-window-detected]]
+if.app-name-regex-substring = 'Zen'
+run = ['move-node-to-workspace Arc']
+
+[[on-window-detected]]
 if.app-name-regex-substring = 'Slack'
 run = ['move-node-to-workspace Slack']
 

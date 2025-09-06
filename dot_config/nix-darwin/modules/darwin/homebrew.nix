@@ -36,6 +36,7 @@
       "postman"
       "raycast"
       "slack"
+      "zen"
     ];
     masApps = {
       "WhatsApp" = 310633997;
