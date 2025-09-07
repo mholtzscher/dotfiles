@@ -24,7 +24,7 @@
     ./ripgrep.nix
     ./starship.nix
     ./ssh.nix
-    ./wezterm.nix
+    # ./wezterm.nix
     ./yazi.nix
     ./zed.nix
     ./zellij.nix

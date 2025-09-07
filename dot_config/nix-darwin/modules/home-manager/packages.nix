@@ -13,7 +13,7 @@ with pkgs;
 ++ [
   # asdf-vm # really out of date
   #awscli2
-  buf
+  # buf
   chezmoi
   cowsay
   dive
@@ -36,13 +36,13 @@ with pkgs;
   neovim
   nufmt
   nushellPlugins.polars
-  oras # TODO: set only for paytient mac
+  oras
   pokemon-colorscripts-mac
   procs
   rm-improved
   sl
   slides
-  # sops
+  sops
   tldr
   vim
   vscode
