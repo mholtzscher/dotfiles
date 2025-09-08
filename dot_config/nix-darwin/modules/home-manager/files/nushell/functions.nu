@@ -155,7 +155,7 @@ def chad [] {
   let confirmation = (input "Proceed with 'chezmoi add'? (Y/n) ")
   
   if ($confirmation | str downcase) != "n" {
-    print "Adding files to chezmoi..."                        e
+    print "Adding files to chezmoi..."
     chezmoi add ...$selected_files
     print "Files successfully added to chezmoi."
   } else {

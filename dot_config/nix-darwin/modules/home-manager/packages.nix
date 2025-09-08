@@ -34,7 +34,7 @@ with pkgs;
   mkalias
   nixfmt-rfc-style
   neovim
-  nufmt
+  # nufmt
   nushellPlugins.polars
   oras
   pokemon-colorscripts-mac
