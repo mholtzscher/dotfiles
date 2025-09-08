@@ -4,7 +4,7 @@ with pkgs;
 [
   nodejs
   lua
-  python3
+  # python3
   # python313Packages.python-lsp-server
   # python313Packages.python-lsp-ruff
   # python313Packages.python-lsp-ruff

@@ -2,7 +2,7 @@
 {
   programs = {
     poetry = {
-      enable = true;
+      enable = false;
       settings = {
         virtualenvs.create = true;
         virtualenvs.in-project = true;
