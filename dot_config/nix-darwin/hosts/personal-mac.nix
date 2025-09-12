@@ -17,14 +17,12 @@ in
 
   homebrew = {
     taps = [
-      "sst/tap"
     ];
     brews = [
       "gemini-cli"
       "hashicorp/tap/terraform"
       "mockery"
       "pyenv-virtualenv"
-      "sst/tap/opencode"
     ];
     casks = [
       "capacities"

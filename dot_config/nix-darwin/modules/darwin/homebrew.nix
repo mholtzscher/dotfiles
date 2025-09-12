@@ -9,9 +9,10 @@
     };
     taps = [
       "hashicorp/tap"
+      "FelixKratz/formulae"
       "jetbrains/utils"
       "nikitabobko/tap"
-      "FelixKratz/formulae"
+      "sst/tap"
     ];
     brews = [
       "awscli"
@@ -19,6 +20,7 @@
       "borders"
       "JetBrains/utils/kotlin-lsp"
       "mas"
+      "sst/tap/opencode"
       # "sketchybar"
     ];
     casks = [
