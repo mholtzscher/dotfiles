@@ -4,6 +4,7 @@
     ./atuin.nix
     ./bat.nix
     ./bottom.nix
+    ./carapace.nix
     ./eza.nix
     ./fd.nix
     ./fish.nix
