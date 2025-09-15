@@ -16,7 +16,7 @@
         #font-family-bold-italic = "Iosevka NFM Bold Italic"
         font-size = "13";
 
-        theme = "tokyonight_night";
+        theme = "Tokyonight Night";
 
         background-blur-radius = 20;
         mouse-hide-while-typing = true;
