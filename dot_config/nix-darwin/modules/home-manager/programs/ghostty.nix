@@ -29,7 +29,9 @@
         quick-terminal-position = "center";
         quick-terminal-screen = "macos-menu-bar";
 
-        custom-shader = "./shaders/cursor_blaze.glsl";
+        custom-shader = [
+          "./shaders/cursor_blaze.glsl"
+        ];
       };
     };
   };
