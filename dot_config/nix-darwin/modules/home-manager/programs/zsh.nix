@@ -18,9 +18,9 @@
         clean = "git clean -Xdf";
       };
       initContent = ''
-        if [ -f /Users/michaelholtzcher/code/onboarding/engineering.sh ]; then
+        if [ -f /Users/michaelholtzcher/code/paytient/onboarding/engineering.sh ]; then
             export GITHUB_PAT=$(op read "op://Personal/Github/paytient-pat")
-            source /Users/michaelholtzcher/code/onboarding/engineering.sh
+            source /Users/michaelholtzcher/code/paytient/onboarding/engineering.sh
         fi
       '';
       sessionVariables = {

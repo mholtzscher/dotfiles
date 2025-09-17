@@ -44,6 +44,7 @@ with pkgs;
   slides
   sops
   tldr
+  tree-sitter
   vim
   vscode
   websocat
