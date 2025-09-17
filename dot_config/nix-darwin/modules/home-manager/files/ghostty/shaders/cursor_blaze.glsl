@@ -1,5 +1,4 @@
 float getSdfRectangle(in vec2 p, in vec2 xy, in vec2 b)
-
 {
     vec2 d = abs(p - xy) - b;
     return length(max(d, 0.0)) + min(max(d.x, d.y), 0.0);
@@ -54,6 +53,20 @@ float determineStartVertexFactor(vec2 c, vec2 p) {
     return 1.0 - max(condition1, condition2);
 }
 
+float determineStartVertexFactor2(vec2 c, vec2 p) {
+    // Conditions using step
+    float condition1 = step(p.x, c.x) * step(c.y, p.y); // c.x < p.x && c.y > p.y
+    float condition2 = step(c.x, p.x) * step(p.y, c.y); // c.x > p.x && c.y < p.y
+
+    // If neither condition is met, return 1 (else case)
+    return 1.0 - max(condition1, condition2);
+}
+
+float esAMenorB(float c, float p) {
+    // Conditions using step
+    return 1.0 - step(p, c); // c < p
+}
+
 vec2 getRectangleCenter(vec4 rectangle) {
     return vec2(rectangle.x + (rectangle.z / 2.), rectangle.y - (rectangle.w / 2.));
 }
@@ -61,10 +74,6 @@ float ease(float x) {
     return pow(1.0 - x, 3.0);
 }
 
-vec4 saturate(vec4 color, float factor) {
-    float gray = dot(color, vec4(0.299, 0.587, 0.114, 0.)); // luminance
-    return mix(vec4(gray), color, factor);
-}
 const vec4 TRAIL_COLOR = vec4(0.471, 0.278, 0.741, 0.1);
 const vec4 TRAIL_COLOR_ACCENT = vec4(0.471, 0.278, 0.741, 0.1);
 const float DURATION = 0.3; //IN SECONDS
@@ -90,11 +99,18 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
     float vertexFactor = determineStartVertexFactor(currentCursor.xy, previousCursor.xy);
     float invertedVertexFactor = 1.0 - vertexFactor;
 
+    float xMenorFactor = esAMenorB(previousCursor.x, currentCursor.x);
+    float yMenorFactor = esAMenorB(currentCursor.y, previousCursor.y);
+
     // Set every vertex of my parellogram
     vec2 v0 = vec2(currentCursor.x + currentCursor.z * vertexFactor, currentCursor.y - currentCursor.w);
-    vec2 v1 = vec2(currentCursor.x + currentCursor.z * invertedVertexFactor, currentCursor.y);
-    vec2 v2 = vec2(previousCursor.x + currentCursor.z * invertedVertexFactor, previousCursor.y);
-    vec2 v3 = vec2(previousCursor.x + currentCursor.z * vertexFactor, previousCursor.y - previousCursor.w);
+    vec2 v1 = vec2(currentCursor.x + currentCursor.z * xMenorFactor, currentCursor.y - currentCursor.w * yMenorFactor);
+    vec2 v2 = vec2(currentCursor.x + currentCursor.z * invertedVertexFactor, currentCursor.y);
+    vec2 v3 = centerCP;
+    // vec2 v0 = vec2(currentCursor.x + currentCursor.z * vertexFactor, currentCursor.y - currentCursor.w);
+    // vec2 v1 = vec2(currentCursor.x + currentCursor.z * invertedVertexFactor, currentCursor.y);
+    // vec2 v2 = vec2(previousCursor.x + currentCursor.z * invertedVertexFactor, previousCursor.y);
+    // vec2 v3 = vec2(previousCursor.x + currentCursor.z * vertexFactor, previousCursor.y - previousCursor.w);
 
     float sdfCurrentCursor = getSdfRectangle(vu, currentCursor.xy - (currentCursor.zw * offsetFactor), currentCursor.zw * 0.5);
     float sdfTrail = getSdfParallelogram(vu, v0, v1, v2, v3);
@@ -104,15 +120,17 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
     // Distance between cursors determine the total length of the parallelogram;
     float lineLength = distance(centerCC, centerCP);
 
+    vec4 newColor = vec4(fragColor);
+    // Compute fade factor based on distance along the trail
+    float fadeFactor = 1.0 - smoothstep(lineLength, sdfCurrentCursor, easedProgress * lineLength);
+
     float mod = .007;
     //trailblaze
-    // HACK: Using the saturate function because I currently don't know how to blend colors without losing saturation.
-    vec4 trail = mix(saturate(TRAIL_COLOR_ACCENT, 1.5), fragColor, 1. - smoothstep(0., sdfTrail + mod, 0.007));
-    trail = mix(saturate(TRAIL_COLOR, 1.5), trail, 1. - smoothstep(0., sdfTrail + mod, 0.006));
-    trail = mix(trail, saturate(TRAIL_COLOR, 1.5), step(sdfTrail + mod, 0.));
+    vec4 trail = mix(TRAIL_COLOR_ACCENT, fragColor, 1. - smoothstep(0., sdfTrail + mod, 0.007));
+    trail = mix(TRAIL_COLOR, trail, 1. - smoothstep(0., sdfTrail + mod, 0.006));
+    trail = mix(trail, TRAIL_COLOR, step(sdfTrail + mod, 0.));
     //cursorblaze
-    trail = mix(saturate(TRAIL_COLOR_ACCENT, 1.5), trail, 1. - smoothstep(0., sdfCurrentCursor + .002, 0.004));
-    trail = mix(saturate(TRAIL_COLOR, 1.5), trail, 1. - smoothstep(0., sdfCurrentCursor + .002, 0.004));
+    trail = mix(TRAIL_COLOR_ACCENT, trail, 1. - smoothstep(0., sdfCurrentCursor + .002, 0.004));
+    trail = mix(TRAIL_COLOR, trail, 1. - smoothstep(0., sdfCurrentCursor + .002, 0.004));
     fragColor = mix(trail, fragColor, 1. - smoothstep(0., sdfCurrentCursor, easedProgress * lineLength));
 }
-
