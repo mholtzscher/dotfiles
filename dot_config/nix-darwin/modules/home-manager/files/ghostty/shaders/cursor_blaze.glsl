@@ -66,9 +66,6 @@ vec4 saturate(vec4 color, float factor) {
     return mix(vec4(gray), color, factor);
 }
 const vec4 TRAIL_COLOR = vec4(0.471, 0.278, 0.741, 0.1);
-// const vec4 TRAIL_COLOR = vec4(0.365, 0.243, 0.659, 0.1);// real
-// const vec4 TRAIL_COLOR = vec4(1.0, 0.725, 0.161, 1.0);
-// const vec4 TRAIL_COLOR_ACCENT = vec4(0.62, 0.545, 0.796, 0.1); // real
 const vec4 TRAIL_COLOR_ACCENT = vec4(0.471, 0.278, 0.741, 0.1);
 const float DURATION = 0.3; //IN SECONDS
 
