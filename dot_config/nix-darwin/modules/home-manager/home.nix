@@ -41,6 +41,8 @@ in
       source = ./files/bordersrc;
       executable = true;
     };
+    "${config.xdg.configHome}/ghostty/shaders/cursor_blaze.glsl".source =
+      ./files/ghostty/shaders/cursor_blaze.glsl;
     # "${config.xdg.configHome}/starship.toml".source =
     #   "${starship}/docs/public/presets/toml/pure-preset.toml";
     # "${config.xdg.configHome}/starship.toml".source =

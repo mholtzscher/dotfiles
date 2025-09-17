@@ -28,6 +28,8 @@
         window-width = 200;
         quick-terminal-position = "center";
         quick-terminal-screen = "macos-menu-bar";
+
+        custom-shader = "./shaders/cursor_blaze.glsl";
       };
     };
   };
