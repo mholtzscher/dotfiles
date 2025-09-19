@@ -20,6 +20,7 @@
         ll = "ls -al";
         lg = "lazygit";
         n = "nvim";
+        oc = "opencode";
 
         nfu = "nix flake update";
         ngc = "nix-collect-garbage -d";
