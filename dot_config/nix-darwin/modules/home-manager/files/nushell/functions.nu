@@ -471,9 +471,9 @@ def s3u --env [] {
   let file_name = ($selected_file | path basename)
   
   # Confirm upload
-  let confirmation = (input $"Upload ($file_name) to s3://($selected_bucket)/($file_name)? (Y/n) ")
+  let confirmation = (input $"Upload ($file_name) to s3://($selected_bucket)/($file_name)? \(Y/n\) ")
   if ($confirmation | str downcase) == "n" {
-    print "Upload cancelled"
+  print "Upload cancelled"
     return
   }
   
