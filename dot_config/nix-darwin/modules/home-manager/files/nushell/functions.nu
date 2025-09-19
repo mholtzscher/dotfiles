@@ -393,6 +393,7 @@ def aws_export_envs --env [] {
 # }
 #
 # S3 upload function with fzf bucket and file selection
+# S3 upload function with fzf bucket and file selection
 def s3u --env [] {
   # Print current AWS_PROFILE
   let current_profile = if ($env.AWS_PROFILE? | is-empty) { "Not set" } else { $env.AWS_PROFILE }
@@ -470,19 +471,28 @@ def s3u --env [] {
   # Get the filename for S3 key
   let file_name = ($selected_file | path basename)
   
+  # Ask for optional folder prefix
+  let folder_prefix = (input "Enter folder path prefix (leave empty for root): ")
+  let s3_key = if ($folder_prefix | is-empty) {
+    $file_name
+  } else {
+    let clean_prefix = ($folder_prefix | str trim | str replace --regex "/+$" "")
+    $"($clean_prefix)/($file_name)"
+  }
+  
   # Confirm upload
-  let confirmation = (input $"Upload ($file_name) to s3://($selected_bucket)/($file_name)? \(Y/n\) ")
-  if ($confirmation | str downcase) == "n" {
-  print "Upload cancelled"
+  let confirmation = (input $"Upload ($file_name) to s3://($selected_bucket)/($s3_key)? \(Y/n\) ")
+  if ($confirmation | str downcase) != "y" {
+    print "Upload cancelled"
     return
   }
   
   # Upload the file
-  print $"Uploading ($selected_file) to s3://($selected_bucket)/($file_name)..."
-  let upload_result = (aws s3 cp $selected_file $"s3://($selected_bucket)/($file_name)" | complete)
+  print $"Uploading ($selected_file) to s3://($selected_bucket)/($s3_key)..."
+  let upload_result = (aws s3 cp $selected_file $"s3://($selected_bucket)/($s3_key)" | complete)
   if $upload_result.exit_code == 0 {
-    print $"Successfully uploaded ($file_name) to s3://($selected_bucket)/($file_name)"
-    print $"S3 URL: https://($selected_bucket).s3.amazonaws.com/($file_name)"
+    print $"Successfully uploaded ($file_name) to s3://($selected_bucket)/($s3_key)"
+    print $"S3 URL: https://($selected_bucket).s3.amazonaws.com/($s3_key)"
   } else {
     print "Failed to upload file to S3"
     print $upload_result.stderr
