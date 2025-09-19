@@ -392,6 +392,104 @@ def aws_export_envs --env [] {
 #   }
 # }
 #
+# S3 upload function with fzf bucket and file selection
+def s3u --env [] {
+  # Print current AWS_PROFILE
+  let current_profile = if ($env.AWS_PROFILE? | is-empty) { "Not set" } else { $env.AWS_PROFILE }
+  print $"Current AWS Profile: ($current_profile)"
+  
+  # Check if AWS CLI is available
+  if (which aws | is-empty) {
+    print "Error: AWS CLI is not installed"
+    return 1
+  }
+  
+  # Check if fzf is available
+  if (which fzf | is-empty) {
+    print "Error: fzf is not installed"
+    return 1
+  }
+  
+  # Ensure we have an AWS profile set
+  if ($env.AWS_PROFILE? | is-empty) {
+    print "No AWS profile set. Please set AWS_PROFILE environment variable or use 'sso' alias to select a profile."
+    return 1
+  }
+  
+  # Check for valid AWS SSO session
+  let session_check = (aws sts get-caller-identity | complete)
+  if $session_check.exit_code != 0 {
+    print "No valid AWS session found. Attempting SSO login..."
+    let login_result = (aws sso login | complete)
+    if $login_result.exit_code != 0 {
+      print "Failed to login to AWS SSO"
+      return 1
+    }
+    print "Successfully logged in to AWS SSO"
+  } else {
+    print "Valid AWS session found"
+  }
+  
+  # List S3 buckets and let user select with fzf
+  print "Fetching S3 buckets..."
+  let buckets_result = (aws s3api list-buckets --query 'Buckets[].Name' --output text | complete)
+  if $buckets_result.exit_code != 0 {
+    print "Failed to list S3 buckets"
+    return 1
+  }
+  
+  let buckets = ($buckets_result.stdout | str trim | split row "\t" | where $it != "")
+  if ($buckets | is-empty) {
+    print "No S3 buckets found"
+    return 1
+  }
+  
+  let selected_bucket = ($buckets | str join "\n" | fzf --prompt="Select S3 bucket: " --height=40% --border)
+  if ($selected_bucket | is-empty) {
+    print "No bucket selected"
+    return
+  }
+  
+  print $"Selected bucket: ($selected_bucket)"
+  
+  # Use fzf to select a file to upload
+  print "Select file to upload..."
+  let selected_file = (fd --type f . | fzf --prompt="Select file to upload: " --height=60% --border --preview "bat --color=always --plain --line-range :50 {}" --preview-window "right:50%:wrap")
+  if ($selected_file | is-empty) {
+    print "No file selected"
+    return
+  }
+  
+  if not ($selected_file | path exists) {
+    print $"Error: File ($selected_file) does not exist"
+    return 1
+  }
+  
+  print $"Selected file: ($selected_file)"
+  
+  # Get the filename for S3 key
+  let file_name = ($selected_file | path basename)
+  
+  # Confirm upload
+  let confirmation = (input $"Upload ($file_name) to s3://($selected_bucket)/($file_name)? (Y/n) ")
+  if ($confirmation | str downcase) == "n" {
+    print "Upload cancelled"
+    return
+  }
+  
+  # Upload the file
+  print $"Uploading ($selected_file) to s3://($selected_bucket)/($file_name)..."
+  let upload_result = (aws s3 cp $selected_file $"s3://($selected_bucket)/($file_name)" | complete)
+  if $upload_result.exit_code == 0 {
+    print $"Successfully uploaded ($file_name) to s3://($selected_bucket)/($file_name)"
+    print $"S3 URL: https://($selected_bucket).s3.amazonaws.com/($file_name)"
+  } else {
+    print "Failed to upload file to S3"
+    print $upload_result.stderr
+    return 1
+  }
+}
+
 # Retrieve the theme settings
 $env.config.color_config =  {
     binary: '#bb9af7'
