@@ -43,6 +43,8 @@ in
     };
     "${config.xdg.configHome}/ghostty/shaders/cursor_blaze.glsl".source =
       ./files/ghostty/shaders/cursor_blaze.glsl;
+    "${config.xdg.configHome}/raycast/scripts/toggle-aerospace.sh".source =
+      ./files/raycast/toggle-aerospace.sh;
     # "${config.xdg.configHome}/starship.toml".source =
     #   "${starship}/docs/public/presets/toml/pure-preset.toml";
     # "${config.xdg.configHome}/starship.toml".source =
